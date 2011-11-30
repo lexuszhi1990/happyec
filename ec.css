@@ -1,6 +1,18 @@
-#pagetitle
+body {
+font-size: small;
+margin-left:35px;
+margin-right:35px;
+}
+#pagetitle {
+text-align: center;
+color: #e34e5e;
+font-size: 200%;
+}
 
 #subtitle {
-margin-top:15px;
-margin-bottom:15px;
+font-size:small;
+text-align: center;
+color: green;
+margin-top:-15px;
+margin-bottom:-15px;
 }
