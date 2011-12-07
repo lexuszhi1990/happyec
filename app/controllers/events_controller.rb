@@ -41,6 +41,10 @@ class EventsController < ApplicationController
   # POST /events.xml
   def create
     @event = Event.new(params[:event])
+    # I have to call update_attribute mannually FIXME
+    # DateTime.civil also wants second as its last parameter, but in the view
+    # helper select_timedate does not have seconds, but this is OK
+    @event.update_attribute("time",DateTime.civil(params[:start_datetime][:year].to_i, params[:start_datetime][:month].to_i, params[:start_datetime][:day].to_i,params[:start_datetime][:hour].to_i,params[:start_datetime][:minute].to_i) )
 
     respond_to do |format|
       if @event.save
