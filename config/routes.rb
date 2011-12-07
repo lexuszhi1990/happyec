@@ -1,4 +1,6 @@
 Ec::Application.routes.draw do
+  resources :comments
+
   resources :events
 
   get "log_in" => "sessions#new", :as => "log_in" 
