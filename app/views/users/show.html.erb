@@ -1,1 +1,11 @@
 <%= @user.name %>
+
+<p>
+  <b>my Comments:</b>
+
+  <br \>
+  <% @user.comments.each do |comment| %>
+  <%=comment.content%>
+  <br \>
+  <%end%>
+</p>
