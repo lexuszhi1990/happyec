@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       render "new"  
     end  
   end  
-end  
+
   def index
       @users = User.all
 
@@ -33,17 +33,20 @@ end
       format.html # index.html.erb
     end
   end
+
   def show
     if params[:name]
       @user = User.where(:name => params[:name]).first
     else
       @user = User.find(params[:id])
     end
+
     if @user == nil
       redirect_to root_url, :notice => "no such user!"  
     else
       respond_to do |format|
         format.html # show.html.erb
+      end
     end
   end
 end
