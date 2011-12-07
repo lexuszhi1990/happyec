@@ -24,4 +24,14 @@
 
 <br />
 
+<div class="comments">
+<% Comment.all.each do |comment| %>
+
+<%= comment.event_id %><br \>
+<%= comment.user_id %><br>
+<%= comment.content %><br>
+<%= link_to 'Edit', edit_comment_path(comment) %><br>
+
+<% end %>
+</div>
 <%= link_to 'New Event', new_event_path %>
