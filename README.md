@@ -3,6 +3,8 @@ HeBei JingMao University English corner
 
 #design
 
+http://wufoo.com/tour/integration/
+
 sure we can steal some from Blug and Toastmaster
 
 1. same steps for each event, so that we can document it, and let the best
