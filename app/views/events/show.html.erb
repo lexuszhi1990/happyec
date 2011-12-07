@@ -14,6 +14,14 @@
   <b>Content:</b>
   <%= @event.content %>
 </p>
+<p>
+  <b>Comments:</b>
+  <br \>
+  <% @event.comments.each do |comment| %>
+  <%=comment.content%>
+  <br \>
+  <%end%>
+</p>
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
