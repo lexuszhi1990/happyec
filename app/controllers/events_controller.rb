@@ -50,7 +50,8 @@ class EventsController < ApplicationController
     # it UTC. So actually everytime the user submit a time, he is wrong, so
     # here we correct him, by -8
     # this is WRONG, only works, when :hour > 8
-    @utc_time=DateTime.civil(params[:start_datetime][:year].to_i, params[:start_datetime][:month].to_i, params[:start_datetime][:day].to_i,params[:start_datetime][:hour].to_i-8,params[:start_datetime][:minute].to_i) 
+    # http://api.rubyonrails.org/classes/DateTime.html#method-i-to_time
+    @utc_time=DateTime.civil(params[:start_datetime][:year].to_i, params[:start_datetime][:month].to_i, params[:start_datetime][:day].to_i,params[:start_datetime][:hour].to_i,params[:start_datetime][:minute].to_i,Rational(+8, 24)).utc
 
     @event.update_attribute("time",@utc_time)
 
