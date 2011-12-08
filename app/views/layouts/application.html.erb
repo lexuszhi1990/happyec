@@ -7,19 +7,41 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<div id="user_nav">
-  <% if current_user %>
-    Logged in as <%= current_user.name %>.
-    <%= link_to "Log out", log_out_path %>
-  <% else %>
-    <%= link_to "Sign up", sign_up_path %> or
-    <%= link_to "log in", log_in_path %>
-  <% end %>
-</div>
-
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
+
+<table  width="100%" bgcolor=#ff6600>
+	<tr>
+		<td style="width:18px;padding-right:4px">
+			<a href="http://happypeter.org"><img src="/images/monster.png" width=42 height=25 style="border:1px #ffffff solid;"></img></a>
+		</td>
+	
+		<td style="text-align:left;">
+			<span class="pagetop">
+			<b><%= link_to 'EC', events_path %> </b> 
+			</span>
+		</td>
+		<td style="text-align:center;color:#fff00f">
+			<% flash.each do |name, msg| %>  
+			<%= content_tag :div, msg, :id => "flash#{name}" %>  
+			<% end %>  
+		</td>
+		<td style="text-align:right;">
+			<span class="pagetop">
+			<% if current_user %>  
+			<% @user= User.find(current_user.id) %>
+			<%= link_to current_user.name, user_path(@user) %> |
+			<%= link_to "Log out", log_out_path %>  
+			<% else %>  
+			<%= link_to "Sign up", sign_up_path %> |   
+			<%= link_to "Log in", log_in_path %>  
+			<% end %>  
+			</span>
+		</td>
+
+	</tr>
+</table>
 
 
 <%= yield %>

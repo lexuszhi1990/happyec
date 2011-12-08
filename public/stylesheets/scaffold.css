@@ -54,3 +54,10 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+.event {
+  background-color: #ff6600;
+}
+.comment {
+  background-color: #ff6600;
+}

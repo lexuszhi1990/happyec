@@ -1,23 +1,20 @@
 <h1>Events</h1>
+<%= link_to 'Post a New Event', new_event_path %>
 
-
-<div class="events">
 <% @events.each do |event| %>
+<div class="event">
     <%= event.name %>
     TIME:<%= event.time %>
-<% end %>
-</table>
-
 </div>
+    <br \>
+<% end %>
 
-<div class="comments">
+
+<h1>latest comments</h1>
 <% Comment.all.each do |comment| %>
-
-<%= comment.event_id %><br \>
-<%= comment.user_id %><br>
+<div class="comment">
 <%= comment.content %><br>
 <%= link_to 'Edit', edit_comment_path(comment) %><br>
-
-<% end %>
 </div>
-<%= link_to 'New Event', new_event_path %>
+<br />
+<% end %>
