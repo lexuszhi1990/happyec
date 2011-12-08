@@ -44,7 +44,14 @@ class EventsController < ApplicationController
     # I have to call update_attribute mannually FIXME
     # DateTime.civil also wants second as its last parameter, but in the view
     # helper select_timedate does not have seconds, but this is OK
-    @event.update_attribute("time",DateTime.civil(params[:start_datetime][:year].to_i, params[:start_datetime][:month].to_i, params[:start_datetime][:day].to_i,params[:start_datetime][:hour].to_i,params[:start_datetime][:minute].to_i) )
+
+
+    # -8, because user thing he is submitting Beijing Time, but rails consider
+    # it UTC. So actually everytime the user submit a time, he is wrong, so
+    # here we correct him, by -8
+    @utc_time=DateTime.civil(params[:start_datetime][:year].to_i, params[:start_datetime][:month].to_i, params[:start_datetime][:day].to_i,params[:start_datetime][:hour].to_i-8,params[:start_datetime][:minute].to_i) 
+
+    @event.update_attribute("time",@utc_time)
 
     respond_to do |format|
       if @event.save
