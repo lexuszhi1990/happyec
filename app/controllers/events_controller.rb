@@ -49,6 +49,7 @@ class EventsController < ApplicationController
     # -8, because user thing he is submitting Beijing Time, but rails consider
     # it UTC. So actually everytime the user submit a time, he is wrong, so
     # here we correct him, by -8
+    # this is WRONG, only works, when :hour > 8
     @utc_time=DateTime.civil(params[:start_datetime][:year].to_i, params[:start_datetime][:month].to_i, params[:start_datetime][:day].to_i,params[:start_datetime][:hour].to_i-8,params[:start_datetime][:minute].to_i) 
 
     @event.update_attribute("time",@utc_time)

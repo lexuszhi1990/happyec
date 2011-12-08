@@ -4,7 +4,10 @@
 <% @events.each do |event| %>
 <div class="event">
     <%= event.name %>
-    TIME:<%= event.time %>
+    <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+    Beijing TIME:<%= event.time.in_time_zone(zone) %>
+    <br>
+    Utc time:<%=event.time%> 
 </div>
     <br \>
 <% end %>
