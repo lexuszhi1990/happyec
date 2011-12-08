@@ -1,3 +1,13 @@
+/*
+  wufoo colors:
+  #container{background:#BC3A1B url(/images/landing/gradient-red.png) repeat-y center ;border:1px solid #b5351b;}
+  #container{background:#373434 url(/images/landing/gradient-black.png) repeat-y center ;border:1px solid #444040;} 
+  #container{background:#e77709 url(/images/landing/gradient-orange.png) repeat-y center ;border:1px solid #DF5B00;}
+
+
+ color:#f9e5bd; //light yellow on blackground
+color:#FFE16E; //yellow for "login"
+ * */
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
@@ -14,7 +24,7 @@ pre {
 
 a { color: #000; }
 a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a:hover { text-decoration: underline; }
 
 div.field, div.actions {
   margin-bottom: 10px;
@@ -60,4 +70,21 @@ div.field, div.actions {
 }
 .comment {
   background-color: #ff6600;
+}
+
+#pagetoptable {
+  background:#e77709 url(/images/landing/gradient-orange.png) repeat-y center ;border:1px solid #DF5B00;
+  color:#fff;text-shadow: rgba(0,0,0,.3) 1px 1px 1px;position:relative;
+}
+.pagetop  {
+  color:#FFE16E;
+}
+
+.pagetop a {
+  color:#FFE16E;
+  text-decoration:none;
+  font-weight:bold;
+}
+.pagetop a:hover { 
+  text-decoration:underline;
 }

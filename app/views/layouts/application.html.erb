@@ -11,10 +11,10 @@
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
 
-<table  width="100%" bgcolor=#ff6600>
+<table  width="100%" id="pagetoptable">
 	<tr>
 		<td style="width:18px;padding-right:4px">
-			<a href="http://happypeter.org"><img src="/images/monster.png" width=42 height=25 style="border:1px #ffffff solid;"></img></a>
+			<a href="http://happypeter.org"><img src="/images/monster.png" width=42 height=25 ></img></a>
 		</td>
 	
 		<td style="text-align:left;">
@@ -42,7 +42,6 @@
 
 	</tr>
 </table>
-
 
 <%= yield %>
 
