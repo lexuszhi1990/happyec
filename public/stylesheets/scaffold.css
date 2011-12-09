@@ -75,8 +75,11 @@ div.field, div.actions {
 }
 
 #pagetoptable {
-  background:#e77709 url(/images/landing/gradient-orange.png) repeat-y center ;border:1px solid #DF5B00;
-  color:#fff;text-shadow: rgba(0,0,0,.3) 1px 1px 1px;position:relative;
+  background:#e77709;
+  border:1px solid #DF5B00;
+  color:#fff;
+  text-shadow: rgba(0,0,0,.3) 1px 1px 1px;
+  position:relative;
 }
 .pagetop  {
   color:#FFE16E;
