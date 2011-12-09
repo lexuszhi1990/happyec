@@ -109,15 +109,17 @@ div.field, div.actions {
   font-weight: bold;
 }
 .eventcontent {
-	color:0;
+  padding:5px;
+  border:3px solid #6D8A2C;
+  color:0;
 }
 
 .event a {
-	color:#abc;
-	text-decoration:none;
+  color:#abc;
+  text-decoration:none;
 }
 .event a:hover {
-	  text-decoration:underline;
+  text-decoration:underline;
 }
 span.eventtime {
 	font-size:50%;
