@@ -1,6 +1,11 @@
 <h1>Events</h1>
-<%= link_to 'Post a New Event', new_event_path %>
 
+<% if current_user %>  
+  <% @user= User.find(current_user.id) %>
+  <% if @user.name == "happypeter"%>
+    <%= link_to 'Post a New Event', new_event_path %>
+  <%end%>
+<%end%>
 <% @events.each do |event| %>
 <div class="event">
     
@@ -15,10 +20,19 @@
 
 
 <h1>latest comments</h1>
-<% Comment.all.each do |comment| %>
+<% Comment.all.reverse.each do |comment| %>
 <div class="comment">
-<%= comment.content %><br>
-<%= link_to 'Edit', edit_comment_path(comment) %><br>
+  <span class="commenttime">
+      <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+      <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
+  </span>
+  <span class="commentparent">
+  <% @parent=Event.find(comment.event_id) %>
+  on: <%= link_to @parent.name, event_path(@parent)%>
+  </span>
+  <div class="commentbody">
+    <%= comment.content %>
+  </div>
 </div>
 <br />
 <% end %>

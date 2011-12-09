@@ -25,7 +25,6 @@ pre {
 }
 
 a { color: #000; }
-a:visited { color: #666; }
 a:hover { text-decoration: underline; }
 
 div.field, div.actions {
@@ -107,5 +106,12 @@ div.field, div.actions {
 	  text-decoration:underline;
 }
 span.eventtime {
+	font-size:50%;
+}
+span.commenttime {
+	font-size:50%;
+}
+
+span.commentparent {
 	font-size:50%;
 }
