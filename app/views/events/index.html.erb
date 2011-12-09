@@ -31,7 +31,7 @@
   on: <%= link_to @parent.name, event_path(@parent)%>
   </span>
   <div class="commentbody">
-    <%= comment.content %>
+    <%= markdown(comment.content) %>
   </div>
 </div>
 <br />
