@@ -1,28 +1,29 @@
 <p id="notice"><%= notice %></p>
+<div class="event">
+  <div class="eventname">
+    <%= @event.name %>
+  </div>
 
-<p>
-  <b>Name:</b>
-  <%= @event.name %>
-</p>
+  <div class="eventlocation">
+    <b>Location:</b>
+    <%= @event.location %>
+  </div>
 
-<p>
-  <b>Location:</b>
-  <%= @event.location %>
-
-</p>
-<p>
-<b>Time:</b>
-   <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-   <%= @event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
- <p>
-
-
-<p>
-  <b>Content:</b>
-  <%= markdown(@event.content) %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
+  <div class="eventtime">
+    <b>Time:</b>
+    <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+    <%= @event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
+  </div>
+  <div class="eventcontent">
+    <%= markdown(@event.content) %>
+  </div>
+  <% if current_user %>  <%# only myself can edit%>
+    <% @user= User.find(current_user.id) %>
+    <% if @user.name == "happypeter"%>
+      <%= link_to 'Edit', edit_event_path(@event) %> 
+    <%end%>
+  <%end%>
+</div>
 
 <p>
   <b>Comments:</b>

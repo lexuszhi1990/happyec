@@ -91,16 +91,30 @@ div.field, div.actions {
 .pagetop a:hover { 
   text-decoration:underline;
 }
-.event {
+.eventhead {
   background-color: #6D8A2C;
   padding:10px;
   color:#fff;
   font-weight: bold;
 }
+.event {
+  border:3px solid #6D8A2C;
+  padding:10px;
+  color:#000;
+}
+.eventname {
+  background-color: #6D8A2C;
+  padding:10px;
+  color:#fff;
+  font-weight: bold;
+}
+.eventcontent {
+	color:0;
+}
 
 .event a {
-	color:#fff;
-	  text-decoration:none;
+	color:#abc;
+	text-decoration:none;
 }
 .event a:hover {
 	  text-decoration:underline;
