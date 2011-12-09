@@ -115,3 +115,7 @@ span.commenttime {
 span.commentparent {
 	font-size:50%;
 }
+div#bodycontainer {
+	width:80%;
+	text-align:left;
+}

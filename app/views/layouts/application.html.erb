@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ec</title>
+  <title>English Corner</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -10,13 +10,14 @@
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
-
+<center>
+<div id="bodycontainer">
 <table  width="100%" id="pagetoptable">
 	<tr>
 		
 		<td style="text-align:left;">
 			<span class="pagetop">
-			<b><%= link_to 'EnglishCorner', events_path %></b>
+			<b><%= link_to 'HOME', events_path %></b>
 			</span>
 		</td>
 
@@ -37,6 +38,7 @@
 </table>
 
 <%= yield %>
-
+</div>
+</center>
 </body>
 </html>
