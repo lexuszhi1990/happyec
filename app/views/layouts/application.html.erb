@@ -7,9 +7,18 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
+	
+
+<% if current_user %>  <%# only myself can see this debug message %>
+  <% @user= User.find(current_user.id) %>
+  <% if @user.name == "happypeter"%>
+    <% flash.each do |name, msg| %>
+	  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
+  <%end%>
+<%end%>
+
+
 <center>
 <div id="bodycontainer">
 <table  width="100%" id="pagetoptable">
