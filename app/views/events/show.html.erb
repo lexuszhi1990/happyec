@@ -28,7 +28,19 @@
   <b>Comments:</b>
   <br \>
   <% @event.comments.each do |comment| %>
-  <%=markdown(comment.content)%>
+<div class="comment">
+  <span class="commenttime">
+      <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+      <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
+  </span>
+  <span class="commentparent">
+  <% @parent=Event.find(comment.event_id) %>
+  on: <%= link_to @parent.name, event_path(@parent)%>
+  </span>
+  <div class="commentbody">
+    <%= markdown(comment.content) %>
+  </div>
+</div>
   <br \>
   <%end%>
 </p>
