@@ -98,14 +98,14 @@ div.field, div.actions {
   color:#fff;
   font-weight: bold;
 }
-.eventname {
-  float: right;
-  padding: 0px;
-  margin-left: 50px;
-  font-weight: bold;
-  text-align:center;
-  border:0px solid #abc;
-  padding:5px;
-  color:#f9e5bd;
-  background: #373434 ;
+
+.event a {
+	color:#fff;
+	  text-decoration:none;
+}
+.event a:hover {
+	  text-decoration:underline;
+}
+span.eventtime {
+	font-size:50%;
 }

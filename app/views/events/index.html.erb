@@ -4,11 +4,11 @@
 <% @events.each do |event| %>
 <div class="event">
     
-  <div class="eventname">
-    <%= event.name %>
-  </div>
-    <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-    <%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
+    <a href="/events/<%= event.id %>"><%= event.name %></a>
+	<span class="eventtime">
+      <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+      <%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
+	</span>
 </div>
     <br \>
 <% end %>
