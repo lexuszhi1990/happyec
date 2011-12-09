@@ -13,28 +13,21 @@
 
 <table  width="100%" id="pagetoptable">
 	<tr>
-		<td style="width:18px;padding-right:4px">
-			<a href="http://happypeter.org"><img src="/images/monster.png" width=42 height=25 ></img></a>
-		</td>
-	
+		
 		<td style="text-align:left;">
 			<span class="pagetop">
-			<b><%= link_to 'EC', events_path %> </b> 
+			<b><%= link_to 'EnglishCorner', events_path %></b>
 			</span>
 		</td>
-		<td style="text-align:center;color:#fff00f">
-			<% flash.each do |name, msg| %>  
-			<%= content_tag :div, msg, :id => "flash#{name}" %>  
-			<% end %>  
-		</td>
+
 		<td style="text-align:right;">
 			<span class="pagetop">
 			<% if current_user %>  
 			<% @user= User.find(current_user.id) %>
 			<%= link_to current_user.name, user_path(@user) %> |
-			<%= link_to "Log out", log_out_path %>  
+ 			<%= link_to "Log out", log_out_path %>  
 			<% else %>  
-			<%= link_to "Sign up", sign_up_path %> |   
+			<%= link_to "Sign up", sign_up_path %> |    
 			<%= link_to "Log in", log_in_path %>  
 			<% end %>  
 			</span>
