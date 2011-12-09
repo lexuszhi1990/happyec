@@ -13,6 +13,9 @@ Ec::Application.routes.draw do
   resources :events do
     resources :comments
   end
+  resources :users do
+    resources :comments
+  end
   resources :comments ## will this confilcts with about nested one
 
   # Sample resource route with options:
