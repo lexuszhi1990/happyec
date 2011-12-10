@@ -28,6 +28,8 @@ GEM
       activemodel (= 3.0.9)
       activesupport (= 3.0.9)
     activesupport (3.0.9)
+    ancestry (1.2.4)
+      activerecord (>= 2.2.2)
     arel (2.0.10)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
@@ -76,6 +78,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ancestry
   bcrypt-ruby
   mysql2 (~> 0.2.6)
   rails (= 3.0.9)
