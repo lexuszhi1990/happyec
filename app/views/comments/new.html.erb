@@ -1,5 +1,19 @@
-<h1>New comment</h1>
-<%= render @comment.parent if @comment.parent %>
+
+<% if @comment.parent %>
+<div class="comment">
+  <span class="commenter">
+  by    <%= User.find(@comment.parent.user_id).name %>,
+  </span>
+  <span class="commenttime">
+      <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+      <%= @comment.parent.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
+  </span>
+  <div class="commentbody">
+    <%= markdown(@comment.parent.content) %>
+  </div>
+</div>
+<% end %>
+
 
 <%= render 'form' %>
 
