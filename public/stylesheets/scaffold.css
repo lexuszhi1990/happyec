@@ -151,3 +151,45 @@ div#bodycontainer {
 	width:80%;
 	text-align:left;
 }
+
+h1.comments {
+  font-size:120%;
+  margin: 8px 0;
+  padding: 8px 15px;
+  border: solid 1px #999;
+  width: 200px;
+  border-radius: 12px;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, #CCC),
+      color-stop(1, #F5F5F5)
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      #CCC 0%,
+      #F5F5F5 100%
+  );
+}
+
+h1.events {
+  font-size:120%;	
+  margin: 8px 0;
+  padding: 8px 15px;
+  border: solid 1px #999;
+  width: 200px;
+  border-radius: 12px;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, #CCC),
+      color-stop(1, #F5F5F5)
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      #CCC 0%,
+      #F5F5F5 100%
+  );
+}

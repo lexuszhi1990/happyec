@@ -1,4 +1,4 @@
-<h1>Events</h1>
+<h1 class="events">Events</h1>
 
 <% if current_user %>  
   <% @user= User.find(current_user.id) %>
@@ -19,7 +19,7 @@
 <% end %>
 
 
-<h1>Comments</h1>
+<h1 class="comments">Comments</h1>
 <% Comment.all.reverse.each do |comment| %>
 <div class="comment">
   <span class="commenter">
