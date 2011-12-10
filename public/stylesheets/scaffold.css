@@ -124,6 +124,9 @@ div.field, div.actions {
 span.eventtime {
 	font-size:70%;
 }
+span.commenter {
+	font-size:70%;
+}
 span.commenttime {
 	font-size:70%;
 }

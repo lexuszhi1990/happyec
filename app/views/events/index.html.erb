@@ -22,6 +22,9 @@
 <h1>Comments</h1>
 <% Comment.all.reverse.each do |comment| %>
 <div class="comment">
+  <span class="commenter">
+     by <%= User.find(comment.user_id).name %>,
+  </span>
   <span class="commenttime">
       <%zone = ActiveSupport::TimeZone.new("Beijing")%>
       <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
