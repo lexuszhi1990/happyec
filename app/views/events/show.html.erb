@@ -58,10 +58,13 @@
     <%= markdown(comment.content) %>
   </div>
 </div>
+<%= link_to "Reply", new_comment_path(:event_id => @event.id, :user_id => current_user.id, :parent_id => comment.id) %> 
   <br \>
   <%end%>
 </p>
 
 
+
+<%= nested_comments @event.comments.arrange(:order => :created_at) %>
 
 
