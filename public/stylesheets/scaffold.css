@@ -6,7 +6,7 @@
   #container {background:#6D8A2C url(/images/landing/gradient-green.png) repeat-y center ;border:1px solid #66911C;}
 
 
-  color:#f9e5bd; //light yellow on blackground
+  color:#f9e5bd; // yellow for inner background
   color:#FFE16E; //yellow for "login"
  * */
 
@@ -169,44 +169,28 @@ div#bodycontainer {
 
 h1.comments {
   font-size:120%;
+  font-weight:normal;	
   margin: 8px 0;
   padding: 8px 15px;
   border: solid 1px #999;
-  width: 200px;
+  width: 90px;
   border-radius: 12px;
-  background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      color-stop(0, #CCC),
-      color-stop(1, #F5F5F5)
-  );
-  background-image: -moz-linear-gradient(
-      center bottom,
-      #CCC 0%,
-      #F5F5F5 100%
-  );
+  background-color:#000;
+  color:#FFE16E; // yellow for login
+  text-align:center;
 }
 
 h1.events {
-  font-size:120%;	
+  font-size:120%;
+  font-weight:normal;	
   margin: 8px 0;
   padding: 8px 15px;
   border: solid 1px #999;
-  width: 200px;
+  width: 90px;
   border-radius: 12px;
-  background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      color-stop(0, #CCC),
-      color-stop(1, #F5F5F5)
-  );
-  background-image: -moz-linear-gradient(
-      center bottom,
-      #CCC 0%,
-      #F5F5F5 100%
-  );
+  background-color:#000;
+  color:#FFE16E; // yellow for login
+  text-align:center;
 }
 .nested_comments {
   margin-left: 30px;

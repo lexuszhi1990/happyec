@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   # GET /comments/new.xml
   def new
-    @comment = Comment.new(:event_id => params[:event_id], :user_id => params[:user_id], :parent_id => params[:parent_id])
+    @comment = Comment.new(:event_id => params[:event_id], :parent_id => params[:parent_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +41,7 @@ class CommentsController < ApplicationController
   # POST /comments.xml
   def create
     @comment = Comment.new(params[:comment])
+    @comment.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @comment.save
