@@ -20,6 +20,7 @@
 
 
 <h1 class="comments">Comments</h1>
+<div class="comments">
 <% Comment.all.reverse.each do |comment| %>
 <div class="comment">
   <span class="commenter">
@@ -29,6 +30,7 @@
       <%zone = ActiveSupport::TimeZone.new("Beijing")%>
       <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
   </span>
+  <br \>
   <span class="commentparent">
     <% @parent=Event.find(comment.event_id) %>
     on: <%= link_to @parent.name, event_path(@parent)%>
@@ -40,6 +42,7 @@
   <div class="commentbody">
     <%= markdown(comment.content) %>
   </div>
-</div>
+</div><%# .comment%>
 <br />
 <% end %>
+</div><%# .comments %>

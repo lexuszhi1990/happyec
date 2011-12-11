@@ -41,7 +41,7 @@
    <u><%= link_to "Log in", log_in_path(:return_to => request.url) %> </u> to Comment.
     <br \>
 <% end %>
-
+<div class="comments">
 <%= nested_comments @event.comments.arrange(:order => :created_at) %>
-
+</div>
 
