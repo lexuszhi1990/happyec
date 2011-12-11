@@ -1,15 +1,15 @@
 <div class="comment">
 	<div class="comment_head">
-		<span class="commenter">
+		<span class="comment_guy">
 		by    <%= User.find(comment.user_id).name %>,
 		</span>
-		<span class="commenttime">
+		<span class="comment_time">
 		    <%zone = ActiveSupport::TimeZone.new("Beijing")%>
 		    <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
 		</span>
 	</div>
 	<div class="comment_body">
-	  <%= markdown(comment.content) %>
+		<%= markdown(comment.content) %>
 	</div>
 <% if current_user %>
   <%= link_to "Reply", new_comment_path(:event_id => comment.event.id, :parent_id => comment.id) %> 

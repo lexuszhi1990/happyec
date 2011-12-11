@@ -158,27 +158,27 @@ div.comment_body {
 span.eventtime {
 	font-size:70%;
 }
-span.commenter {
+span.comment_guy {
 	font-size:70%;
 }
-span.commenttime {
+span.comment_time {
 	font-size:70%;
 }
 
-span.commentparent {
+span.comment_parent {
 	color:#fff;
 	font-size:70%;
 }
-span.commentparent a {
+span.comment_parent a {
 	color:#fff;
 	text-decoration:none;
 }
 
-span.commentparent a:hover {
+span.comment_parent a:hover {
 	color:#fff;
 	text-decoration:underline;
 }
-span.commentparenttime {
+span.comment_parent_time {
   font-size:80%;
 }
 div#bodycontainer {
