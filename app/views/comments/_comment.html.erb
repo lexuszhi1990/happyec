@@ -10,6 +10,6 @@
     <%= markdown(comment.content) %>
   </div>
 <% if current_user %>
-  <%= link_to "Reply", new_comment_path(:event_id => comment.event.id, :parent_id => comment.id) %> |
+  <%= link_to "Reply", new_comment_path(:event_id => comment.event.id, :parent_id => comment.id) %> 
 <% end %>
 </div>

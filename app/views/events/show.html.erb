@@ -42,11 +42,6 @@
     <br \>
 <% end %>
 
-<p>
-  <b>Comments:</b>
-</p>
-
-
 <%= nested_comments @event.comments.arrange(:order => :created_at) %>
 
 
