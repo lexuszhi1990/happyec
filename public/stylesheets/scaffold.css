@@ -22,8 +22,8 @@
 html{font-size:100.01%;background:#F8E088 url(/images/stripe2.png);}
 
 #container {
-    background-color:#FFFFFF;
-      padding: 10px;
+	background:#e77709 url(/images/landing/gradient-orange.png) repeat-y center ;border:1px solid #DF5B00;
+    padding: 10px;
 }
 
 
@@ -90,7 +90,6 @@ div.field, div.actions {
 
 #pagetoptable {
   background:#e77709;
-  border:1px solid #DF5B00;
   color:#fff;
   text-shadow: rgba(0,0,0,.3) 1px 1px 1px;
   position:relative;
