@@ -1,48 +1,48 @@
 <h1 class="events">Events</h1>
 
 <% if current_user %>  
-  <% @user= User.find(current_user.id) %>
-  <% if @user.name == "happypeter"%>
-    <%= link_to 'Post a New Event', new_event_path %>
-  <%end%>
+	<% @user= User.find(current_user.id) %>
+	<% if @user.name == "happypeter"%>
+		<%= link_to 'Post a New Event', new_event_path %>
+	<%end%>
 <%end%>
 <% @events.each do |event| %>
-<div class="eventhead">
-    
-    <a href="/events/<%= event.id %>"><%= event.name %></a>
-	<span class="eventtime">
-      <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-      <%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
-	</span>
-</div>
-    <br \>
+	<div class="eventhead">   
+		<a href="/events/<%= event.id %>"><%= event.name %></a>
+		<span class="eventtime">
+			<%zone = ActiveSupport::TimeZone.new("Beijing")%>
+			<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
+		</span>
+	</div>
+	<br \>
 <% end %>
-
 
 <h1 class="comments">Comments</h1>
 <div class="comments">
-<% Comment.all.reverse.each do |comment| %>
-<div class="comment">
-  <span class="commenter">
-     by <%= User.find(comment.user_id).name %>,
-  </span>
-  <span class="commenttime">
-      <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-      <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
-  </span>
-  <br \>
-  <span class="commentparent">
-    <% @parent=Event.find(comment.event_id) %>
-    on: <%= link_to @parent.name, event_path(@parent)%>
-    <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-    <span class="commentparenttime">
-	  (<%= @parent.time.in_time_zone(zone).to_formatted_s(:long_ordinal)%>)
-    </span>
-  </span>
-  <div class="commentbody">
-    <%= markdown(comment.content) %>
-  </div>
-</div><%# .comment%>
-<br />
-<% end %>
+	<% Comment.all.reverse.each do |comment| %>
+		<div class="comment">
+			<div class="comment_head">
+				<span class="commenter">
+					by <%= User.find(comment.user_id).name %>,
+				</span>
+				<span class="commenttime">
+					<%zone = ActiveSupport::TimeZone.new("Beijing")%>
+					<%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
+				</span>
+			  	<br \>
+				<span class="commentparent">
+					<% @parent=Event.find(comment.event_id) %>
+			    	on: <%= link_to @parent.name, event_path(@parent)%>
+			    	<%zone = ActiveSupport::TimeZone.new("Beijing")%>
+			    	<span class="commentparenttime">
+						(<%= @parent.time.in_time_zone(zone).to_formatted_s(:long_ordinal)%>)
+			    	</span>
+				</span>
+			</div> <%# class="comment_head" %>
+			<div class="commentbody">
+		 		<%= markdown(comment.content) %>
+			</div>
+		</div><%# .comment%>
+		<br />
+	<% end %>
 </div><%# .comments %>
