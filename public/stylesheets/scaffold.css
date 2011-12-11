@@ -9,13 +9,29 @@
   color:#f9e5bd; //light yellow on blackground
   color:#FFE16E; //yellow for "login"
  * */
-body { background-color: #fff; color: #333; }
+
+#container {
+    text-align:left;
+    margin:0 auto;
+    width:640px;
+}
+
+
+/* ----- Backgrounds ----- */
+
+html{font-size:100.01%;background:#F8E088 url(/images/stripe2.png);}
+
+#container {
+    background-color:#FFFFFF;
+      padding: 10px;
+}
+
+
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:small;  
   line-height: 18px;
-
 }
 
 pre {
