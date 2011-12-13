@@ -118,10 +118,12 @@ span.event_time {
 div.event_location {
 	font-size:70%;
 }
-div.event_content {
-  padding:5px;
-  border:3px solid #6D8A2C;
-  color:0;
+div.event_content {   /*event_body is a better name FIXME */
+	background-color:#307D7E;
+	color:#fff;
+	padding:10px;
+	border: solid 2px #fff; 
+	border-radius: 10px;
 }
 
 
@@ -155,10 +157,10 @@ div.comment_head {
 }
 
 div.comment_body {
-	background-color:#fff;
-	color:#000;
-	padding:1px;
-	border: solid 10px #fff; 
+	background-color:#E56717;	
+	color:#fff;
+	padding:10px;
+	border: solid 2px #fff; 
 	border-radius: 10px;
 }
 span.comment_guy {
