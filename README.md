@@ -3,6 +3,10 @@ HeBei JingMao University English corner
 
 #design
 
+## chatroom
+
+I need a chatroom on the frontpage, even anonymous users can post
+
 ## Style
 http://wufoo.com/tour/integration/
 
