@@ -1,11 +1,34 @@
-<%= @user.name %>
-
 <p>
-  <b>my Comments:</b>
-
-  <br \>
-  <% @user.comments.each do |comment| %>
-    <%=comment.content%>
-    <br \>
-  <%end%>
+User Name: <%= @user.name %>
 </p>
+
+<b>My Comments:</b>
+
+<% @user.comments.each do |comment| %>
+		<div class="comment">
+			<div class="comment_head">
+				<span class="comment_time">
+				    <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+				    <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
+				</span>
+				<br \>
+				<span class="comment_parent">
+					<% @parent=Event.find(comment.event_id) %>
+			    	on:
+			 		<a href="/events/<%= @parent.id %>">
+						<%= @parent.name %>
+				    	<span class="comment_parent_time">
+					    	<%zone = ActiveSupport::TimeZone.new("Beijing")%>
+							(<%= @parent.time.in_time_zone(zone).to_formatted_s(:long_ordinal)%>)
+				    	</span>
+					</a>
+				</span>
+			</div>
+			<div class="comment_body">
+				<%= markdown(comment.content) %>
+			</div>
+		</div>
+<%end%>
+
+
+
