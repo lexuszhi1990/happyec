@@ -39,11 +39,14 @@
 			  	<br \>
 				<span class="comment_parent">
 					<% @parent=Event.find(comment.event_id) %>
-			    	on: <%= link_to @parent.name, event_path(@parent)%>
-			    	<%zone = ActiveSupport::TimeZone.new("Beijing")%>
-			    	<span class="comment_parent_time">
-						(<%= @parent.time.in_time_zone(zone).to_formatted_s(:long_ordinal)%>)
-			    	</span>
+			    	on:
+			 		<a href="/events/<%= @parent.id %>">
+						<%= @parent.name %>
+				    	<span class="comment_parent_time">
+					    	<%zone = ActiveSupport::TimeZone.new("Beijing")%>
+							(<%= @parent.time.in_time_zone(zone).to_formatted_s(:long_ordinal)%>)
+				    	</span>
+					</a>
 				</span>
 			</div> <%# class="comment_head" %>
 			<div class="comment_body">
