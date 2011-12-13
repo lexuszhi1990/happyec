@@ -1,21 +1,26 @@
 <h1 class="events">Events</h1>
 
+
 <% if current_user %>  
 	<% @user= User.find(current_user.id) %>
 	<% if @user.name == "happypeter"%>
 		<%= link_to 'Post a New Event', new_event_path %>
 	<%end%>
 <%end%>
-<% @events.each do |event| %>
-	<div class="eventhead">   
-		<a href="/events/<%= event.id %>"><%= event.name %></a>
-		<span class="eventtime">
-			<%zone = ActiveSupport::TimeZone.new("Beijing")%>
-			<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
-		</span>
-	</div>
-	<br \>
-<% end %>
+<div class="events">
+	<% @events.each do |event| %>
+		<div class="event">
+			<div class="event_head">   
+				<a href="/events/<%= event.id %>"><%= event.name %></a>
+				<span class="event_time">
+					<%zone = ActiveSupport::TimeZone.new("Beijing")%>
+					<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
+				</span>
+			</div>
+		</div>
+		<br \>
+	<% end %>
+</div>
 
 <h1 class="comments">Comments</h1>
 <div class="comments">

@@ -10,23 +10,24 @@
   color:#FFE16E; //yellow for "login"
  * */
 
-#container {
-    text-align:left;
-    margin:0 auto;
-    width:640px;
-}
-
-
 /* ----- Backgrounds ----- */
 
 html{font-size:100.01%;background:#F8E088 url(/images/stripe2.png);}
 
 #container {
-	background:#e77709 url(/images/landing/gradient-orange.png) repeat-y center ;border:1px solid #DF5B00;
+	text-align:left;
+    margin:0 auto;
+    width:640px;
+	background:#e77709 url(/images/landing/gradient-orange.png) repeat-y center ;
+	border:1px solid #DF5B00;
     padding: 10px;
 }
 
 
+div#bodycontainer {
+	width:80%;
+	text-align:left;
+}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -82,6 +83,90 @@ div.field, div.actions {
   list-style: square;
 }
 
+
+#pagetoptable {
+  background:#e77709;
+  color:#fff;
+  text-shadow: rgba(0,0,0,.3) 1px 1px 1px;
+  position:relative;
+}
+.pagetop  {
+  color:#FFE16E;
+}
+
+.pagetop a {
+  color:#FFE16E;
+  text-decoration:none;
+  font-weight:bold;
+}
+.pagetop a:hover { 
+  text-decoration:underline;
+}
+
+/* event */
+div.event {
+  border:3px solid #6D8A2C;
+  padding:10px;
+  color:#000;
+}
+.event a {
+  color:#abc;
+  text-decoration:none;
+}
+.event a:hover {
+  text-decoration:underline;
+}
+
+h1.events {
+  font-size:120%;
+  font-weight:normal;	
+  margin: 8px 0;
+  padding: 8px 15px;
+  border: solid 1px #999;
+  width: 90px;
+  border-radius: 12px;
+  background-color:#000;
+  color:#FFE16E; // yellow for login
+  text-align:center;
+}
+div.event {
+	color:#abc;
+}
+div.event_head {
+  background-color: #6D8A2C;
+  padding:10px;
+  color:#fff;
+  font-weight: bold;
+}
+div.event_name {
+  background-color: #6D8A2C;
+  padding:10px;
+  color:#fff;
+  font-weight: bold;
+}
+.event_content {
+  padding:5px;
+  border:3px solid #6D8A2C;
+  color:0;
+}
+
+span.event_time {
+	font-size:70%;
+}
+
+/* comment */
+h1.comments {
+  font-size:120%;
+  font-weight:normal;	
+  margin: 8px 0;
+  padding: 8px 15px;
+  border: solid 1px #999;
+  width: 90px;
+  border-radius: 12px;
+  background-color:#000;
+  color:#FFE16E; // yellow for login
+  text-align:center;
+}
 div.comments {
   padding:10px;
   background-color:#F88017;
@@ -106,58 +191,6 @@ div.comment_body {
 	border: solid 10px #fff; 
 	border-radius: 10px;
 }
-
-#pagetoptable {
-  background:#e77709;
-  color:#fff;
-  text-shadow: rgba(0,0,0,.3) 1px 1px 1px;
-  position:relative;
-}
-.pagetop  {
-  color:#FFE16E;
-}
-
-.pagetop a {
-  color:#FFE16E;
-  text-decoration:none;
-  font-weight:bold;
-}
-.pagetop a:hover { 
-  text-decoration:underline;
-}
-.eventhead {
-  background-color: #6D8A2C;
-  padding:10px;
-  color:#fff;
-  font-weight: bold;
-}
-.event {
-  border:3px solid #6D8A2C;
-  padding:10px;
-  color:#000;
-}
-.eventname {
-  background-color: #6D8A2C;
-  padding:10px;
-  color:#fff;
-  font-weight: bold;
-}
-.eventcontent {
-  padding:5px;
-  border:3px solid #6D8A2C;
-  color:0;
-}
-
-.event a {
-  color:#abc;
-  text-decoration:none;
-}
-.event a:hover {
-  text-decoration:underline;
-}
-span.eventtime {
-	font-size:70%;
-}
 span.comment_guy {
 	font-size:70%;
 }
@@ -181,36 +214,8 @@ span.comment_parent a:hover {
 span.comment_parent_time {
   font-size:80%;
 }
-div#bodycontainer {
-	width:80%;
-	text-align:left;
-}
 
-h1.comments {
-  font-size:120%;
-  font-weight:normal;	
-  margin: 8px 0;
-  padding: 8px 15px;
-  border: solid 1px #999;
-  width: 90px;
-  border-radius: 12px;
-  background-color:#000;
-  color:#FFE16E; // yellow for login
-  text-align:center;
-}
 
-h1.events {
-  font-size:120%;
-  font-weight:normal;	
-  margin: 8px 0;
-  padding: 8px 15px;
-  border: solid 1px #999;
-  width: 90px;
-  border-radius: 12px;
-  background-color:#000;
-  color:#FFE16E; // yellow for login
-  text-align:center;
-}
 .nested_comments {
   margin-left: 45px;
 }
