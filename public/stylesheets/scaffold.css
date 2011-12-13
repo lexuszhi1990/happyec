@@ -12,7 +12,10 @@
 
 /* ----- Backgrounds ----- */
 
-html{font-size:100.01%;background:#F8E088 url(/images/stripe2.png);}
+html {
+	font-size:100.01%;
+	background:#F8E088 url(/images/stripe2.png);
+}
 
 #container {
 	text-align:left;
@@ -44,46 +47,8 @@ pre {
 a { color: #000; }
 a:hover { text-decoration: underline; }
 
-div.field, div.actions {
-  margin-bottom: 10px;
-}
 
-#notice {
-  color: green;
-}
-
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
-
+/* page top table */
 #pagetoptable {
   background:#e77709;
   color:#fff;
@@ -144,15 +109,15 @@ div.event_name {
   color:#fff;
   font-weight: bold;
 }
+div.event_time {
+	font-size:70%;
+}
 .event_content {
   padding:5px;
   border:3px solid #6D8A2C;
   color:0;
 }
 
-span.event_time {
-	font-size:70%;
-}
 
 /* comment */
 h1.comments {
@@ -218,4 +183,44 @@ span.comment_parent_time {
 
 .nested_comments {
   margin-left: 45px;
+}
+
+/* rails generated stuff */
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
 }
