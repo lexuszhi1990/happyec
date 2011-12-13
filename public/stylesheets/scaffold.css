@@ -1,14 +1,18 @@
 /*
-  wufoo colors:
-  #container{background:#BC3A1B url(/images/landing/gradient-red.png) repeat-y center ;border:1px solid #b5351b;}
-  #container{background:#373434 url(/images/landing/gradient-black.png) repeat-y center ;border:1px solid #444040;} 
-  #container{background:#e77709 url(/images/landing/gradient-orange.png) repeat-y center ;border:1px solid #DF5B00;}
-  #container {background:#6D8A2C url(/images/landing/gradient-green.png) repeat-y center ;border:1px solid #66911C;}
+	wufoo colors:
+	#container{background:#BC3A1B url(/images/landing/gradient-red.png) repeat-y center ;border:1px solid #b5351b;}
+	#container{background:#373434 url(/images/landing/gradient-black.png) repeat-y center ;border:1px solid #444040;} 
+	#container{background:#e77709 url(/images/landing/gradient-orange.png) repeat-y center ;border:1px solid #DF5B00;}
+	#container {background:#6D8A2C url(/images/landing/gradient-green.png) repeat-y center ;border:1px solid #66911C;}
 
 
-  color:#f9e5bd; // yellow for inner background
-  color:#FFE16E; //yellow for "login"
- * */
+	color:#f9e5bd; // yellow for inner background
+	color:#FFE16E; //yellow for "login"
+  
+	http://www.computerhope.com/htmcolor.htm
+	Dark Orange: #F88017; 
+	Cyan4:    #307D7E;
+*/
 
 /* ----- Backgrounds ----- */
 
@@ -69,13 +73,22 @@ a:hover { text-decoration: underline; }
 }
 
 /* event */
-div.event {
-  border:3px solid #6D8A2C;
-  padding:10px;
-  color:#000;
+div.events {	
+	padding:10px;
+	background-color:#F88017;
+	border: solid 10px #F88017; 
+	border-radius: 10px;
 }
+div.event {
+	color:#fff;
+	border: solid 10px #307D7E;
+	border-radius: 10px;
+	padding:10px;
+	background-color:#307D7E;
+}
+
 .event a {
-  color:#abc;
+  color:#fff;
   text-decoration:none;
 }
 .event a:hover {
@@ -91,28 +104,21 @@ h1.events {
   width: 90px;
   border-radius: 12px;
   background-color:#000;
-  color:#FFE16E; // yellow for login
+  color:#FFE16E; 
   text-align:center;
 }
-div.event {
-	color:#abc;
-}
-div.event_head {
-  background-color: #6D8A2C;
-  padding:10px;
-  color:#fff;
-  font-weight: bold;
-}
+
 div.event_name {
-  background-color: #6D8A2C;
-  padding:10px;
-  color:#fff;
-  font-weight: bold;
+	color:#fff;
+	font-weight: bold;
 }
 div.event_time {
 	font-size:70%;
 }
-.event_content {
+div.event_location {
+	font-size:70%;
+}
+div.event_content {
   padding:5px;
   border:3px solid #6D8A2C;
   color:0;
@@ -139,7 +145,6 @@ div.comments {
   border-radius: 10px;
 }
 div.comment {
-
   color:#fff;
   border: solid 10px #E56717; /*http://www.computerhope.com/htmcolor.htm*/
   border-radius: 10px;
