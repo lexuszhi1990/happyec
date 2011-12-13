@@ -12,12 +12,11 @@
 		<div class="event">
 			<div class="event_name">
 				<a href="/events/<%= event.id %>"><%= event.name %></a>
+				<span class="event_time">
+					<%zone = ActiveSupport::TimeZone.new("Beijing")%>
+					(<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>)
+				</span>
 			</div>
-			<div class="event_time">
-				<%zone = ActiveSupport::TimeZone.new("Beijing")%>
-				<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
-			</div>
-
 		</div>
 		<br \>
 	<% end %>

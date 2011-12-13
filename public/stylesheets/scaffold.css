@@ -112,8 +112,8 @@ div.event_name {
 	color:#fff;
 	font-weight: bold;
 }
-div.event_time {
-	font-size:70%;
+span.event_time {
+
 }
 div.event_location {
 	font-size:70%;
