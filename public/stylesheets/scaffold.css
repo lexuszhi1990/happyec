@@ -212,14 +212,35 @@ div.profile {
 	padding:10px;
 	background-color:#307D7E;
 }
+
+/* footer */
+/* page top table */
+div.footer {
+	font-size:80%;
+	text-align:center;
+	background:#e77709;
+	color:#fff;
+	text-shadow: rgba(0,0,0,.3) 1px 1px 1px;
+	position:relative;
+}
+
+div.footer a {
+	color:#FFE16E;
+	text-decoration:none;
+	font-weight:bold;
+}
+div.footer a:hover { 
+	text-decoration:underline;
+}
+
 /* rails generated stuff */
 
 div.field, div.actions {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 #notice {
-  color: green;
+	color: green;
 }
 
 .field_with_errors {
