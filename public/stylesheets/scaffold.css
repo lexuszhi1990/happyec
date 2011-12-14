@@ -92,20 +92,20 @@ div.event {
   text-decoration:none;
 }
 .event a:hover {
-  text-decoration:underline;
+	text-decoration:underline;
 }
 
 h1.events {
-  font-size:120%;
-  font-weight:normal;	
-  margin: 8px 0;
-  padding: 8px 15px;
-  border: solid 1px #999;
-  width: 90px;
-  border-radius: 12px;
-  background-color:#000;
-  color:#FFE16E; 
-  text-align:center;
+	font-size:120%;
+	font-weight:normal;	
+	margin: 8px 0;
+	padding: 8px 15px;
+	border: solid 1px #999;
+	width: 90px;
+	border-radius: 12px;
+	background-color:#000;
+	color:#FFE16E; 
+	text-align:center;
 }
 
 div.event_name {
@@ -203,6 +203,15 @@ span.comment_parent_time {
   margin-left: 45px;
 }
 
+/* user */
+
+div.profile {
+	color:#fff;
+	border: solid 10px #307D7E;
+	border-radius: 10px;
+	padding:10px;
+	background-color:#307D7E;
+}
 /* rails generated stuff */
 
 div.field, div.actions {

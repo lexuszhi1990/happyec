@@ -1,10 +1,9 @@
-<p>
-Name: <%= @user.name %>
-</p>
-<p>
-Email: <%= @user.email %>
-</p>
-<b>My Comments:</b>
+<div class="profile">
+	Name: <%= @user.name %>
+	<br \>
+	Email: <%= @user.email %>
+</div>
+<h1 class="comments">Comments:</h1>
 
 <% @user.comments.each do |comment| %>
 		<div class="comment">
