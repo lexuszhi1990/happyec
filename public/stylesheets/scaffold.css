@@ -153,7 +153,24 @@ div.comment {
   background-color:#E56717;
 }
 div.comment_head {
-  background-color:;
+	color:#fff;
+	font-size:70%;
+	font-size:70%;
+}
+div.comment_head a {
+	color:#fff;
+	text-decoration:none;
+}
+div.comment_head a:hover {
+	color:#fff;
+	text-decoration:underline;
+}
+
+span.comment_guy {
+
+}
+span.comment_time {
+
 }
 
 div.comment_body {
@@ -162,12 +179,6 @@ div.comment_body {
 	padding:10px;
 	border: solid 2px #fff; 
 	border-radius: 10px;
-}
-span.comment_guy {
-	font-size:70%;
-}
-span.comment_time {
-	font-size:70%;
 }
 
 span.comment_parent {
