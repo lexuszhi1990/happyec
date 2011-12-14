@@ -1,7 +1,11 @@
 <div class="comment">
 	<div class="comment_head">
 		<span class="comment_guy">
-		by    <%= User.find(comment.user_id).name %>,
+			by
+			<a href="/users/<%= User.find(comment.user_id).id %>">    
+				<%= User.find(comment.user_id).name %>
+			</a>
+			,
 		</span>
 		<span class="comment_time">
 		    <%zone = ActiveSupport::TimeZone.new("Beijing")%>
