@@ -127,6 +127,7 @@ div.event_content {   /*event_body is a better name FIXME */
 }
 
 span.event_upcoming {
+	float:right;
 	font-size:80%;
 	background-color:#41A317;
 	color:#fff;
@@ -136,6 +137,7 @@ span.event_upcoming {
 }
 
 span.event_past {
+	float:right;
 	font-size:80%;
 	background-color:#C24641;
 	color:#fff;
