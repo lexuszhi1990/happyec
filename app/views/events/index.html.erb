@@ -8,7 +8,7 @@
 	<%end%>
 <%end%>
 <div class="events">
-	<% @events.each do |event| %>
+	<% @events.reverse.each do |event| %>
 		<div class="event">
 			<div class="event_name">
 				<a href="/events/<%= event.id %>">
