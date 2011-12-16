@@ -17,6 +17,15 @@
 						<%zone = ActiveSupport::TimeZone.new("Beijing")%>
 						(<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>)
 					</span>
+					<% if Time.now.utc > event.time %> <%# if the event is over %>
+						<span class="event_past">
+							Past
+						</span>
+					<% else %>
+						<span class="event_upcoming">
+							upcoming
+						</span>
+					<% end %>
 				</a>
 			</div>
 		</div>

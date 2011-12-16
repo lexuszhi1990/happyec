@@ -126,7 +126,23 @@ div.event_content {   /*event_body is a better name FIXME */
 	border-radius: 10px;
 }
 
+span.event_upcoming {
+	font-size:80%;
+	background-color:#41A317;
+	color:#fff;
+	padding:3px;
+	border: solid 2px #fff; 
+	border-radius: 10px;
+}
 
+span.event_past {
+	font-size:80%;
+	background-color:#C24641;
+	color:#fff;
+	padding:3px;
+	border: solid 2px #fff; 
+	border-radius: 10px;
+}
 /* comment */
 h1.comments {
   font-size:120%;
