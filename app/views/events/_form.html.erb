@@ -25,7 +25,9 @@
   </div>
   <div class="field">
   
-  <%= select_datetime Date.today, :prefix => :start_datetime %>
+        <%= f.label :start_datetime, "Time" %>
+        <%= f.datetime_select :start_datetime %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
