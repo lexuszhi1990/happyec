@@ -3,6 +3,7 @@ Ec::Application.routes.draw do
 
   resources :events
 
+  match "/auth/:provider/callback" => "users#login_with_qq"
   get "log_in" => "sessions#new", :as => "log_in" 
   get "log_out" => "sessions#destroy", :as => "log_out"  
   get "sign_up" => "users#new", :as => "sign_up"  
