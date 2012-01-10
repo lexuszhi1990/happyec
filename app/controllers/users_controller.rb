@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     redirect_to "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=100240376&redirect_uri=http://ec.happypeter.org/auth/qq/callback"
   end
   def login_with_qq
-    render :text =>  params[:code]
+    redirect_to "https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&client_id=100240376&client_secret=07e7230147cbab07661c0232eda07657&code=#{params[:code]}&state=1234&redirect_uri=http://ec.happypeter.org/auth/qq/callback"
   end
   def create  
     @user = User.new(params[:user])  
