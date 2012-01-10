@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end  
     
   def login_from_qq
-    render :text =>  "login_from_qq"
+    redirect_to "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=100240376&redirect_uri=http://ec.happypeter.org/auth/qq/callback"
   end
   def login_with_qq
     render :text =>  params[:code]
