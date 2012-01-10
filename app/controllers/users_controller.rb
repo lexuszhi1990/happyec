@@ -17,6 +17,9 @@ class UsersController < ApplicationController
     end
   end  
     
+  def login_from_qq
+    render :text =>  "login_from_qq"
+  end
   def login_with_qq
     render :text =>  params[:code]
   end
