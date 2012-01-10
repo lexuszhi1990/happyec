@@ -17,6 +17,9 @@ class UsersController < ApplicationController
     end
   end  
     
+  def login_with_qq
+    render :text =>  params[:code]
+  end
   def create  
     @user = User.new(params[:user])  
     if @user.save  
