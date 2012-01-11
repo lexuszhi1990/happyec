@@ -35,7 +35,10 @@ class UsersController < ApplicationController
     logger.debug "hhhhhhhhhhhhhhhhhhhhhh"
     logger.debug resp.body.to_yaml
     logger.debug "hhhhhhhhhhhhhhhhhhhhhh"
-    render :text =>  "#{params[:code]}"
+    @access_token = resp.body.to_s.split("&")[0].split("=")[1]
+    #get it out of "access_token=186D73F9A3F462D22FEC6028C638E0DD&expires_in=7776000"
+    logger.debug "hhhhhhhhhhhhhhhhhhhhhh"
+    render :text =>  @access_token
 
     #redirect_to "https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&client_id=100240376&client_secret=07e7230147cbab07661c0232eda07657&code=#{params[:code]}&state=1234&redirect_uri=http://ec.happypeter.org/auth/qq/callback"
   end
