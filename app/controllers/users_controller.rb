@@ -21,7 +21,23 @@ class UsersController < ApplicationController
     redirect_to "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=100240376&redirect_uri=http://ec.happypeter.org/auth/qq/callback"
   end
   def login_with_qq
-    redirect_to "https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&client_id=100240376&client_secret=07e7230147cbab07661c0232eda07657&code=#{params[:code]}&state=1234&redirect_uri=http://ec.happypeter.org/auth/qq/callback"
+    conn = Faraday.new(:url => 'https://graph.qq.com/')
+    resp = conn.get do |req|       
+      req.url '/oauth2.0/token'
+      req.params['grant_type'] = 'authorization_code'
+      req.params['client_id'] = 100240376
+      req.params['client_secret'] = '07e7230147cbab07661c0232eda07657'
+      req.params['code'] = params[:code]
+      req.params['redirect_uri'] = 'http://ec.happypeter.org/auth/qq/callback'
+    end
+
+
+    logger.debug "hhhhhhhhhhhhhhhhhhhhhh"
+    logger.debug resp.body.to_yaml
+    logger.debug "hhhhhhhhhhhhhhhhhhhhhh"
+    render :text =>  "#{params[:code]}"
+
+    #redirect_to "https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&client_id=100240376&client_secret=07e7230147cbab07661c0232eda07657&code=#{params[:code]}&state=1234&redirect_uri=http://ec.happypeter.org/auth/qq/callback"
   end
   def create  
     @user = User.new(params[:user])  

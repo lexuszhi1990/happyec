@@ -9,6 +9,7 @@ gem 'mysql2', '~> 0.2.6'
 gem 'bcrypt-ruby', :require => 'bcrypt'  
 gem 'redcarpet'
 gem 'ancestry'
+gem 'faraday'
 # Use unicorn as the web server
 # gem 'unicorn'
 
