@@ -62,7 +62,7 @@ class UsersController < ApplicationController
       @user = User.create_from_hash(hash2)
     end
     cookies.permanent[:token] = @user.token
-    redirect_to root_url, :notice => "Signed in successfully"
+    redirect_to root_url, :notice => @user.token
   end
   def create  
     @user = User.new(params[:user])  
