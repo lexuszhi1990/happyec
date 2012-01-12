@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120112110102) do
+ActiveRecord::Schema.define(:version => 20120112110721) do
 
   create_table "comments", :force => true do |t|
     t.integer  "event_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120112110102) do
     t.string   "password_hash"
     t.string   "password_salt"
     t.string   "qqopenid"
+    t.string   "token"
   end
 
 end
