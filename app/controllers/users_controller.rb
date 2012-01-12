@@ -48,18 +48,21 @@ class UsersController < ApplicationController
 
     @openid = hash["openid"]
 
-    # now pull out all user's info
-    resp3 = conn.get do |req|       
-      req.url '/user/get_user_info'
-      req.params['access_token'] = @access_token.to_s
-      req.params['oauth_consumer_key'] = 100240376
-      req.params['openid'] = @openid.to_s
+    @user = User.find_by_qq_openid(hash["openid"]) 
+    if @user.nil?
+      # now pull out all user's info
+      resp3 = conn.get do |req|       
+        req.url '/user/get_user_info'
+        req.params['access_token'] = @access_token.to_s
+        req.params['oauth_consumer_key'] = 100240376
+        req.params['openid'] = @openid.to_s
+      end
+      str3 = resp3.body.to_s
+      hash2 = JSON str3
+      @user = User.create_from_hash(hash2)
     end
-    str3 = resp3.body.to_s
-
-    hash2 = JSON str3
-
-    render :text => hash2["nickname"]
+    cookies.permanent[:token] = @user.token
+    redirect_to root_url, :notice => "Signed in successfully"
   end
   def create  
     @user = User.new(params[:user])  
