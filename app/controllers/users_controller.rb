@@ -20,8 +20,10 @@ class UsersController < ApplicationController
   def login_from_qq
     redirect_to "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=100240376&redirect_uri=http://ec.happypeter.org/auth/qq/callback"
   end
+
   def login_with_qq
     conn = Faraday.new(:url => 'https://graph.qq.com/')
+    # step1: get access_token
     resp = conn.get do |req|       
       req.url '/oauth2.0/token'
       req.params['grant_type'] = 'authorization_code'
@@ -33,7 +35,7 @@ class UsersController < ApplicationController
     @access_token = resp.body.to_s.split("&")[0].split("=")[1]
     #get it out of "access_token=186D73F9A3F462D22FEC6028C638E0DD&expires_in=7776000"
 
-    # now get openid with access_token
+    # step2: get openid with access_token
     resp2 = conn.get do |req|       
       req.url '/oauth2.0/me'
       req.params['access_token'] = @access_token.to_s
@@ -46,7 +48,7 @@ class UsersController < ApplicationController
     @openid = hash["openid"]
     @user = User.find_by_qqopenid(hash["openid"]) 
     if @user == nil
-      # now pull out all user's info
+      # step3: pull out all user's info
       resp3 = conn.get do |req|       
         req.url '/user/get_user_info'
         req.params['access_token'] = @access_token.to_s
@@ -60,6 +62,7 @@ class UsersController < ApplicationController
     cookies.permanent[:token] = @user.token
     redirect_to root_url, :notice => @user.token
   end
+
   def login  #login with a local account
     user = User.authenticate(params[:name], params[:password])  
     if user
@@ -75,6 +78,7 @@ class UsersController < ApplicationController
     cookies.delete(:token)
     redirect_to root_url, :notice => "You have been logged out."
   end
+
   def create  
     @user = User.new(params[:user])  
     if @user.save  
@@ -86,8 +90,7 @@ class UsersController < ApplicationController
   end  
 
   def index
-      @users = User.all
-
+    @users = User.all
     respond_to do |format|
       format.html # index.html.erb
     end
