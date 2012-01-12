@@ -10,6 +10,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'redcarpet'
 gem 'ancestry'
 gem 'faraday'
+gem 'pry', :group => :development
 # Use unicorn as the web server
 # gem 'unicorn'
 
