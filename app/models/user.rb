@@ -3,12 +3,21 @@ class User < ActiveRecord::Base
   has_many :comments
   attr_accessor :password  
   before_save :encrypt_password  
+  before_create { generate_token(:token) }
 
   validates_confirmation_of :password  
   validates_presence_of :password, :on => :create
 
   validates_presence_of :name  
   validates_uniqueness_of :name  
+  def self.create_from_hash(qqhash)
+    User.new.tap do |user|
+      user.qqopenid = qqhash["openid"]
+      user.name = qqhash["nickname"]
+      user.email = "fuckqq@fuckqq.com"
+      user.save!
+    end
+  end
   def self.authenticate(name, password)  
     user = find_by_name(name)  
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)  
@@ -28,4 +37,9 @@ class User < ActiveRecord::Base
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)  
     end  
   end  
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
 end

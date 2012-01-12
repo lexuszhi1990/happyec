@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
     @openid = hash["openid"]
 
-    @user = User.find_by_qq_openid(hash["openid"]) 
+    @user = User.find_by_qqopenid(hash["openid"]) 
     if @user.nil?
       # now pull out all user's info
       resp3 = conn.get do |req|       
