@@ -1,8 +1,17 @@
 <div class="profile">
-	Name: <%= @user.name %>
-	<br \>
-	Email: <%= @user.email %>
+  Name: <%= @user.name %>
+  <br \>
+  Email: <%= @user.email %>
+
+  <br \>
+  <% if @user != nil && current_user != nil %>
+    <% if @user.id == current_user.id %>
+        <%= link_to "edit", edit_user_path(@user)%>
+    <% end %>
+  <% end %>
 </div>
+
+
 <h1 class="comments">Comments:</h1>
 
 <% @user.comments.each do |comment| %>
