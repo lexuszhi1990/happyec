@@ -55,7 +55,11 @@ class UsersController < ApplicationController
       req.params['oauth_consumer_key'] = 100240376
       req.params['openid'] = @openid.to_s
     end
-    render :text => resp3.body.to_s
+    str3 = resp3.body.to_s
+
+    hash2 = JSON str3
+
+    render :text => hash2["nickname"]
   end
   def create  
     @user = User.new(params[:user])  
