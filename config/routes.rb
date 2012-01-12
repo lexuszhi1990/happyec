@@ -5,7 +5,8 @@ Ec::Application.routes.draw do
 
   match "/auth/qq" => "users#login_from_qq"
   match "/auth/qq/callback" => "users#login_with_qq"
-  get "log_in" => "sessions#new", :as => "log_in" 
+  get "log_in" => "users#new", :as => "log_in"  
+  match "/local_user_login" =>"users#login" # when user try to login with their local account
   get "log_out" => "users#logout", :as => "log_out"  
   get "sign_up" => "users#new", :as => "sign_up"  
 

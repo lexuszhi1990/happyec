@@ -1,3 +1,22 @@
+<div class="content" id="login">
+<h1>Login</h1>  
+  <%= form_tag "/local_user_login" do %>  
+    <p>  
+      <%= label_tag :name %><br />  
+      <%= text_field_tag :name, params[:name] %>  
+    </p>  
+    <p>  
+      <%= label_tag :password %><br />  
+      <%= password_field_tag :password %>  
+    </p>  
+
+    <p class="button"><%= submit_tag("login") %></p>  
+  <% end %>  
+
+  Log in with 
+  <%= link_to image_tag("icons/qq.png", :size => "60x20", :alt => "QQ"), "/auth/qq" %>
+</div>
+
 <h1>Sign Up</h1>  
   
 <%= form_for @user do |f| %>  

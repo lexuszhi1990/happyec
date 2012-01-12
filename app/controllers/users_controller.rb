@@ -30,8 +30,6 @@ class UsersController < ApplicationController
       req.params['code'] = params[:code]
       req.params['redirect_uri'] = 'http://ec.happypeter.org/auth/qq/callback'
     end
-
-
     @access_token = resp.body.to_s.split("&")[0].split("=")[1]
     #get it out of "access_token=186D73F9A3F462D22FEC6028C638E0DD&expires_in=7776000"
 
@@ -63,6 +61,16 @@ class UsersController < ApplicationController
     end
     cookies.permanent[:token] = @user.token
     redirect_to root_url, :notice => @user.token
+  end
+  def login  #login with a local account
+    user = User.authenticate(params[:name], params[:password])  
+    if user
+      cookies.permanent[:token] = user.token
+      redirect_to root_url, :notice => "Logged in!"
+    else
+      flash.alert = "Invalid name or password"
+      redirect_to :action => "new"
+    end
   end
 
   def logout
