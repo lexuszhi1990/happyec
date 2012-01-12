@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name  
   validates_uniqueness_of :name  
-  def self.create_from_hash(qqhash)
+  def self.create_from_hash(qqhash, openid)
     User.new.tap do |user|
-      user.qqopenid = qqhash["openid"]
+      user.qqopenid = openid
       user.name = qqhash["nickname"]
       user.email = "fuckqq@fuckqq.com"
       user.save!

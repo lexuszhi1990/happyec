@@ -43,11 +43,9 @@ class UsersController < ApplicationController
 
     require 'json'
     hash = JSON str2
-
     @openid = hash["openid"]
-
     @user = User.find_by_qqopenid(hash["openid"]) 
-    if @user.nil?
+    if @user == nil
       # now pull out all user's info
       resp3 = conn.get do |req|       
         req.url '/user/get_user_info'
@@ -57,7 +55,7 @@ class UsersController < ApplicationController
       end
       str3 = resp3.body.to_s
       hash2 = JSON str3
-      @user = User.create_from_hash(hash2)
+      @user = User.create_from_hash(hash2, hash["openid"])
     end
     cookies.permanent[:token] = @user.token
     redirect_to root_url, :notice => @user.token
