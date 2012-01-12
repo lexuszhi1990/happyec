@@ -5,3 +5,10 @@ you need to reboot your apache to make gems like ancestry work
 
 HTTP::get is not working for https, so Faraday
 http://stackoverflow.com/questions/5082152/rails-eof-error-when-using-http-get-response-to-retrieve-facebook-access-token
+
+## json
+
+http://ruby.about.com/od/tasks/a/The-Json-Gem.htm
+http://www.simonecarletti.com/blog/2010/04/inside-ruby-on-rails-serializing-ruby-objects-with-json/
+http://mike.bailey.net.au/2011/02/json-with-ruby-and-rails/
+http://www.json.org/
