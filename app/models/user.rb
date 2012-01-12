@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     User.new.tap do |user|
       user.qqopenid = openid
       user.name = qqhash["nickname"]
-      user.email = "fuckqq@fuckqq.com"
+      user.email = "not given"
       user.save!
     end
   end
