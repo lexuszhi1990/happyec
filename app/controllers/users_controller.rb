@@ -18,7 +18,8 @@ class UsersController < ApplicationController
   end  
     
   def login_from_qq
-    redirect_to "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=100240376&redirect_uri=http://ec.happypeter.org/auth/qq/callback"
+    @auth_url = "https://graph.qq.com/oauth2.0/authorize"
+    redirect_to @auth_url + "?response_type=code&client_id="+APP_CONFIG["qq_app_id"].to_s+"&redirect_uri=http://ec.happypeter.org/auth/qq/callback"
   end
 
   def login_with_qq
@@ -27,8 +28,8 @@ class UsersController < ApplicationController
     resp = conn.get do |req|       
       req.url '/oauth2.0/token'
       req.params['grant_type'] = 'authorization_code'
-      req.params['client_id'] = 100240376
-      req.params['client_secret'] = '07e7230147cbab07661c0232eda07657'
+      req.params['client_id'] = APP_CONFIG["qq_app_id"].to_s
+      req.params['client_secret'] = APP_CONFIG["qq_key"].to_s
       req.params['code'] = params[:code]
       req.params['redirect_uri'] = 'http://ec.happypeter.org/auth/qq/callback'
     end
