@@ -64,6 +64,11 @@ class UsersController < ApplicationController
     cookies.permanent[:token] = @user.token
     redirect_to root_url, :notice => @user.token
   end
+
+  def logout
+    cookies.delete(:token)
+    redirect_to root_url, :notice => "You have been logged out."
+  end
   def create  
     @user = User.new(params[:user])  
     if @user.save  
