@@ -40,7 +40,13 @@ class UsersController < ApplicationController
       req.url '/oauth2.0/me'
       req.params['access_token'] = @access_token.to_s
     end
-    render :text => resp2.body.to_s
+    str = resp2.body.to_s #callback( {"client_id":"100240376","openid":"B8B8CF6AB35A92FBF796615A74063BD6"} );
+    str2=str[9,70]
+
+    require 'json'
+    hash = JSON str2
+
+    render :text => hash["openid"].to_s
 
   end
   def create  
