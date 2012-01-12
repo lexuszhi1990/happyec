@@ -25,7 +25,7 @@ html {
 	text-align:left;
     margin:0 auto;
     width:640px;
-	background:#e77709 url(/images/landing/gradient-orange.png) repeat-y center ;
+	background:#e77709;
 	border:1px solid #DF5B00;
     padding: 10px;
 }
@@ -51,6 +51,9 @@ pre {
 a { color: #000; }
 a:hover { text-decoration: underline; }
 
+a img {
+  border: none; /*there is a black border by default*/
+}
 
 /* page top table */
 #pagetoptable {
