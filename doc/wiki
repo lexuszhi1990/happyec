@@ -12,3 +12,56 @@ http://ruby.about.com/od/tasks/a/The-Json-Gem.htm
 http://www.simonecarletti.com/blog/2010/04/inside-ruby-on-rails-serializing-ruby-objects-with-json/
 http://mike.bailey.net.au/2011/02/json-with-ruby-and-rails/
 http://www.json.org/
+
+# qq login 3 steps
+
+http://connect.opensns.qq.com/
+
+## STEP1: get access_token
+
+https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=100240376&redirect_uri=http://ec.happypeter.org/auth/qq/callback
+
+now the error:
+
+    No route matches "/auth/qq/callback"
+
+so I add in route.rb
+
+  match "/auth/:provider/callback" => "users#login_with_qq"
+
+then I get:
+http://ec.happypeter.org/auth/qq/callback?code=844F8D4399626474034CAB441C379A89
+//code=xxx, xxx is Authorization Code
+
+Unknown action
+
+The action 'login_with_qq' could not be found for UsersController
+
+
+now I 
+
+https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&client_id=100240376&client_secret=07e7230147cbab07661c0232eda07657&code=28FF47651FE206C3AB973DD1C62849B1&state=1234&redirect_uri=http://ec.happypeter.org/auth/qq/callback
+
+TIP: client_id=xxx NOT client_id =xxx
+
+not i get in the page:
+
+access_token=186D73F9A3F462D22FEC6028C638E0DD&expires_in=7776000
+
+# STEP2: get openid with access_token
+
+https://graph.qq.com/oauth2.0/me?access_token=186D73F9A3F462D22FEC6028C638E0DD
+
+which returns:
+callback( {"client_id":"100240376","openid":"B8B8CF6AB35A92FBF796615A74063BD6"} ); 
+
+# STEP3: pull user info with your openid and things
+
+https://graph.qq.com/user/get_user_info?access_token=186D73F9A3F462D22FEC6028C638E0DD&oauth_consumer_key=100240376&openid=B8B8CF6AB35A92FBF796615A74063BD6
+
+then I get everything
+{ "ret":0, "msg":"", "nickname":"王广忠", "figureurl":"http://qzapp.qlogo.cn/qzapp/100240376/B8B8CF6AB35A92FBF796615A74063BD6/30", "figureurl_1":"http://qzapp.qlogo.cn/qzapp/100240376/B8B8CF6AB35A92FBF796615A74063BD6/50", "figureurl_2":"http://qzapp.qlogo.cn/qzapp/100240376/B8B8CF6AB35A92FBF796615A74063BD6/100", "gender":"男", "vip":"0", "level":"0" 
+
+
+## the oauth way
+http://www.oschina.net/question/54100_27146
