@@ -65,3 +65,6 @@ then I get everything
 
 ## the oauth way
 http://www.oschina.net/question/54100_27146
+
+# migrate to linode
+since I have happycasts already done here, so I do not need to do passenger again, but still I encounter a "readline" not found error, the fix was already documented. jsut install -dev package, do a ruby extend.conf or sth. so this is easy.
