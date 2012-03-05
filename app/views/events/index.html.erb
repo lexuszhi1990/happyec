@@ -28,6 +28,22 @@
 					</span>
 				<% end %>
 			</div>
+
+				<% if Time.now.utc < event.time %> <%# if the event is upcoming %>
+                  <div class="event_location">
+                    <b>Location:</b>
+                    <%= link_to  event.location, "/location.html" %>
+                  </div>
+                  <div class="event_content">
+                    <%= markdown(event.content) %>
+                  </div>
+                  <% if current_user %>  <%# only myself can edit%>
+                    <% @user= User.find(current_user.id) %>
+                    <% if @user.name == "happypeter"%>
+                      <%= link_to 'Edit', edit_event_path(event) %> 
+                    <%end%>
+                  <%end%>
+				<% end %>
 		</div>
 		<br \>
 	<% end %>
