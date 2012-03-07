@@ -88,14 +88,16 @@ class UsersController < ApplicationController
   def sendmail 
     @mailbody = params[:mailbody]
     User.all.each do |u|
-      PeterMailer.mail_to_all(u, @mailbody) 
+      PeterMailer.mail_to_all(u, @mailbody).deliver
     end
     redirect_to root_url, :notice => @mailbody  
   end  
   def create  
     @user = User.new(params[:user])  
     if @user.save  
-      PeterMailer.registration_confirmation(@user).deliver
+      User.all.each do |u|
+        PeterMailer.registration_confirmation(u).deliver
+      end
       session[:user_id] = @user.id 
       redirect_to root_url, :notice => "signed up!"  
     else  
