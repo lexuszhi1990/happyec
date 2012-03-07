@@ -1,3 +1,9 @@
+## sendmail issue
+if you use your sendmail on localmachine, it will be slow and the mail usually goes in to spam folder
+sendmail to gmail and 163 both work find( just don't pretent to be happypeter1983@gmail, be no-reply@happyec.org)
+but it is hard to sendmail to qq emailbox
+
+# gem
 you need to reboot your apache to make gems like ancestry work
 
 
