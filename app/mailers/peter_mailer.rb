@@ -1,5 +1,5 @@
 class PeterMailer < ActionMailer::Base
-  default :from => "happypeter1983@gmail.com"
+  default :from => "no-reply@happyec.org" 
   def registration_confirmation(user)
     @user = user
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
