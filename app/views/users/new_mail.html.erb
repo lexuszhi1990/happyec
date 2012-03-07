@@ -3,6 +3,6 @@
   
 <%= form_tag("/sendmail", :method => "post") do %>
 <%= label_tag(:mailbody, "Search for:") %>
- <%= text_field_tag(:mailbody) %>
-  <%= submit_tag("Search") %>
+ <%= text_area_tag(:mailbody) %>
+  <%= submit_tag("Send") %>
 <% end %> 
