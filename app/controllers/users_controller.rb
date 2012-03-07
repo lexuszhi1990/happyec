@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   def new  
     @user = User.new  
   end
+  def newmail  
+    @user = User.new  
+  end
   def edit
     @user = User.find(params[:id])
   end
@@ -82,9 +85,17 @@ class UsersController < ApplicationController
     redirect_to root_url, :notice => "You have been logged out."
   end
 
+  def sendmail 
+    @mailbody = params[:mailbody]
+    User.all.each do |u|
+      PeterMailer.mail_to_all(u, @mailbody).deliver
+    end
+    redirect_to root_url, :notice => "Mail sent!"  
+  end  
   def create  
     @user = User.new(params[:user])  
     if @user.save  
+      PeterMailer.registration_confirmation(@user).deliver
       session[:user_id] = @user.id 
       redirect_to root_url, :notice => "signed up!"  
     else  

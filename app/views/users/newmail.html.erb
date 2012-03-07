@@ -1,0 +1,8 @@
+
+<h1>New Mail</h1>  
+  
+<%= form_tag("/send_mail", :method => "post") do %>
+<%= label_tag(:mailbody, "Write mail") %>
+ <%= text_area_tag(:mailbody) %>
+  <%= submit_tag("Send") %>
+<% end %> 
