@@ -87,6 +87,9 @@ class UsersController < ApplicationController
 
   def sendmail 
     @mailbody = params[:mailbody]
+    User.all.each do |u|
+      PeterMailer.send_to_all(u, @mailbody) 
+    end
     redirect_to root_url, :notice => @mailbody  
   end  
   def create  

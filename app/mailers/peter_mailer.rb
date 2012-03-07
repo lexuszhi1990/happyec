@@ -4,7 +4,7 @@ class PeterMailer < ActionMailer::Base
     @user = user
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
   end
-  def send_to_all(mailbody)
+  def send_to_all(user, mailbody)
     @mailbody = mailbody
     @user = user
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
