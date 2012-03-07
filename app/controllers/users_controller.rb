@@ -95,9 +95,7 @@ class UsersController < ApplicationController
   def create  
     @user = User.new(params[:user])  
     if @user.save  
-      User.all.each do |u|
-        PeterMailer.registration_confirmation(u).deliver
-      end
+      PeterMailer.registration_confirmation(u).deliver
       session[:user_id] = @user.id 
       redirect_to root_url, :notice => "signed up!"  
     else  
