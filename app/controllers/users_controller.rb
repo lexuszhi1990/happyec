@@ -95,7 +95,7 @@ class UsersController < ApplicationController
   def create  
     @user = User.new(params[:user])  
     if @user.save  
-      PeterMailer.registration_confirmation(u).deliver
+      PeterMailer.registration_confirmation(@user).deliver
       session[:user_id] = @user.id 
       redirect_to root_url, :notice => "signed up!"  
     else  
