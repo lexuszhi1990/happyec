@@ -4,10 +4,10 @@ class PeterMailer < ActionMailer::Base
     @user = user
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
   end
-  def send_to_all(user, mailbody)
+  def mail_to_all(user, mailbody)
     @mailbody = mailbody
     @user = user
-    mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "Hi everybody from happyec")
   end
   def password_reset(user)
     @user = user
