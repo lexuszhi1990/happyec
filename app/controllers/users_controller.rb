@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   def new  
     @user = User.new  
   end
+  def new_mail  
+    @user = User.new  
+  end
   def edit
     @user = User.find(params[:id])
   end
@@ -82,6 +85,11 @@ class UsersController < ApplicationController
     redirect_to root_url, :notice => "You have been logged out."
   end
 
+  def sendmail 
+    @mailbody = "hello"
+    PeterMailer.send_to_all(@mailbody).deliver
+    redirect_to root_url, :notice => "signed up!"  
+  end  
   def create  
     @user = User.new(params[:user])  
     if @user.save  

@@ -1,0 +1,8 @@
+
+<h1>New Mail</h1>  
+  
+<%= form_tag("/sendmail", :method => "post") do %>
+<%= label_tag(:q, "Search for:") %>
+ <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %> 
