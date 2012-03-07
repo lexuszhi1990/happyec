@@ -90,7 +90,7 @@ class UsersController < ApplicationController
     User.all.each do |u|
       PeterMailer.mail_to_all(u, @mailbody).deliver
     end
-    redirect_to root_url, :notice => @mailbody  
+    redirect_to root_url, :notice => "Mail sent!"  
   end  
   def create  
     @user = User.new(params[:user])  
