@@ -28,6 +28,10 @@ html {
     padding: 10px;
 }
 
+div.ec_logo {
+  text-align:center;
+}
+
 
 div#bodycontainer {
 	width:80%;
