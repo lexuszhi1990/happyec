@@ -4,7 +4,7 @@
   <title>English Corner</title>
   <link rel="shortcut icon" href="/images/e.png"/>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
 </head>
 <body>	
@@ -34,6 +34,7 @@
 </div>
 <div id="container">
   <% flash.each do |name, msg| %>
+  <%#FIXME: the close button does not work %>
     <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
       <a class="close" data-dismiss="alert">×</a>
       <%= msg %>
