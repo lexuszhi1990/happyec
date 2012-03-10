@@ -85,6 +85,9 @@ GEM
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
     sexp_processor (3.0.10)
+    simple_form (2.0.1)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     slop (2.1.0)
     thor (0.14.6)
     treetop (1.4.10)
@@ -103,3 +106,4 @@ DEPENDENCIES
   pry
   rails (= 3.0.9)
   redcarpet
+  simple_form

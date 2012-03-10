@@ -7,6 +7,7 @@ gem 'rails', '3.0.9'
 
 gem 'mysql2', '~> 0.2.6'
 gem 'bcrypt-ruby', :require => 'bcrypt'  
+gem 'simple_form'
 gem 'redcarpet'
 gem 'ancestry'
 gem 'faraday'
