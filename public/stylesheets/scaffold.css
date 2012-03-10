@@ -34,6 +34,7 @@ div.ec_logo {
 div.tagline {
   padding-left: 10%;
   padding-right: 10%;
+  font-size:1.2em;  
 }
 
 
@@ -62,16 +63,12 @@ a img {
 
 /* page top table */
 #pagetoptable {
-  background:#000000;
-  color:blue;
 }
 .pagetop  {
-  color:#ffffff;
 }
 
 .pagetop a {
   text-decoration:none;
-  color:#ffffff;
 }
 .pagetop a:hover { 
   text-decoration:underline;
