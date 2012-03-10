@@ -24,14 +24,8 @@
             <h3><a class="brand" href="/"><i class="icon-flag"></i>HAPPYEC</a></h3>
 			<%= link_to 'Home', events_path %>
             <ul class="nav">
-                <li><a href="#overview">Overview</a></li>
-
-                <li><a href="#base-icons">Base Icons</a></li>
-                <li><a href="#extended-icons">Extended Icons</a></li>
-                <li><a href="#examples">Examples</a></li>
-                <li><a href="#integration">Integration</a></li>
-                <li><a href="#code">Code</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#Comments">Comments</a></li>
+                <li><a href="#Events">Events</a></li>
 
             </ul>
             <ul class="nav pull-right">
@@ -46,31 +40,6 @@
         </div>
     </div>
 </div>
-<table width="100%" id="pagetoptable">
-	<tr>
-		
-		<td style="text-align:left;">
-			<span class="pagetop">
-			<%= link_to 'Home', events_path %>
-			</span>
-		</td>
-
-		<td style="text-align:right;">
-			<span class="pagetop">
-				           
-			<% if current_user %>  
-			<% @user= User.find(current_user.id) %>
-			<%= link_to current_user.name, user_path(@user) %> |
- 			<%= link_to "Log out", log_out_path %>  
-			<% else %>  
-			<img src="/images/login.png" width=48 height=23></img> 
-			<%= link_to "Log in", log_in_path %>  
-			<% end %>  
-			</span>
-		</td>
-
-	</tr>
-</table>
 <div id="container">
 
 <%= yield %>
