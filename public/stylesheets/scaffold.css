@@ -207,16 +207,12 @@ div.profile {
 div.footer {
 	font-size:80%;
 	text-align:center;
-	background:#e77709;
-	color:#fff;
-	text-shadow: rgba(0,0,0,.3) 1px 1px 1px;
 	position:relative;
 }
 
 div.footer a {
-	color:#FFE16E;
-	text-decoration:none;
-	font-weight:bold;
+  text-decoration:none;
+  color: #abc;
 }
 div.footer a:hover { 
 	text-decoration:underline;
