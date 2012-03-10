@@ -11,6 +11,8 @@ English, sharing knowledge, and have fun! Feel free to join us by
     <a class="btn btn-success" href="/sign_up"> Sign Up</a>
   </div>
 </div>
+
+
 <% if current_user %>  
 	<% @user= User.find(current_user.id) %>
 	<% if @user.name == "happypeter"%>
@@ -20,32 +22,36 @@ English, sharing knowledge, and have fun! Feel free to join us by
 	<%end%>
 <%end%>
 
-<h1 class="next_meetup">Next Meetup</h1>
-<div class="event">
-  <% @events.reverse.each do |event| %>
-	<% if Time.now.utc < event.time %> <%# only show the events upcoming %>
-	  <div class="event_name">
-         <a href="/events/<%= event.id %>">
-           <%= event.name %>
-             <span class="event_time">
-               <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-               (<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>)
-             </span>
-         </a>
-	</div>
-    <div class="event_location">
-       <b>Location:</b>
-       <%= link_to  event.location, "/location.html" %>
-    </div>
-    <div class="event_content">
-       <%= markdown(event.content) %>
-    </div>
-    <% if current_user %>  <%# only myself can edit%>
-       <% @user= User.find(current_user.id) %>
-       <% if @user.name == "happypeter"%>
-         <%= link_to 'Edit', edit_event_path(event) %> 
-       <% end %>
-	<% end %>
-  <% end %> <%# for do %>
-<% end %>
+
+
+<div class="next_meetup">
+  <div class="next_meetup_title">Next Meetup</div>
+  <div class="event">
+    <% @events.reverse.each do |event| %>
+      <% if Time.now.utc < event.time %> <%# only show the events upcoming %>
+        <div class="event_name">
+           <a href="/events/<%= event.id %>">
+             <%= event.name %>
+               <span class="event_time">
+                 <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+                 (<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>)
+               </span>
+           </a>
+       </div>
+      <div class="event_location">
+         <b>Location:</b>
+         <%= link_to  event.location, "/location.html" %>
+      </div>
+      <div class="event_content">
+         <%= markdown(event.content) %>
+      </div>
+      <% if current_user %>  <%# only myself can edit%>
+         <% @user= User.find(current_user.id) %>
+         <% if @user.name == "happypeter"%>
+           <%= link_to 'Edit', edit_event_path(event) %> 
+         <% end %>
+      <% end %>
+      <% end %> 
+    <% end %>
+  </div>
 </div>

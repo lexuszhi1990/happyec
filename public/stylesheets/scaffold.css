@@ -70,9 +70,8 @@ a img {
 
 /* event */
 div.event {
-	border: solid 1px #abc;
-	border-radius: 10px;
-	padding:10px;
+  border: solid 1px #abc;
+  padding: 10px;
 }
 
 .event a {
@@ -82,13 +81,12 @@ div.event {
 	text-decoration:underline;
 }
 
-h1.next_meetup {
+div.next_meetup_title {
 	font-size:120%;
 	font-weight:normal;	
-	margin: 8px 0;
-	padding: 8px 15px;
+    color: #ffffff;
 	border: solid 1px #999;
-	border-radius: 12px;
+    background: green;
 	text-align:center;
 }
 
