@@ -1,0 +1,17 @@
+<div class="content" id="login">
+<h1>Login</h1>  
+  <%= form_tag "/local_user_login" do %>  
+
+    <div class="input-prepend">
+    <span class="add-on"><i class="icon-envelope"></i></span>
+      <%= text_field_tag :name, params[:name],:placeholder => "User Name" %>  
+    </div>
+    <div class="input-prepend">
+    <span class="add-on"><i class="icon-key"></i></span>
+      <%= password_field_tag :password,params[:password], :placeholder => "Password" %>  
+    </div>
+    <p class="button"><%= submit_tag("login") %></p>  
+  <% end %>  
+
+or you can <a href="/sign_up">Sign Up</a>
+</div>

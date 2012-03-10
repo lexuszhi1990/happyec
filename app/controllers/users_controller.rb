@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   def new  
     @user = User.new  
   end
+  def login_form
+  end
   def newmail  
     @user = User.new  
   end

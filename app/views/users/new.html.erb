@@ -1,32 +1,3 @@
-    <form>
-    <div class="input-prepend">
-    <span class="add-on"><i class="icon-envelope"></i></span>
-    <input class="span2" type="text" placeholder="Email address">
-    </div>
-    <div class="input-prepend">
-    <span class="add-on"><i class="icon-key"></i></span>
-    <input class="span2" type="password" placeholder="Password">
-    </div>
-    </form>
-
-
-<div class="content" id="login">
-<h1>Login</h1>  
-  <%= form_tag "/local_user_login" do %>  
-
-    <div class="input-prepend">
-    <span class="add-on"><i class="icon-envelope"></i></span>
-      <%= text_field_tag :name, params[:name],:placeholder => "User Name" %>  
-    </div>
-    <div class="input-prepend">
-    <span class="add-on"><i class="icon-key"></i></span>
-      <%= password_field_tag :password,params[:password], :placeholder => "Password" %>  
-    </div>
-    <p class="button"><%= submit_tag("login") %></p>  
-  <% end %>  
-
-</div>
-
 <h1>Sign Up</h1>  
   
 <%= simple_form_for @user do |f| %>  
