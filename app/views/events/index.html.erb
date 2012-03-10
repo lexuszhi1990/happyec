@@ -30,28 +30,30 @@ English, sharing knowledge, and have fun! Feel free to join us by
     <% @events.reverse.each do |event| %>
       <% if Time.now.utc < event.time %> <%# only show the events upcoming %>
         <div class="event_name">
+         <b>Topic:</b><br />
            <a href="/events/<%= event.id %>">
              <%= event.name %>
-               <span class="event_time">
-                 <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-                 (<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>)
-               </span>
            </a>
        </div>
-      <div class="event_location">
-         <b>Location:</b>
+       <div class="event_location">
+         <b>Location:</b> <br />
          <%= link_to  event.location, "/location.html" %>
-      </div>
-      <div class="event_content">
+       </div>
+       <div class="event_time">
+         <b>Time:</b> <br />
+         <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+         <%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
+       </div>
+       <div class="event_content">
          <%= markdown(event.content) %>
-      </div>
-      <% if current_user %>  <%# only myself can edit%>
+       </div>
+       <% if current_user %>  <%# only myself can edit%>
          <% @user= User.find(current_user.id) %>
          <% if @user.name == "happypeter"%>
            <%= link_to 'Edit', edit_event_path(event) %> 
          <% end %>
-      <% end %>
-      <% end %> 
+       <% end %>
+       <% end %> 
     <% end %>
   </div>
 </div>
