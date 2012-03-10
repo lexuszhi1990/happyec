@@ -24,7 +24,6 @@ html {
 	text-align:left;
     margin:0 auto;
     width:640px;
-	border:1px solid #DF5B00;
     padding: 10px;
 }
 
@@ -63,17 +62,16 @@ a img {
 
 /* page top table */
 #pagetoptable {
-  background:#e77709;
-  color:#fff;
-  text-shadow: rgba(0,0,0,.3) 1px 1px 1px;
-  position:relative;
+  background:#000000;
+  color:blue;
 }
 .pagetop  {
+  color:#ffffff;
 }
 
 .pagetop a {
   text-decoration:none;
-  font-weight:bold;
+  color:#ffffff;
 }
 .pagetop a:hover { 
   text-decoration:underline;

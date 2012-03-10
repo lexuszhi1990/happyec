@@ -19,14 +19,12 @@
   <%end%>
 <%end%>
 
-<div id="container">
-<table  width="100%" id="pagetoptable">
+<table width="100%" id="pagetoptable">
 	<tr>
 		
 		<td style="text-align:left;">
 			<span class="pagetop">
-            <img src="/images/twit.png" width=47 height=36></img>
-			<b><%= link_to 'HOME', events_path %></b>
+			<%= link_to 'Home', events_path %>
 			</span>
 		</td>
 
@@ -46,6 +44,7 @@
 
 	</tr>
 </table>
+<div id="container">
 
 <%= yield %>
 
