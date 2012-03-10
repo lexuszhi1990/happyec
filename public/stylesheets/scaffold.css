@@ -67,6 +67,11 @@ a img {
   border: none; /*there is a black border by default*/
 }
 
+/* signup and login */
+
+h1.signup, h1.login {
+  padding-bottom: 15px;
+}
 
 /* event */
 div.event {
@@ -203,9 +208,11 @@ div.profile {
 /* footer */
 /* page top table */
 div.footer {
-	font-size:80%;
-	text-align:center;
-	position:relative;
+  border-top: solid 1px #abc;
+  font-size:80%;
+  text-align:center;
+  position:relative;
+  background: #efefef;
 }
 
 div.footer a {
