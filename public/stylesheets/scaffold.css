@@ -67,18 +67,6 @@ a img {
   border: none; /*there is a black border by default*/
 }
 
-/* page top table */
-#pagetoptable {
-}
-.pagetop  {
-}
-
-.pagetop a {
-  text-decoration:none;
-}
-.pagetop a:hover { 
-  text-decoration:underline;
-}
 
 /* event */
 div.events {	
