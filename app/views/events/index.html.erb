@@ -20,7 +20,7 @@ English, sharing knowledge, and have fun! Feel free to join us by
 	<%end%>
 <%end%>
 
-<h1 class="events">our Next meetup</h1>
+<h1 class="next_meetup">Next Meetup</h1>
 <div class="event">
   <% @events.reverse.each do |event| %>
 	<% if Time.now.utc < event.time %> <%# only show the events upcoming %>
@@ -32,9 +32,6 @@ English, sharing knowledge, and have fun! Feel free to join us by
                (<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>)
              </span>
          </a>
-        <span class="event_upcoming">
-		  upcoming
-		</span>
 	</div>
     <div class="event_location">
        <b>Location:</b>

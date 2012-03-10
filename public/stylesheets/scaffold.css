@@ -69,13 +69,8 @@ a img {
 
 
 /* event */
-div.events {	
-	padding:10px;
-	border: solid 10px #F88017; 
-	border-radius: 10px;
-}
 div.event {
-	border: solid 10px #307D7E;
+	border: solid 1px #abc;
 	border-radius: 10px;
 	padding:10px;
 }
@@ -87,13 +82,12 @@ div.event {
 	text-decoration:underline;
 }
 
-h1.events {
+h1.next_meetup {
 	font-size:120%;
 	font-weight:normal;	
 	margin: 8px 0;
 	padding: 8px 15px;
 	border: solid 1px #999;
-	width: 90px;
 	border-radius: 12px;
 	text-align:center;
 }
@@ -113,22 +107,7 @@ div.event_content {   /*event_body is a better name FIXME */
 	border-radius: 10px;
 }
 
-span.event_upcoming {
-	float:right;
-	font-size:80%;
-	padding:3px;
-	border: solid 2px #fff; 
-	border-radius: 10px;
-}
 
-span.event_past {
-	float:right;
-	font-size:80%;
-	background-color:#C24641;
-	padding:3px;
-	border: solid 2px #fff; 
-	border-radius: 10px;
-}
 /* comment */
 h1.comments {
   font-size:120%;
