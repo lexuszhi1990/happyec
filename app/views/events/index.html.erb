@@ -30,13 +30,13 @@ English, sharing knowledge, and have fun! Feel free to join us by
     <% @events.reverse.each do |event| %>
       <% if Time.now.utc < event.time %> <%# only show the events upcoming %>
         <div class="event_name">
-         <b>Topic:</b><br />
+         <b>Topic:</b>
            <a href="/events/<%= event.id %>">
              <%= event.name %>
            </a>
        </div>
        <div class="event_location">
-         <b>Location:</b> <br />
+         <b>Location:</b> 
          <%= link_to  event.location, "/location.html" %>
        </div>
        <div class="event_content">
@@ -49,6 +49,20 @@ English, sharing knowledge, and have fun! Feel free to join us by
          <% end %>
        <% end %>
        <% end %> 
+    <% end %>
+  </div>
+</div>
+<div class="past_meetups">
+  <div class="next_meetup_title">Earlier Meetups</div>
+  <div class="event">
+    <% @events.reverse.each do |event| %>
+      <% if Time.now.utc > event.time %> <%# only show the events past %>
+        <div class="event_name">
+           <a href="/events/<%= event.id %>">
+             NO. <%= event.id %> Meetup: <%= event.name %>
+           </a>
+       </div>
+      <% end %> 
     <% end %>
   </div>
 </div>

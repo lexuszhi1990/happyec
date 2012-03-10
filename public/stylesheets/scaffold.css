@@ -96,13 +96,11 @@ div.next_meetup_title {
 }
 
 div.event_name {
-	font-weight: bold;
 }
 div.event_time {
 
 }
 div.event_location {
-	font-size:70%;
 }
 div.event_content {   /*event_body is a better name FIXME */
 	padding:10px;
