@@ -110,49 +110,27 @@ div.event_content {   /*event_body is a better name FIXME */
 
 
 /* comment */
-h1.comments {
-  font-size:120%;
-  font-weight:normal;	
-  margin: 8px 0;
-  padding: 8px 15px;
-  border: solid 1px #999;
-  width: 90px;
-  border-radius: 12px;
-  background-color:#000;
-  color:#FFE16E; // yellow for login
-  text-align:center;
-}
 div.comments {
   padding:10px;
-  background-color:#F88017;
-  border: solid 10px #F88017; /*http://www.computerhope.com/htmcolor.htm*/
-  border-radius: 10px;
+  border: solid 1px #abc; /*http://www.computerhope.com/htmcolor.htm*/
 }
 div.comment {
-  color:#fff;
-  border: solid 10px #E56717; /*http://www.computerhope.com/htmcolor.htm*/
-  border-radius: 10px;
-  background-color:#E56717;
+  border: solid 1px #E56717; /*http://www.computerhope.com/htmcolor.htm*/
 }
 div.comment a {
-	color:#fff;
 	text-decoration:none;
 }
 div.comment a:hover {
-	color:#fff;
 	text-decoration:underline;
 }
 div.comment_head {
-	color:#fff;
 	font-size:70%;
 	font-size:70%;
 }
 div.comment_head a {
-	color:#fff;
 	text-decoration:none;
 }
 div.comment_head a:hover {
-	color:#fff;
 	text-decoration:underline;
 }
 
@@ -164,24 +142,18 @@ span.comment_time {
 }
 
 div.comment_body {
-	background-color:#E56717;	
-	color:#fff;
 	padding:10px;
-	border: solid 2px #fff; 
-	border-radius: 10px;
+	border: solid 2px #abc; 
 }
 
 span.comment_parent {
-	color:#fff;
 	font-size:70%;
 }
 span.comment_parent a {
-	color:#fff;
 	text-decoration:none;
 }
 
 span.comment_parent a:hover {
-	color:#fff;
 	text-decoration:underline;
 }
 span.comment_parent_time {

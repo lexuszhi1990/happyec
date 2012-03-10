@@ -67,9 +67,41 @@ English, sharing knowledge, and have fun! Feel free to join us by
   </div>
 </div>
 <div class="recent_comments">
-  <div class="next_meetup_title">Recent Comments</div>
-  <div class="event">
-    <% @comments.reverse.each do |c| %>
-    <% end %>
+  <div class="next_meetup_title">R C</div>
+    <div class="comments">
+        <% Comment.find(:all, :order => "id desc", :limit => 5).each do |comment| %>
+            <div class="comment">
+                <div class="comment_head">
+                    <span class="comment_guy">
+                        by
+                        <a href="/users/<%= User.find(comment.user_id).id %>">    
+                            <%= User.find(comment.user_id).name %>
+                        </a>
+                        ,
+                    </span>
+                    <span class="comment_time">
+                        <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+                        <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
+                    </span>
+                    <br \>
+                    <span class="comment_parent">
+                        <% @parent=Event.find(comment.event_id) %>
+                        on:
+                        <a href="/events/<%= @parent.id %>">
+                            <%= @parent.name %>
+                            <span class="comment_parent_time">
+                                <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+                                (<%= @parent.time.in_time_zone(zone).to_formatted_s(:long_ordinal)%>)
+                            </span>
+                        </a>
+                    </span>
+                </div> <%# class="comment_head" %>
+                <div class="comment_body">
+                    <%= markdown(comment.content) %>
+                </div>
+            </div><%# .comment%>
+            <br />
+        <% end %>
+    </div><%# .comments %>
   </div>
 </div>
