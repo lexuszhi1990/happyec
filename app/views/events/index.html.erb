@@ -11,7 +11,6 @@ English, sharing knowledge, and have fun! Feel free to join us by
     <a class="btn btn-success" href="/sign_up"> Sign Up</a>
   </div>
 </div>
-<h1 class="events">Events</h1>
 <% if current_user %>  
 	<% @user= User.find(current_user.id) %>
 	<% if @user.name == "happypeter"%>
@@ -20,81 +19,36 @@ English, sharing knowledge, and have fun! Feel free to join us by
 		<%= link_to 'Mail to All Members', "/new_mail" %>
 	<%end%>
 <%end%>
-<div class="events">
-	<% @events.reverse.each do |event| %>
-		<div class="event">
-			<div class="event_name">
-				<a href="/events/<%= event.id %>">
-					<%= event.name %>
-					<span class="event_time">
-						<%zone = ActiveSupport::TimeZone.new("Beijing")%>
-						(<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>)
-					</span>
-				</a>
-				<% if Time.now.utc > event.time %> <%# if the event is over %>
-					<span class="event_past">
-						Past
-					</span>
-				<% else %>
-					<span class="event_upcoming">
-						upcoming
-					</span>
-				<% end %>
-			</div>
 
-				<% if Time.now.utc < event.time %> <%# if the event is upcoming %>
-                  <div class="event_location">
-                    <b>Location:</b>
-                    <%= link_to  event.location, "/location.html" %>
-                  </div>
-                  <div class="event_content">
-                    <%= markdown(event.content) %>
-                  </div>
-                  <% if current_user %>  <%# only myself can edit%>
-                    <% @user= User.find(current_user.id) %>
-                    <% if @user.name == "happypeter"%>
-                      <%= link_to 'Edit', edit_event_path(event) %> 
-                    <%end%>
-                  <%end%>
-				<% end %>
-		</div>
-		<br \>
+<h1 class="events">our Next meetup</h1>
+<div class="event">
+  <% @events.reverse.each do |event| %>
+	<% if Time.now.utc < event.time %> <%# only show the events upcoming %>
+	  <div class="event_name">
+         <a href="/events/<%= event.id %>">
+           <%= event.name %>
+             <span class="event_time">
+               <%zone = ActiveSupport::TimeZone.new("Beijing")%>
+               (<%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>)
+             </span>
+         </a>
+        <span class="event_upcoming">
+		  upcoming
+		</span>
+	</div>
+    <div class="event_location">
+       <b>Location:</b>
+       <%= link_to  event.location, "/location.html" %>
+    </div>
+    <div class="event_content">
+       <%= markdown(event.content) %>
+    </div>
+    <% if current_user %>  <%# only myself can edit%>
+       <% @user= User.find(current_user.id) %>
+       <% if @user.name == "happypeter"%>
+         <%= link_to 'Edit', edit_event_path(event) %> 
+       <% end %>
 	<% end %>
+  <% end %> <%# for do %>
+<% end %>
 </div>
-
-<h1 class="comments">Comments</h1>
-<div class="comments">
-	<% Comment.all.reverse.each do |comment| %>
-		<div class="comment">
-			<div class="comment_head">
-				<span class="comment_guy">
-					by
-					<a href="/users/<%= User.find(comment.user_id).id %>">    
-						<%= User.find(comment.user_id).name %>
-					</a>
-					,
-				</span>
-				<span class="comment_time">
-					<%zone = ActiveSupport::TimeZone.new("Beijing")%>
-					<%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
-				</span>
-			  	<br \>
-				<span class="comment_parent">
-					<% @parent=Event.find(comment.event_id) %>
-			    	on:
-			 		<a href="/events/<%= @parent.id %>">
-						<%= @parent.name %>
-				    	<span class="comment_parent_time">
-					    	<%zone = ActiveSupport::TimeZone.new("Beijing")%>
-							(<%= @parent.time.in_time_zone(zone).to_formatted_s(:long_ordinal)%>)
-				    	</span>
-					</a>
-				</span>
-			</div> <%# class="comment_head" %>
-			<div class="comment_body">
-		 		<%= markdown(comment.content) %>
-			</div>
-		</div><%# .comment%>
-		<br />
-	<% end %>
-</div><%# .comments %>
