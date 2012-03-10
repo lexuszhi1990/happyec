@@ -9,14 +9,7 @@
 </head>
 <body>	
 
-<% if current_user %>  <%# only myself can see this debug message %>
-  <% @user= User.find(current_user.id) %>
-  <% if @user.name == "happypeter"%>
-    <% flash.each do |name, msg| %>
-	  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-	<% end %>
-  <%end%>
-<%end%>
+
 
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -40,6 +33,12 @@
     </div>
 </div>
 <div id="container">
+  <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= msg %>
+    </div>
+  <% end %>
 
 <%= yield %>
 
