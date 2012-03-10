@@ -38,6 +38,11 @@ div.tagline {
   font-size:1.2em;  
 }
 
+div.signup {
+  margin: 9px;
+  text-align:center;
+}
+
 
 div#bodycontainer {
 	width:80%;
