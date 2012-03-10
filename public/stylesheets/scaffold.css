@@ -18,14 +18,12 @@
 
 html {
 	font-size:100.01%;
-	background:#F8E088 url(/images/stripe2.png);
 }
 
 #container {
 	text-align:left;
     margin:0 auto;
     width:640px;
-	background:#e77709;
 	border:1px solid #DF5B00;
     padding: 10px;
 }
@@ -43,7 +41,6 @@ body, p, ol, ul, td {
 }
 
 pre {
-  background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
@@ -63,11 +60,9 @@ a img {
   position:relative;
 }
 .pagetop  {
-  color:#FFE16E;
 }
 
 .pagetop a {
-  color:#FFE16E;
   text-decoration:none;
   font-weight:bold;
 }
@@ -78,7 +73,6 @@ a img {
 /* event */
 div.events {	
 	padding:10px;
-	background-color:#F88017;
 	border: solid 10px #F88017; 
 	border-radius: 10px;
 }
@@ -87,7 +81,6 @@ div.event {
 	border: solid 10px #307D7E;
 	border-radius: 10px;
 	padding:10px;
-	background-color:#307D7E;
 }
 
 .event a {
@@ -106,8 +99,6 @@ h1.events {
 	border: solid 1px #999;
 	width: 90px;
 	border-radius: 12px;
-	background-color:#000;
-	color:#FFE16E; 
 	text-align:center;
 }
 
@@ -122,7 +113,6 @@ div.event_location {
 	font-size:70%;
 }
 div.event_content {   /*event_body is a better name FIXME */
-	background-color:#307D7E;
 	color:#fff;
 	padding:10px;
 	border: solid 2px #fff; 
@@ -132,7 +122,6 @@ div.event_content {   /*event_body is a better name FIXME */
 span.event_upcoming {
 	float:right;
 	font-size:80%;
-	background-color:#41A317;
 	color:#fff;
 	padding:3px;
 	border: solid 2px #fff; 
