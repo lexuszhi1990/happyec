@@ -86,13 +86,14 @@ div.event {
 	text-decoration:underline;
 }
 
-div.next_meetup_title {
-	font-size:120%;
-	font-weight:normal;	
-    color: #ffffff;
-	border: solid 1px #999;
-    background: green;
-	text-align:center;
+div.tab_title {
+  font-size:120%;
+  font-weight:normal;	
+  color: #ffffff;
+  border: solid 1px #999;
+  padding: 5px;
+  background: green;
+  text-align:center;
 }
 
 div.event_name {

@@ -25,7 +25,7 @@ English, sharing knowledge, and have fun! Feel free to join us by
 
 
 <div class="next_meetup">
-  <div class="next_meetup_title">Next Meetup</div>
+  <div class="tab_title">Next Meetup</div>
   <div class="event">
     <% @events.reverse.each do |event| %>
       <% if Time.now.utc < event.time %> <%# only show the events upcoming %>
@@ -53,7 +53,7 @@ English, sharing knowledge, and have fun! Feel free to join us by
   </div>
 </div>
 <div class="past_meetups">
-  <div class="next_meetup_title">Earlier Meetups</div>
+  <div class="tab_title">Earlier Meetups</div>
   <div class="event">
     <% @events.reverse.each do |event| %>
       <% if Time.now.utc > event.time %> <%# only show the events past %>
@@ -67,7 +67,7 @@ English, sharing knowledge, and have fun! Feel free to join us by
   </div>
 </div>
 <div class="recent_comments">
-  <div class="next_meetup_title">R C</div>
+  <div class="tab_title">R C</div>
     <div class="comments">
         <% Comment.find(:all, :order => "id desc", :limit => 5).each do |comment| %>
             <div class="comment">
@@ -108,8 +108,7 @@ English, sharing knowledge, and have fun! Feel free to join us by
 
   <script type="text/javascript">
     $(function() {
-      $('.section .contents').hide()
-      $('.contents .tweets').hide()
+      $('.comments').hide()
 
       $('.expand_collapse_links').show()
       $('.expand_collapse_links .expand_all').click(function() {
@@ -119,26 +118,11 @@ English, sharing knowledge, and have fun! Feel free to join us by
         $('.section .contents').hide()
       })
 
-      $('.section h2').click(function() {
+      $('.tab_title').click(function() {
         var hidden = $(this).next().is(':hidden')
         $(this).next().slideToggle()
         return hidden
       })
 
-      $('#menu span').css('cursor', 'pointer').click(function() {
-        $('.section .contents').hide()
-        showSectionsForSCM(this.innerHTML)
-        document.location.hash = this.innerHTML
-      }) 
-
-      if (document.location.hash) {
-        var anchor = document.location.hash.substring(1)
-        $('.section h2 a[name=' + anchor + ']').parent('h2').click()
-        showSectionsForSCM(anchor)
-      }
-
-      function showSectionsForSCM(scm) {
-        $('.section .' + scm).parents('.section').find('.contents').show()
-      }
     })
   </script>
