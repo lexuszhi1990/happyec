@@ -32,6 +32,11 @@ div.ec_logo {
   text-align:center;
 }
 
+div.tagline {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 
 div#bodycontainer {
 	width:80%;

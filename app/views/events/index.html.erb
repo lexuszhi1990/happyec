@@ -1,8 +1,11 @@
 <div class="ec_logo">
-  <img src="/images/ec_logo.png" /> <h1 class="events">Events</h1>
+  <img src="/images/ec_logo.png" /> 
 </div>
 
-
+<div class="tagline">
+We are a group of students in <a href="http://www.heuet.net.cn/english/">Hebei Uinversity of Economics and Business</a>, we currently meet each sunday afternoon at <a href="/location.html">Bookbar Cafe</a> to practice our English, sharing knowledge, and have fun! Feel free to join us by signup here.
+</div>
+<h1 class="events">Events</h1>
 <% if current_user %>  
 	<% @user= User.find(current_user.id) %>
 	<% if @user.name == "happypeter"%>
