@@ -54,7 +54,7 @@ English and have fun! Feel free to join us.
 </div>
 <div class="past_meetups">
   <div class="tab_title">
-    <a name="past_meetups" href="#past_meetups">Past Meetups</a>
+    Past Meetups
   </div>
   <div class="event">
     <% @events.reverse.each do |event| %>
@@ -70,7 +70,7 @@ English and have fun! Feel free to join us.
 </div>
 <div class="recent_comments">
   <div class="tab_title"> 
-    <a name="recent_comments" href="#recent_comments">Recent Comments</a>
+    Recent Comments
   </div>
     <div class="comments">
         <% Comment.find(:all, :order => "id desc", :limit => 5).each do |comment| %>
