@@ -39,11 +39,6 @@ English, sharing knowledge, and have fun! Feel free to join us by
          <b>Location:</b> <br />
          <%= link_to  event.location, "/location.html" %>
        </div>
-       <div class="event_time">
-         <b>Time:</b> <br />
-         <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-         <%= event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>
-       </div>
        <div class="event_content">
          <%= markdown(event.content) %>
        </div>
