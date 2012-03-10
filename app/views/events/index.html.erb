@@ -110,23 +110,3 @@ English and have fun! Feel free to join us.
   </div>
 </div>
 
-  <script type="text/javascript">
-    $(function() {
-      $('.comments').hide()
-      $('.past_meetups .event').hide()
-
-      $('.expand_collapse_links .expand_all').click(function() {
-        $('.section .contents').show()
-      })
-      $('.expand_collapse_links .collapse_all').click(function() {
-        $('.section .contents').hide()
-      })
-
-      $('.tab_title').click(function() {
-        var hidden = $(this).next().is(':hidden')
-        $(this).next().slideToggle()
-        return hidden
-      })
-
-    })
-  </script>
