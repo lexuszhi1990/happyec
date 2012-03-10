@@ -23,6 +23,7 @@ html {
 #container {
 	text-align:left;
     margin:0 auto;
+    margin-top:20px;
     width:640px;
     padding: 10px;
 }
