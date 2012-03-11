@@ -117,6 +117,7 @@ div.comments {
 }
 div.comment {
   border-left: solid 2px green; /*http://www.computerhope.com/htmcolor.htm*/
+  margin-bottom: 15px;
 }
 div.comment a {
 	text-decoration:none;
