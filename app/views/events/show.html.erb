@@ -1,7 +1,7 @@
 
 
 <div class="event">
-	<div class="event_name"> <%# event_title is a better name FIXME %>
+	<div class="event_title"> 
 		<%= @event.name %>
 		<span class="event_time">
 		<%zone = ActiveSupport::TimeZone.new("Beijing")%>
@@ -12,7 +12,6 @@
 
 
   <div class="event_location">
-    <b>Location:</b>
     <%= @event.location %>
   </div>
 
