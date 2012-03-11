@@ -55,6 +55,10 @@ class EventsController < ApplicationController
 
     @event.update_attribute("time",@utc_time)
 
+    @end_utc_time=DateTime.civil(params[:end_datetime][:year].to_i, params[:end_datetime][:month].to_i, params[:end_datetime][:day].to_i,params[:end_datetime][:hour].to_i,params[:end_datetime][:minute].to_i).ago(60*60*8)
+
+    @event.update_attribute("endtime",@end_utc_time)
+
     respond_to do |format|
       if @event.save
         format.html { redirect_to(@event, :notice => 'Event was successfully created.') }

@@ -24,8 +24,11 @@
     <%= f.text_area :content %>
   </div>
   <div class="field">
-  
+
+starttime 
   <%= select_datetime Date.today, :prefix => :start_datetime %>
+endtime:
+  <%= select_datetime Date.today, :prefix => :end_datetime %>
   </div>
   <div class="actions">
     <%= f.submit %>

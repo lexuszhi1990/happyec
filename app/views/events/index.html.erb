@@ -28,7 +28,7 @@ English and have fun! Feel free to join us.
   <div class="tab_title">Next Meetup</div>
   <div class="event">
     <% @events.reverse.each do |event| %>
-      <% if Time.now.utc < event.time %> <%# only show the events upcoming %>
+      <% if Time.now.utc < event.endtime %> <%# only show the events upcoming and running %>
         <div class="event_name">
          <b>Topic:</b>
            <a href="/events/<%= event.id %>">
@@ -58,7 +58,7 @@ English and have fun! Feel free to join us.
   </div>
   <div class="event">
     <% @events.reverse.each do |event| %>
-      <% if Time.now.utc > event.time %> <%# only show the events past %>
+      <% if Time.now.utc > event.endtime %> <%# only show the events past %>
         <div class="event_name">
            <a href="/events/<%= event.id %>">
               Meetup NO. <%= event.id %>: <%= event.name %>
