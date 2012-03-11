@@ -19,7 +19,6 @@
 		<%= markdown(comment.content) %>
 	</div>
 <% if current_user %>
-
 <span class="reply"> <%= link_to "Reply", new_comment_path(:event_id => comment.event.id, :parent_id => comment.id) %> </span>
 <% end %>
 </div>

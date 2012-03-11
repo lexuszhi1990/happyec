@@ -173,13 +173,19 @@ span.reply {
 }
 
 /* user */
-
+h2.your_profile {
+  font-size: 120%;
+}
+h2.your_comments {
+  font-size: 120%;
+}
 div.profile {
-	color:#fff;
-	border: solid 10px #307D7E;
-	border-radius: 10px;
+	border: solid 1px #307D7E;
 	padding:10px;
-	background-color:#307D7E;
+}
+div.profile a {
+  text-decoration:underline;
+  font-size: 70%;
 }
 
 /* footer */
