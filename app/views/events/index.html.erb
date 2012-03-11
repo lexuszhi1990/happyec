@@ -24,41 +24,41 @@ English and have fun! Feel free to join us.
 
 
 
-<div class="next_meetup">
-  <div class="tab_title">Next Meetup</div>
-  <div class="event">
-    <% @events.reverse.each do |event| %>
-      <% if Time.now.utc < event.endtime %> <%# only show the events upcoming and running %>
+<% @events.reverse.each do |event| %>
+  <% if Time.now.utc < event.time %> <%# only show the events upcoming and running %>
+    <div class="next_meetup">
+      <div class="tab_title">Next Meetup</div>
+      <div class="event">
         <div class="event_name">
          <b>Topic:</b>
            <a href="/events/<%= event.id %>">
              <%= event.name %>
            </a>
-       </div>
-       <div class="event_location">
+        </div>
+        <div class="event_location">
          <b>Location:</b> 
          <%= link_to  event.location, "/location.html" %>
-       </div>
-       <div class="event_content">
+        </div>
+        <div class="event_content">
          <%= markdown(event.content) %>
-       </div>
-       <% if current_user %>  <%# only myself can edit%>
-         <% @user= User.find(current_user.id) %>
-         <% if @user.name == "happypeter"%>
-           <%= link_to 'Edit', edit_event_path(event) %> 
-         <% end %>
-       <% end %>
-       <% end %> 
-    <% end %>
-  </div>
-</div>
+        </div>
+        <% if current_user %>  <%# only myself can edit%>
+          <% @user= User.find(current_user.id) %>
+          <% if @user.name == "happypeter"%>
+            <%= link_to 'Edit', edit_event_path(event) %> 
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %> 
 <div class="past_meetups">
   <div class="tab_title">
     Past Meetups
   </div>
   <div class="event">
     <% @events.reverse.each do |event| %>
-      <% if Time.now.utc > event.endtime %> <%# only show the events past %>
+      <% if Time.now.utc > event.time %> <%# only show the events past %>
         <div class="event_name">
            <a href="/events/<%= event.id %>">
               Meetup NO. <%= event.id %>: <%= event.name %>
