@@ -116,7 +116,7 @@ div.comments {
   border: solid 1px #abc; /*http://www.computerhope.com/htmcolor.htm*/
 }
 div.comment {
-  border: solid 2px green; /*http://www.computerhope.com/htmcolor.htm*/
+  border-left: solid 2px green; /*http://www.computerhope.com/htmcolor.htm*/
 }
 div.comment a {
 	text-decoration:none;
@@ -127,7 +127,7 @@ div.comment a:hover {
 div.comment_head {
   font-size:70%;
   padding-left: 5px;
-  border-bottom: solid 2px green;
+  border-bottom: solid 1px green;
 }
 div.comment_head a {
   text-decoration:none;
