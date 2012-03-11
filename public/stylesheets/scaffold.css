@@ -178,6 +178,12 @@ span.reply {
 }
 
 /* user */
+span.username {
+  font-size: 70%;
+}
+span.password {
+  font-size: 70%;
+}
 h2.your_profile {
   font-size: 120%;
 }
