@@ -167,6 +167,11 @@ span.comment_parent_time {
   margin-left: 45px;
 }
 
+span.reply {
+  font-size: 70%;
+  text-decoration:underline;
+}
+
 /* user */
 
 div.profile {
