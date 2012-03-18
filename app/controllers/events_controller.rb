@@ -41,16 +41,6 @@ class EventsController < ApplicationController
   # POST /events.xml
   def create
     @event = Event.new(params[:event])
-    # I have to call update_attribute mannually FIXME
-    # DateTime.civil also wants second as its last parameter, but in the view
-    # helper select_timedate does not have seconds, but this is OK
-
-
-    # -8, because user thing he is submitting Beijing Time, but rails consider
-    # it UTC. So actually everytime the user submit a time, he is wrong, so
-    # here we correct him, by -8
-    # this is WRONG, only works, when :hour > 8, so I use ago(8hours) here
-    # http://api.rubyonrails.org/classes/DateTime.html#method-i-to_time
     respond_to do |format|
       if @event.save
         format.html { redirect_to(@event, :notice => 'Event was successfully created.') }
@@ -66,13 +56,6 @@ class EventsController < ApplicationController
   # PUT /events/1.xml
   def update
     @event = Event.find(params[:id])
-
-    #@utc_time=DateTime.civil(params[:time][:year].to_i, params[:time][:month].to_i, params[:time][:day].to_i,params[:time][:hour].to_i,params[:time][:minute].to_i)
-    
-
-    @event.update_attribute("time",params[:time])
-
-
     respond_to do |format|
       if @event.update_attributes(params[:event])
         format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
