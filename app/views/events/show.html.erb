@@ -4,8 +4,7 @@
 	<div class="event_title"> 
 		<%= @event.name %>
 		<span class="event_time">
-		<%zone = ActiveSupport::TimeZone.new("Beijing")%>
-		(<%= @event.time.in_time_zone(zone).to_formatted_s(:long_ordinal) %>)
+		(<%= @event.time.to_formatted_s(:long_ordinal) %>)
 		</span>
 	</div>
 
