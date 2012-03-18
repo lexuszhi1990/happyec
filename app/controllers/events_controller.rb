@@ -51,14 +51,6 @@ class EventsController < ApplicationController
     # here we correct him, by -8
     # this is WRONG, only works, when :hour > 8, so I use ago(8hours) here
     # http://api.rubyonrails.org/classes/DateTime.html#method-i-to_time
-    @utc_time=DateTime.civil(params[:start_datetime][:year].to_i, params[:start_datetime][:month].to_i, params[:start_datetime][:day].to_i,params[:start_datetime][:hour].to_i,params[:start_datetime][:minute].to_i).ago(60*60*8)
-
-    @event.update_attribute("time",@utc_time)
-
-    @end_utc_time=DateTime.civil(params[:end_datetime][:year].to_i, params[:end_datetime][:month].to_i, params[:end_datetime][:day].to_i,params[:end_datetime][:hour].to_i,params[:end_datetime][:minute].to_i).ago(60*60*8)
-
-    @event.update_attribute("endtime",@end_utc_time)
-
     respond_to do |format|
       if @event.save
         format.html { redirect_to(@event, :notice => 'Event was successfully created.') }
