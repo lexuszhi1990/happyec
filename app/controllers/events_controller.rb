@@ -75,9 +75,10 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
 
-    @utc_time=DateTime.civil(params[:start_datetime][:year].to_i, params[:start_datetime][:month].to_i, params[:start_datetime][:day].to_i,params[:start_datetime][:hour].to_i,params[:start_datetime][:minute].to_i).ago(60*60*8)
+    #@utc_time=DateTime.civil(params[:time][:year].to_i, params[:time][:month].to_i, params[:time][:day].to_i,params[:time][:hour].to_i,params[:time][:minute].to_i)
+    
 
-    @event.update_attribute("time",@utc_time)
+    @event.update_attribute("time",params[:time])
 
 
     respond_to do |format|

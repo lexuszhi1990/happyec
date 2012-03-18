@@ -118,7 +118,7 @@ div.event_content {   /*event_body is a better name FIXME */
 /* comment */
 div.comments {
   padding:10px;
-  border: solid 1px #abc; /*http://www.computerhope.com/htmcolor.htm*/
+  border: solid 1px #abc; 
 }
 div.comment {
   border-left: solid 2px green; /*http://www.computerhope.com/htmcolor.htm*/
