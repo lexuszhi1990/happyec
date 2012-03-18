@@ -3,15 +3,12 @@ class EventsController < ApplicationController
   # GET /events.xml
   def index
     @events = Event.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }
     end
   end
 
-  # GET /events/1
-  # GET /events/1.xml
   def show
     @event = Event.find(params[:id])
 
@@ -21,11 +18,8 @@ class EventsController < ApplicationController
     end
   end
 
-  # GET /events/new
-  # GET /events/new.xml
   def new
     @event = Event.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @event }
