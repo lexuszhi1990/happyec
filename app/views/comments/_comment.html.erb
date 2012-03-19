@@ -16,7 +16,7 @@
 		<% end %>
 	</div>
 	<div class="comment_body">
-		<%= raw line_break(escape_arrow(comment.content)) %>
+		<%= simple_format(h comment.content) %>
 	</div>
 <% if current_user %>
 <span class="reply"> <%= link_to "Reply", new_comment_path(:event_id => comment.event.id, :parent_id => comment.id) %> </span>
