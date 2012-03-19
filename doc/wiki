@@ -1,5 +1,5 @@
 # photo specs
-500x375(widthxheight) 
+500x375(widthxheight)--- jpg format (much smaller than png, best for photos)
 use gimp to change its size and save it with 80%quality
 the final file size shall be 60k or so
 
