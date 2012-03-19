@@ -7,6 +7,8 @@ I will choose one distinctive pic as the theme of this meetup, and link with it 
 
 # railscast #204 give a clear explan to "h" "raw" and "html_safe"
 
+when you use "raw", don't write "< br>", the < and > will be escaped, write "<br>" ( no space!!)
+
 # date picker
 https://github.com/twitter/bootstrap/issues/445#issuecomment-4551146
 ## sendmail issue
