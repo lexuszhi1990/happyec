@@ -31,6 +31,10 @@ html {
 div.ec_logo {
   text-align:center;
 }
+div.theme_photo {
+  margin-top: 20px;
+  text-align:center;
+}
 
 div.tagline {
   padding-left: 10%;
