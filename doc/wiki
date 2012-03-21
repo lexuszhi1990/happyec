@@ -1,3 +1,5 @@
+# a WYSIWYG editor
+http://jhollingworth.github.com/bootstrap-wysihtml5/
 # photo specs
 500x375(widthxheight)--- jpg format (much smaller than png, best for photos)
 use gimp to change its size and save it with 80%quality
