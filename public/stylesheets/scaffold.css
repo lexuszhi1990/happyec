@@ -84,10 +84,10 @@ div.event {
 }
 
 .event a {
-  text-decoration:none;
+ color: green;
 }
 .event a:hover {
-	text-decoration:underline;
+  text-decoration:underline;
 }
 
 div.tab_title {
