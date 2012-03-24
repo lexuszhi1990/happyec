@@ -40,7 +40,7 @@ English and have fun! Feel free to join us.
          <%= link_to  event.location, "/location.html" %>
         </div>
         <div class="event_content">
-         <%= markdown(event.content) %>
+         <%= raw event.content %>
         </div>
         <% if current_user %>  <%# only myself can edit%>
           <% @user= User.find(current_user.id) %>
