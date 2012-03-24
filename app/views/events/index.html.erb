@@ -31,6 +31,7 @@ English and have fun! Feel free to join us.
       <div class="event">
         <div class="event_time">
          <b>When:</b> 
+		(<%= event.time.to_formatted_s(:weekday) %>)
 		<%= event.time.to_formatted_s(:long_ordinal) %>
         </div>
         <div class="event_location">
@@ -65,7 +66,7 @@ English and have fun! Feel free to join us.
       <% if Time.now.utc > event.time %> <%# only show the events past %>
         <div class="event_name">
            <a href="/events/<%= event.id %>">
-              Meetup NO. <%= event.id %>: <%= event.name %>
+              <%= event.time.to_formatted_s(:day_month_year) %> >> <%= event.name %>
            </a>
        </div>
       <% end %> 
