@@ -202,6 +202,14 @@ div.profile a {
   text-decoration:underline;
   font-size: 70%;
 }
+span.event_time {
+
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
+}
+
+
 
 /* footer */
 /* page top table */

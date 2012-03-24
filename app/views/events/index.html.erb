@@ -33,7 +33,7 @@ English and have fun! Feel free to join us.
          <b>When:</b> 
 		<%= event.time.to_formatted_s(:time) %>
 		<%= event.time.to_formatted_s(:weekday) %>
-		(<%= event.time.to_formatted_s(:day_month_year) %>)
+		<span class="event_time">(<%= event.time.to_formatted_s(:day_month_year) %>)</span>
         </div>
         <div class="event_location">
          <b>Where:</b> 
@@ -67,7 +67,7 @@ English and have fun! Feel free to join us.
       <% if Time.now.utc > event.time %> <%# only show the events past %>
         <div class="event_name">
            <a href="/events/<%= event.id %>">
-              <%= event.time.to_formatted_s(:day_month_year) %> >> <%= event.name %>
+              <span class="event_time"><%= event.time.to_formatted_s(:day_month_year) %> >></span> <%= event.name %>
            </a>
        </div>
       <% end %> 
