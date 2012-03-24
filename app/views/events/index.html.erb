@@ -29,15 +29,19 @@ English and have fun! Feel free to join us.
     <div class="next_meetup">
       <div class="tab_title">Next Meetup</div>
       <div class="event">
+        <div class="event_time">
+         <b>When:</b> 
+		<%= event.time.to_formatted_s(:long_ordinal) %>
+        </div>
+        <div class="event_location">
+         <b>Where:</b> 
+         <%= link_to  event.location, "/location.html" %>
+        </div>
         <div class="event_name">
          <b>Topic:</b>
            <a href="/events/<%= event.id %>">
              <%= event.name %>
            </a>
-        </div>
-        <div class="event_location">
-         <b>Location:</b> 
-         <%= link_to  event.location, "/location.html" %>
         </div>
         <div class="event_content">
          <%= raw event.content %>
