@@ -25,15 +25,11 @@
 
 <br \>
 <% if current_user %>
-  <%= form_for(Comment.new(:event_id => @event.id, :user_id => current_user.id)) do |f| %>
+  <%= simple_form_for(Comment.new(:event_id => @event.id, :user_id => current_user.id)) do |f| %>
     <%= f.hidden_field :event_id %>
     <%= f.hidden_field :user_id  %>
-      <div class="field">
-        <%= f.text_area :content, :size => "70x8" %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
-      </div>
+    <%= f.input :content,:input_html => { :cols => 160, :rows => 1000 } %>
+    <%= f.button :submit, "comment" %>
 <% end %>
 <% else %>
 	<u><%= link_to "Log in", log_in_path(:return_to => request.url) %> </u> to Comment.
