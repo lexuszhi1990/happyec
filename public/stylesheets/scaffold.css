@@ -229,3 +229,7 @@ div.footer a:hover {
 	text-decoration:underline;
 }
 
+
+#comment_btn {
+  text-align: right;
+}
