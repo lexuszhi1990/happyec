@@ -1,9 +1,9 @@
 <h1 class="signup">Sign Up</h1>  
   
 <%= simple_form_for @user do |f| %>  
-    <%= f.input :name %>
-    <%= f.input :password %>
+    <%= f.input :name, :required => false, :label => "User Name"%>
+    <%= f.input :password, :required => false %>
     <%= f.input :password_confirmation %>
-    <%= f.input :email %>
+    <%= f.input :email, :required => false %>
     <%= f.button :submit %>
 <% end %>  
