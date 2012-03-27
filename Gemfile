@@ -23,6 +23,11 @@ end
 
 gem 'jquery-rails'
 
+# for the "no javascript runtime error" upgrading to 3.1
+gem 'execjs'
+gem 'therubyracer'
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
