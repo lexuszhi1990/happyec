@@ -34,8 +34,8 @@
 </div>
 <div id="container">
   <% flash.each do |name, msg| %>
-  <%#FIXME: the close button does not work %>
     <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+     <a class="close" data-dismiss="alert">×</a>
       <%= msg %>
     </div>
   <% end %>
