@@ -233,7 +233,7 @@ div.footer a:hover {
 #comment_btn {
   text-align: right;
 }
-textarea
+div.nice_comment textarea
 {
   display: inline-block;
   width: 612px; /*container: 640 - padding: 4x2 -margin-left, right */
@@ -250,12 +250,12 @@ textarea
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-.control-group {
+div.nice_comment .control-group {
   background-color: #eeeeee;
   margin-bottom: 9px;
 }
 
-.control-label {
+div.nice_comment .control-label {
   padding: 10px;
   padding-bottom: 5px;
   font-weight: bold;

@@ -24,7 +24,9 @@
 </div>
 
 <br \>
+
 <% if current_user %>
+  <div class="nice_comment">
   <%= simple_form_for(Comment.new(:event_id => @event.id, :user_id => current_user.id)) do |f| %>
     <%= f.hidden_field :event_id %>
     <%= f.hidden_field :user_id  %>
@@ -32,7 +34,8 @@
     <div id="comment_btn">
       <%= f.button :submit, "Comment on this meetup" %>
     </div>
-<% end %>
+  <% end %>
+  </div>
 <% else %>
 	<u><%= link_to "Log in", log_in_path(:return_to => request.url) %> </u> to Comment.
 	<br \>
