@@ -1,4 +1,5 @@
 .bundle
+.rvmrc
 config/app_config.yml
 tags
 db/*.sqlite3
