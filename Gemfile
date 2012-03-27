@@ -5,7 +5,7 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '~> 0.2.6'
+gem 'mysql2', '0.3.6'
 gem 'bcrypt-ruby', :require => 'bcrypt'  
 gem 'simple_form'
 gem 'redcarpet', '1.17.1'
