@@ -17,3 +17,38 @@ body { padding-top: 60px; }
 //
 // Example:
 // @linkColor: #ff0000;
+
+@navbarBackground: @grayLighter;
+@navbarBackgroundHighlight: @grayLighter;
+
+.navbar .brand {
+  color: black;
+  font-weight: bold;
+  font-size: 130%;
+}
+.navbar .brand:hover {
+  color: @blue;
+}
+@navbarLinkColor:   black; 
+@navbarLinkColorHover:  @blue; 
+
+
+// peter copied below form gemdir/twitter-bootstrap-xxx/navbar.less
+// Links
+.navbar .nav > li > a {
+  float: none;
+  padding: 10px 10px 11px;
+  line-height: 19px;
+  color: @navbarLinkColor;
+  margin-top: 3px;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  font-weight: bold;
+}
+// Hover
+.navbar .nav > li > a:hover {
+  background-color: @navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
+  color: @navbarLinkColorHover;
+  text-decoration: none;
+}
+
