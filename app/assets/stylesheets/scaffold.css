@@ -233,3 +233,30 @@ div.footer a:hover {
 #comment_btn {
   text-align: right;
 }
+textarea
+{
+  display: inline-block;
+  width: 612px; /*container: 640 - padding: 4x2 -margin-left, right */
+  height: 88px;
+  padding: 4px;
+  margin-bottom: 9px;
+  margin-left:10px;
+  margin-right:10px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555555;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.control-group {
+  background-color: #eeeeee;
+  margin-bottom: 9px;
+}
+
+.control-label {
+  padding: 10px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}

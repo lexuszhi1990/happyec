@@ -561,12 +561,10 @@ textarea,
 select,
 .uneditable-input {
   display: inline-block;
-  width: 612px; /*container: 640 - padding: 4x2 -margin-left, right */
+  width: 210px; 
   height: 18px;
   padding: 4px;
   margin-bottom: 9px;
-  margin-left:10px;
-  margin-right:10px;
   font-size: 13px;
   line-height: 18px;
   color: #555555;
@@ -997,10 +995,6 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
   margin-bottom: 0;
   vertical-align: middle;
 }
-.control-group {
-  background-color: #eeeeee;
-  margin-bottom: 9px;
-}
 legend + .control-group {
   margin-top: 18px;
   -webkit-margin-top-collapse: separate;
@@ -1021,11 +1015,6 @@ legend + .control-group {
   width: 140px;
   padding-top: 5px;
   text-align: right;
-}
-.control-label {
-  padding: 10px;
-  padding-bottom: 5px;
-  font-weight: bold;
 }
 .form-horizontal .controls {
   margin-left: 160px;
@@ -3496,3 +3485,4 @@ a.thumbnail:hover {
 .invisible {
   visibility: hidden;
 }
+
