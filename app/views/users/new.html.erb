@@ -1,9 +1,11 @@
-<h1 class="signup">Sign Up</h1>  
-  
-<%= simple_form_for @user do |f| %>  
-    <%= f.input :name, :required => false, :label => "User Name"%>
-    <%= f.input :password, :required => false %>
-    <%= f.input :password_confirmation %>
-    <%= f.input :email, :required => false %>
-    <%= f.button :submit, :class => "btn btn-info" %>
-<% end %>  
+<div id="signup_form">
+  <h1 class="signup">Create your free personal account</h1>  
+    
+  <%= simple_form_for @user do |f| %>  
+      <%= f.input :name, :required => false, :label => "User Name"%>
+      <%= f.input :password, :required => false %>
+      <%= f.input :password_confirmation %>
+      <%= f.input :email, :required => false %>
+      <%= f.button :submit, :class => "btn btn-info" %>
+  <% end %>  
+</div>
