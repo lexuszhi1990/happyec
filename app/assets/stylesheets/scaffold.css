@@ -63,9 +63,6 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
-a:hover { text-decoration: underline; }
-
 a img {
   border: none; /*there is a black border by default*/
 }
@@ -80,13 +77,6 @@ h1.signup, h1.login {
 div.event {
   border: solid 1px #abc;
   padding: 10px;
-}
-
-.event a {
- color: green;
-}
-.event a:hover {
-  text-decoration:underline;
 }
 
 div.tab_title {
@@ -249,6 +239,19 @@ div.nice_comment textarea
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+
+textarea:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: none; 
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+}
+
+
 div.nice_comment .control-group {
   background-color: #eeeeee;
   margin-bottom: 9px;
