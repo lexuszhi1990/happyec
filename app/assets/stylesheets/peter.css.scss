@@ -141,6 +141,7 @@ i.icon-comment {
   color: darken($peter-gray, 30%);
 }
 div.comment {
+  @include peter-shadow;
   margin-bottom: 15px;
   border: solid 2px $peter-gray;
   a {
@@ -154,7 +155,10 @@ div.comment {
     font-weight: bold;
     background-color:  $peter-gray;
     font-size: 80%;
-
+    .comment_time {
+      float: right;
+      padding-left: 20px;
+    }
   }
   .comment_body {
     padding:10px;
@@ -218,30 +222,32 @@ div.footer a {
   color: #abc;
 }
 
-div.nice_comment textarea
-{
-  display: inline-block;
-  width: 612px; /*container: 640 - padding: 4x2 -margin-left, right */
-  height: 88px;
-  padding: 4px;
-  margin-bottom: 9px;
-  margin-left:10px;
-  margin-right:10px;
-  font-size: 13px;
-  line-height: 18px;
-  color: #555555;
-  border: 1px solid #ccc;
-  @include rounded-corners(3px);
+
+div.nice_comment {
+  textarea
+  {
+    display: inline-block;
+    width: 612px; /*container: 640 - padding: 4x2 -margin-left, right */
+    height: 88px;
+    padding: 4px;
+    margin-bottom: 9px;
+    margin-left:10px;
+    margin-right:10px;
+    border: 1px solid #ccc;
+    @include rounded-corners(3px);
+  }
+  .control-group {
+    background-color: $peter-gray;
+    margin-bottom: 9px;
+  }
+  .control-label {
+    padding: 10px;
+    padding-bottom: 5px;
+    font-weight: bold;
+  }
+ #comment_btn {
+    float: right;
+  } 
+ margin-bottom: 40px;
 }
 
-
-div.nice_comment .control-group {
-  background-color: #eeeeee;
-  margin-bottom: 9px;
-}
-
-div.nice_comment .control-label {
-  padding: 10px;
-  padding-bottom: 5px;
-  font-weight: bold;
-}

@@ -22,14 +22,13 @@
     <div class="comment">
         <div class="comment_head">
           <i class="icon-comment"></i> 
-            <span class="comment_guy">
-                <a href="/users/<%= User.find(comment.user_id).id %>">    
-                    <%= User.find(comment.user_id).name %>
-                </a>
-            </span>
-            <span class="comment_time">
+            <a href="/users/<%= User.find(comment.user_id).id %>">    
+                <%= User.find(comment.user_id).name %>
+            </a>
+            commented
+            <div class="comment_time">
                 <%= time_ago_in_words comment.created_at  %> ago
-            </span>
+            </div>
         </div> <%# class="comment_head" %>
         <div class="comment_body">
             <%# need the "h" to escape <> %>
