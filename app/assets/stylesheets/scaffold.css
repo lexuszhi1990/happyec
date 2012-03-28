@@ -76,7 +76,14 @@ h1.signup, h1.login {
 /* event */
 div.event {
   border: solid 1px #abc;
-  padding: 10px;
+  -webkit-box-shadow:  0 9px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow:  0 9px 1px rgba(0, 0, 0, 0.075);
+  box-shadow:  0 1px 9px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
 }
 
 div.tab_title {
@@ -98,6 +105,7 @@ div.tab_title {
 div.event_title {
   font-size: 120%;
   font-weight: bold;
+  padding: 10px;
 }
 div.event_name {
 
@@ -106,11 +114,17 @@ div.event_time {
 
 }
 div.event_location {
+  padding: 10px;
+  background-color: #ececec;
 }
 div.event_content {   /*event_body is a better name FIXME */
 	padding:10px;
 	border: solid 2px #fff; 
 	border-radius: 10px;
+}
+
+.event .edit_button {
+  float: right;
 }
 
 

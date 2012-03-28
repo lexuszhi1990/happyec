@@ -1,29 +1,23 @@
-
-
 <div class="event">
-	<div class="event_title"> 
-		<%= @event.name %>
-	</div>
-
-
-
+  <div class="event_title"> 
+    <%= @event.name %>
+  </div>
   <div class="event_location">
     <%= @event.location %>
+    <div class="edit_button">
+      <% if current_user %>  <%# only myself can edit%>
+        <% @user= User.find(current_user.id) %>
+        <% if @user.name == "happypeter"%>
+          <%= link_to 'Edit', edit_event_path(@event) %> 
+        <%end%>
+      <%end%>
+    </div>
   </div>
-
-
   <div class="event_content">
     <%= raw @event.content %>
   </div>
-  <% if current_user %>  <%# only myself can edit%>
-    <% @user= User.find(current_user.id) %>
-    <% if @user.name == "happypeter"%>
-      <%= link_to 'Edit', edit_event_path(@event) %> 
-    <%end%>
-  <%end%>
 </div>
 
-<br \>
 
 <% if current_user %>
   <div class="nice_comment">
