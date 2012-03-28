@@ -1,20 +1,23 @@
-<div class="hero">
-<span class="num">23</span> people tweeting <span class="num">34</span> comments
-</div>
-<div class="ec_logo">
-  <%= image_tag("ec_logo.png") %> 
-</div>
+<% if not current_user %>  
+  <div id="stranger_tease">
+    <div class="hero">
+    <span class="num">23</span> people tweeting <span class="num">34</span> comments
+    </div>
+    <div class="ec_logo">
+      <%= image_tag("ec_logo.png") %> 
+    </div>
 
-<div class="tagline">
-We are a group of students in <a href="http://www.heuet.net.cn/english/"><i>Hebei
-University of Economics and Business</i></a>, we currently meet each sunday
-afternoon at Bookbar Cafe<a href="/location.html">(<i>click to see map here</i>)</a> to practice our
-English and have fun! Feel free to join us.
-  <div class="signup">
-    <a class="btn btn-success" href="/sign_up"> Sign Up</a>
+    <div class="tagline">
+    We are a group of students in <a href="http://www.heuet.net.cn/english/"><i>Hebei
+    University of Economics and Business</i></a>, we currently meet each sunday
+    afternoon at Bookbar Cafe<a href="/location.html">(<i>click to see map here</i>)</a> to practice our
+    English and have fun! Feel free to join us.
+      <div class="signup">
+        <a class="btn btn-success" href="/sign_up"> Sign Up</a>
+      </div>
+    </div>
   </div>
-</div>
-
+<%end%>
 
 <% if current_user %>  
 	<% @user= User.find(current_user.id) %>
