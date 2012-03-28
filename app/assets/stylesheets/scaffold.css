@@ -120,8 +120,8 @@ div.comments {
   border: solid 1px #abc; 
 }
 div.comment {
-  border-left: solid 2px green; /*http://www.computerhope.com/htmcolor.htm*/
   margin-bottom: 15px;
+  border-bottom: solid 2px #ececec;
 }
 div.comment a {
 	text-decoration:none;
@@ -130,9 +130,8 @@ div.comment a:hover {
 	text-decoration:underline;
 }
 div.comment_head {
-  font-size:70%;
   padding-left: 5px;
-  border-bottom: solid 1px green;
+  font-weight: bold;
 }
 div.comment_head a {
   text-decoration:none;
@@ -149,11 +148,15 @@ span.comment_time {
 }
 
 div.comment_body {
-	padding:10px;
+  padding:10px;
+  margin-left: 14px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  color: #555;
+  
 }
 
 span.comment_parent {
-	font-size:80%;
 }
 span.comment_parent a {
 	text-decoration:none;

@@ -88,16 +88,11 @@
         <% Comment.find(:all, :order => "id desc", :limit => 5).each do |comment| %>
             <div class="comment">
                 <div class="comment_head">
+                  <i class="icon-user"></i> 
                     <span class="comment_guy">
-                        by
                         <a href="/users/<%= User.find(comment.user_id).id %>">    
                             <%= User.find(comment.user_id).name %>
                         </a>
-                        ,
-                    </span>
-                    <span class="comment_time">
-                        <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-                        <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
                     </span>
                     <span class="comment_parent">
                         <% @parent=Event.find(comment.event_id) %>
@@ -105,6 +100,9 @@
                         <a href="/events/<%= @parent.id %>">
                             <%= @parent.name %>
                         </a>
+                    </span>
+                    <span class="comment_time">
+                        <%= time_ago_in_words comment.created_at  %> ago
                     </span>
                 </div> <%# class="comment_head" %>
                 <div class="comment_body">
