@@ -1,15 +1,13 @@
 <div class="comment">
 	<div class="comment_head">
 		<span class="comment_guy">
-			by
+            <i class="icon-comment"></i> 
 			<a href="/users/<%= User.find(comment.user_id).id %>">    
 				<%= User.find(comment.user_id).name %>
 			</a>
-			,
 		</span>
 		<span class="comment_time">
-		    <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-		    <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
+		    <%= time_ago_in_words comment.created_at %> ago
 		</span>
 		<% if current_user && current_user.id == comment.user_id %>
   		| <%= link_to 'edit', edit_event_comment_path(comment.event, comment) %>

@@ -88,7 +88,7 @@
         <% Comment.find(:all, :order => "id desc", :limit => 5).each do |comment| %>
             <div class="comment">
                 <div class="comment_head">
-                  <i class="icon-user"></i> 
+                  <i class="icon-comment"></i> 
                     <span class="comment_guy">
                         <a href="/users/<%= User.find(comment.user_id).id %>">    
                             <%= User.find(comment.user_id).name %>

@@ -115,6 +115,9 @@ div.event_content {   /*event_body is a better name FIXME */
 
 
 /* comment */
+i.icon-comment {
+  color: #f89406;
+}
 div.comments {
   padding:10px;
   border: solid 1px #abc; 
