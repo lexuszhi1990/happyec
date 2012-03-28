@@ -1,5 +1,11 @@
 $peter-gray: #ececec;
-
+$github-blue:#839ba9;
+@mixin github-hero {
+  background:#839ba9;
+  background:-moz-linear-gradient(#839ba9,#405a6a);
+  background:-webkit-linear-gradient(#839ba9,#405a6a);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#839ba9',endColorstr='#405a6a')";
+}
 @mixin peter-shadow {
   -webkit-box-shadow: 0 0 6px $peter-gray;
   -moz-box-shadow: 0 0 6px $peter-gray;
@@ -293,3 +299,15 @@ div.nice_comment {
  margin-bottom: 40px;
 }
 
+#hero { 
+  text-align: center;
+  color: white;
+  padding: 10px;
+  font-size: 160%;
+  @include github-hero;
+}
+#below_hero {
+  padding: 20px;
+  color: darken($github-blue, 20%);
+  background-color: lighten($github-blue, 30%)
+}

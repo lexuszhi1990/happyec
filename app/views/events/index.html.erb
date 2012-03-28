@@ -1,7 +1,10 @@
 <% if not current_user %>  
   <div id="stranger_tease">
-    <div class="hero">
-    <span class="num"><%= User.all.count %></span> people tweeting <span class="num"><%= Comment.all.count %></span> comments
+    <div id="hero">
+    <strong><%= User.all.count %></strong> people tweeting <strong><%= Comment.all.count %></strong> comments
+    </div>
+    <div id="below_hero">
+     ddddo
     </div>
     <div class="ec_logo">
       <%= image_tag("ec_logo.png") %> 
