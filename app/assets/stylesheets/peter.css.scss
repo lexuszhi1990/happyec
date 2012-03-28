@@ -138,16 +138,11 @@ div.event_content {   /*event_body is a better name FIXME */
 
 /* comment */
 i.icon-comment {
-  color: #f89406;
+  color: darken($peter-gray, 30%);
 }
-div.comments {
-  padding:10px;
-  border: solid 1px #abc; 
-}
-
 div.comment {
   margin-bottom: 15px;
-  border-bottom: solid 2px $peter-gray;
+  border: solid 2px $peter-gray;
   a {
     text-decoration:none;
     &:hover {
@@ -155,8 +150,11 @@ div.comment {
     }
   }
   .comment_head {
-    padding-left: 5px;
+    padding: 5px;
     font-weight: bold;
+    background-color:  $peter-gray;
+    font-size: 80%;
+
   }
   .comment_body {
     padding:10px;
