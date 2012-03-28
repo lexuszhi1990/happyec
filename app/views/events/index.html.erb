@@ -78,9 +78,9 @@
     <% end %>
   </div>
 </div>
-<div class="recent_comments">
+<div class="update_index">
   <div class="tab_title"> 
-    Recent Comments
+    Recent Updates
   </div>
     <div class="comments">
         <% Comment.find(:all, :order => "id desc", :limit => 5).each do |comment| %>
