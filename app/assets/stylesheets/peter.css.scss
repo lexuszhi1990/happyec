@@ -11,6 +11,11 @@ $github-blue:#839ba9;
   -moz-box-shadow: 0 0 6px $peter-gray;
   box-shadow: 0 0 6px $peter-gray;
 }
+@mixin no-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
 @mixin inset-shadow {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -310,4 +315,45 @@ div.nice_comment {
   padding: 20px;
   color: darken($github-blue, 20%);
   background-color: lighten($github-blue, 30%)
+}
+
+#login_form {
+  margin-top: 40px;
+  margin-bottom: 80px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#login_form_head {
+  background-color: $github-blue ; 
+  color: white;
+  font-size: 120%;
+  font-weight: bold;
+  padding: 10px;
+  @include github-hero;
+}
+span#login_form_head_sub {
+  font-size: 70%;
+  font-weight: normal;
+}
+#login_form_head_sub a {
+  color: white;
+}
+#login_form_body {
+  background-color: lighten($github-blue, 30%);
+  padding: 20px;
+  padding-bottom: 1px;
+}
+h1.signup {
+  font-size: 140%;
+}
+#signup_form {
+  margin-top: 40px;
+  margin-bottom: 80px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+input:focus {
+  @include no-shadow;
 }
