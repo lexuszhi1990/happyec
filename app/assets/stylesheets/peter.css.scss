@@ -1,14 +1,9 @@
 $peter-gray: #ececec;
 
 @mixin peter-shadow {
-  -webkit-box-shadow:   0 1px 1px rgba(0, 0, 0, 0.075);
-  -moz-box-shadow:   0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow:   0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: 0 0 6px $peter-gray;
+  -moz-box-shadow: 0 0 6px $peter-gray;
+  box-shadow: 0 0 6px $peter-gray;
 }
 @mixin inset-shadow {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -56,21 +51,10 @@ div.signup {
   text-align:center;
 }
 
-
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:small;  
-  line-height: 18px;
-}
-
-pre {
-  padding: 10px;
-  font-size: 11px;
-}
-
 /* event */
 div.event {
   border: solid 1px #abc;
+  margin-bottom: 20px;
   @include peter-shadow;
   .edit_button {
     float: right;
@@ -214,17 +198,6 @@ div.nice_comment textarea
   color: #555555;
   border: 1px solid #ccc;
   @include rounded-corners(3px);
-}
-
-textarea:focus {
-  border-color: rgba(82, 168, 236, 0.8);
-  -webkit-box-shadow: none; 
-  -moz-box-shadow: none;
-  box-shadow: none;
-  outline: 0;
-  outline: thin dotted \9;
-  /* IE6-9 */
-
 }
 
 
