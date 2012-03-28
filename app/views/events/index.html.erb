@@ -31,10 +31,9 @@
 
 
 <% @events.reverse.each do |event| %>
-  <% if Time.now.utc < event.time %> <%# only show the events upcoming and running %>
-    <div class="next_meetup">
-      <div class="tab_title">Next Meetup</div>
-      <div class="event">
+  <% if Time.now.utc < event.time %> 
+    <div class="poster">
+      <div class="poster_title">Next Meetup</div>
         <div class="event_time">
          <b>When:</b> 
 		<%= event.time.to_formatted_s(:time) %>
@@ -60,7 +59,6 @@
             <%= link_to 'Edit', edit_event_path(event) %> 
           <% end %>
         <% end %>
-      </div>
     </div>
   <% end %>
 <% end %> 
