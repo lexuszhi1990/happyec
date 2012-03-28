@@ -86,14 +86,18 @@ body { padding-top: 60px; }
   font-weight: bold;
   padding: 10px;
 }
-#login_form_head_sub {
+span#login_form_head_sub {
   font-size: 70%;
   font-weight: normal;
 }
 #login_form_head_sub a {
   color: @white;
 }
-
+#login_form_body {
+  background-color: lighten(#3a87ad, 40%);
+  padding: 20px;
+  padding-bottom: 1px;
+}
 h1.signup {
   font-size: 140%;
 }
@@ -103,4 +107,15 @@ h1.signup {
   width: 300px;
   margin-left: auto;
   margin-right: auto;
+}
+input:focus,
+textarea:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: none; 
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
 }

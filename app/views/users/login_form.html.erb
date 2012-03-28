@@ -4,17 +4,18 @@
     <span id="login_form_head_sub">(Don't have a account yet?  <a href="/sign_up">Sign Up</a> )</sapn>
   </div>
 
-  <%= form_tag "/local_user_login" do %>  
-
-    <div class="input-prepend">
-      <%= text_field_tag :name, params[:name] %>  
-      <span class="username">Username</span> 
-    </div>
-    <div class="input-prepend">
-      <%= password_field_tag :password,params[:password] %>  
-      <span class="password">Password</span> 
-    </div>
-    <div class="login_btn"><%= submit_tag("login", :class => "btn btn-info") %></div>  
-  <% end %>  
+  <div id="login_form_body">
+    <%= form_tag "/local_user_login" do %>  
+      <div class="input-prepend">
+        <div class="username">Username</div> 
+        <%= text_field_tag :name, params[:name] %>  
+      </div>
+      <div class="input-prepend">
+        <div class="password">Password</div> 
+        <%= password_field_tag :password,params[:password] %>  
+      </div>
+      <div class="login_btn"><%= submit_tag("login", :class => "btn btn-info") %></div>  
+    <% end %>  
+  </div>
 
 </div>
