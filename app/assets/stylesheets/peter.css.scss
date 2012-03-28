@@ -1,0 +1,240 @@
+$peter-gray: #ececec;
+
+@mixin peter-shadow {
+  -webkit-box-shadow:   0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow:   0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow:   0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+@mixin inset-shadow {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+@mixin rounded-corners($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+html {
+	font-size:100.01%;
+}
+
+#container {
+	text-align:left;
+    margin:0 auto;
+    width:640px;
+    padding: 10px;
+}
+
+div.ec_logo {
+  text-align:center;
+}
+div.theme_photo {
+  margin-top: 20px;
+  text-align:center;
+}
+
+div.tagline {
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size:1.2em;  
+}
+
+div.signup {
+  margin: 9px;
+  text-align:center;
+}
+
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:small;  
+  line-height: 18px;
+}
+
+pre {
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* event */
+div.event {
+  border: solid 1px #abc;
+  @include peter-shadow;
+  .edit_button {
+    float: right;
+  }
+}
+
+div.tab_title {
+  font-size:120%;
+  font-weight:normal;	
+  padding: 5px;
+  background: $peter-gray;
+  text-align:center;
+  @include inset-shadow;
+}
+
+div.event_title {
+  font-size: 120%;
+  font-weight: bold;
+  padding: 10px;
+}
+div.event_name {
+
+}
+div.event_time {
+
+}
+div.event_location {
+  padding: 10px;
+  background-color: $peter-gray;
+}
+div.event_content {   /*event_body is a better name FIXME */
+	padding:10px;
+	border: solid 2px #fff; 
+	border-radius: 10px;
+}
+
+
+
+/* comment */
+i.icon-comment {
+  color: #f89406;
+}
+div.comments {
+  padding:10px;
+  border: solid 1px #abc; 
+}
+div.comment {
+  margin-bottom: 15px;
+  border-bottom: solid 2px $peter-gray;
+}
+div.comment a {
+  text-decoration:none;
+  &:hover {
+    text-decoration: underline; 
+  }
+}
+div.comment_head {
+  padding-left: 5px;
+  font-weight: bold;
+}
+
+div.comment_head a {
+  text-decoration:none;
+  &:hover {
+    text-decoration: underline; 
+  }
+}
+
+div.comment_body {
+  padding:10px;
+  margin-left: 14px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  color: #555;
+  
+}
+
+span.comment_parent {
+}
+span.comment_parent a {
+  text-decoration:none;
+  &:hover {
+    text-decoration: underline; 
+  }
+}
+
+/* user */
+span.username {
+  font-size: 70%;
+}
+span.password {
+  font-size: 70%;
+}
+h2.your_profile {
+  font-size: 120%;
+}
+h2.your_comments {
+  font-size: 120%;
+}
+div.profile {
+  border: solid 1px #307D7E;
+  padding:10px;
+}
+div.profile a {
+  text-decoration:underline;
+  font-size: 70%;
+}
+span.event_time {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
+}
+
+
+
+/* footer */
+div.footer {
+  border-top: solid 1px #abc;
+  font-size:80%;
+  text-align:center;
+  position:relative;
+  background: #efefef;
+}
+
+div.footer a {
+  text-decoration:none;
+  color: #abc;
+}
+
+div.nice_comment textarea
+{
+  display: inline-block;
+  width: 612px; /*container: 640 - padding: 4x2 -margin-left, right */
+  height: 88px;
+  padding: 4px;
+  margin-bottom: 9px;
+  margin-left:10px;
+  margin-right:10px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555555;
+  border: 1px solid #ccc;
+  @include rounded-corners(3px);
+}
+
+textarea:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: none; 
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+}
+
+
+div.nice_comment .control-group {
+  background-color: #eeeeee;
+  margin-bottom: 9px;
+}
+
+div.nice_comment .control-label {
+  padding: 10px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
