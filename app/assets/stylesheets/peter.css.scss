@@ -143,7 +143,7 @@ i.icon-comment {
 div.comment {
   @include peter-shadow;
   margin-bottom: 15px;
-  border: solid 2px $peter-gray;
+  border: solid 0.5px darken($peter-gray, 10%);
   a {
     text-decoration:none;
     &:hover {
