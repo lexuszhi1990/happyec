@@ -1,25 +1,18 @@
 <% if not current_user %>  
   <div id="stranger_tease">
     <div id="hero">
-    <strong><%= User.all.count %></strong> people tweeting <strong><%= Comment.all.count %></strong> comments
+    <strong><%= User.all.count %></strong> people,  <strong><%= Comment.all.count %></strong> comments
     </div>
     <div id="below_hero">
-     ddddo
-    </div>
-    <div class="ec_logo">
-      <%= image_tag("ec_logo.png") %> 
-    </div>
-
-    <div class="tagline">
-    We are a group of students in <a href="http://www.heuet.net.cn/english/"><i>Hebei
-    University of Economics and Business</i></a>, we currently meet each sunday
-    afternoon at Bookbar Cafe<a href="/location.html">(<i>click to see map here</i>)</a> to practice our
-    English and have fun! Feel free to join us.
-      <div class="signup">
-        <a class="btn btn-success" href="/sign_up"> Sign Up</a>
-      </div>
+      We are a group of students in <a href="http://www.heuet.net.cn/english/"><i>Hebei
+      University of Economics and Business</i></a>, we currently meet each sunday
+      afternoon at Bookbar Cafe<a href="/location.html">(<i>click to see map here</i>)</a> to practice our
+      English and have fun! 
     </div>
   </div>
+      <div class="signup">
+        <a class="btn btn-large btn-info" href="/sign_up">Join Us by Signup Here</a>
+      </div>
 <%end%>
 
 <% if current_user %>  
@@ -30,7 +23,16 @@
 		<%= link_to 'Mail to All Members', "/new_mail" %>
 	<%end%>
 <%end%>
+<%# ----------------------------%>
 
+      <div class="screenographic community">
+        <img alt="The GitHub Community" src="https://a248.e.akamai.net/assets.github.com/images/modules/features/community_head.jpg?1290470371" />
+        <div class="bigcount">
+            <p class="count"><strong>1,517,215</strong> developers</p>
+            <p class="subtext">(and counting)</p>
+        </div>
+      </div>
+<%# ----------------------------%>
 
 
 <div class="alert alert-success">

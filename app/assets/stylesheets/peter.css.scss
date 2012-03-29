@@ -60,6 +60,8 @@ div.tagline {
 div.signup {
   margin: 9px;
   text-align:center;
+  font-size: 140%;
+  font-weight: bold;
 }
 /* poster */
 #poster {
@@ -357,3 +359,74 @@ h1.signup {
 input:focus {
   @include no-shadow;
 }
+
+
+
+/*************************/
+.screenographic .bigcount p.count {
+  margin:-6px 0 0 0;
+  font-size:50px;
+  line-height:50px;
+  text-shadow:0 0 10px rgba(0,0,0,0.8);
+}
+
+.screenographic .bigcount p.subtext {
+  margin:0;font-size:12px;
+  font-weight:bold;text-align:center;
+  color:#ccc;
+  color:rgba(255,255,255,0.7);
+}
+
+
+.screenographic{
+  padding:15px 10px 0;
+  line-height:1px;
+  border-bottom-right-radius:4px;
+  border-bottom-left-radius:4px;
+  background:#edf3f6;
+  background:-moz-linear-gradient(#edf3f6,#d3e1e8);
+  background:-webkit-linear-gradient(#edf3f6,#d3e1e8);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#edf3f6',endColorstr='#d3e1e8')";
+}
+
+.screenographic *{
+  line-height:1.3;
+}
+
+.screenographic:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;visibility:hidden;
+}
+
+
+.screenographic{display:block;}
+.screenographic{display:inline-block;}
+
+
+.screenographic .bottom{position:absolute;left:0;bottom:0;width:100%;height:6px;background:url('../../images/modules/features/screenographic-bottom.png');opacity:.07;filter:alpha(opacity=7);}.screenographic.community img{margin:-14px 0 0 -10px;}
+
+
+.screenographic .bigcount{
+padding:12px 20px;line-height:1.0;color:#fff;
+white-space:nowrap;background:#1a2933;background:rgba(35,45,52,0.8);border-radius:5px;
+}
+
+.screenographic .bigcount p.count{
+  margin:-6px 0 0 0;font-size:50px;
+  line-height:50px;
+  text-shadow:0 0 10px rgba(0,0,0,0.8);
+}
+.screenographic .bigcount p.subtext{
+margin:0;font-size:12px;font-weight:bold;
+text-align:center;color:#ccc;color:rgba(255,255,255,0.7);
+}
+
+.screenographic.community .bigcount{
+  position:absolute;
+  top:25px;
+  left:50%;
+}
+
+
