@@ -228,7 +228,7 @@ div.nice_comment {
   textarea
   {
     display: inline-block;
-    width: 612px; /*container: 640 - padding: 4x2 -margin-left, right */
+    width: 600px; 
     height: 88px;
     padding: 4px;
     margin-bottom: 9px;
@@ -236,6 +236,7 @@ div.nice_comment {
     margin-right:10px;
     border: 1px solid #ccc;
     @include rounded-corners(3px);
+    @include no-shadow;
   }
   .control-group {
     background-color: $peter-gray;
