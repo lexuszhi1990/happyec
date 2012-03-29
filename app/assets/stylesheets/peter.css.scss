@@ -1,3 +1,4 @@
+$main_width: 960px;
 $peter-gray: #ececec;
 $github-blue:#839ba9;
 @mixin github-hero {
@@ -39,7 +40,7 @@ html {
 #container {
 	text-align:left;
     margin:0 auto;
-    width:740px;
+    width:$main_width;
     padding: 10px;
 }
 
@@ -365,13 +366,13 @@ input:focus {
 /*************************/
 .screenographic .bigcount p.count {
   margin:-6px 0 0 0;
-  font-size:40px;
+  font-size:160%;
   line-height:50px;
   text-shadow:0 0 10px rgba(0,0,0,0.8);
 }
 
 .screenographic img {
-  width:740px;
+  width:$main_width;
 }
 
 .screenographic .bigcount p.subtext {
@@ -384,10 +385,10 @@ input:focus {
 
 .screenographic .bigcount{
   position: relative;
-  top: -100px;
-  left: 100px;
+  top: -120px;
+  left: 200px;
   color:#fff;
-  width: 540px;
+  width: 560px;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 5px;
