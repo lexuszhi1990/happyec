@@ -374,9 +374,12 @@ input:focus {
 .screenographic img {
   width:$main_width;
 }
+.screenographic {
+  position: relative;
+}
 
 .screenographic .bigcount p.subtext {
-  margin:0;font-size:12px;
+  margin:0;
   font-weight:bold;
   text-align:center;
   color:#ccc;
@@ -384,8 +387,8 @@ input:focus {
 }
 
 .screenographic .bigcount{
-  position: relative;
-  top: -120px;
+  position:absolute;
+  top: 40px;
   left: 200px;
   color:#fff;
   width: 560px;
