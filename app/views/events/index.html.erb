@@ -47,33 +47,30 @@
 
 <div class="row-fluid">
   <div class="span6">
-      <div id="past_meetups">
-        <div id="past_meetups_title">
-          Past Meetups
-        </div>
-        <div id="past_meetups_body">
-          <% @events.reverse.each do |event| %>
-            <% if Time.now.utc > event.time %> <%# only show the events past %>
-              <%= render :partial => "event_as_past", :object => event%>
-            <% end %> 
-          <% end %>
-        </div>
+    <div id="past_meetups">
+      <div id="past_meetups_title">
+        Past Meetups
       </div>
-
-
-
+      <div id="past_meetups_body">
+        <% @events.reverse.each do |event| %>
+          <% if Time.now.utc > event.time %> <%# only show the events past %>
+            <%= render :partial => "event_as_past", :object => event%>
+          <% end %> 
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="span6">
-      <div id="update_index">
-        <div class="tab_title"> 
-          Recent Updates
-        </div>
-          <div class="comments">
-            <% @comments= Comment.find(:all, :order => "id desc", :limit => 5) %>
-            <%=render @comments %>
-          </div><%# .comments %>
-        </div>
+    <div id="update_index">
+      <div class="tab_title"> 
+        Recent Updates
       </div>
+        <div class="comments">
+          <% @comments= Comment.find(:all, :order => "id desc", :limit => 5) %>
+          <%=render @comments %>
+        </div><%# .comments %>
+      </div>
+    </div>
   </div>
 </div>
 
