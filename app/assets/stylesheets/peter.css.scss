@@ -79,6 +79,7 @@ div.big_signup_button {
   @include peter-shadow;
   border: solid 1px darken($peter-gray, 20%);
   margin-bottom: 50px;
+  height: 160px;
 
   .meetup_namecard_head {
     background-color: $peter-gray;
@@ -91,8 +92,8 @@ div.big_signup_button {
       float:right;
       border: solid 2px red;
       img {
-        width: 40px;
-        height: 40px;
+        width: 120px;
+        height: 90px;
       }
     }
   }
