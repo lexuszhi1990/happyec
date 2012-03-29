@@ -52,41 +52,12 @@ div.theme_photo {
   text-align:center;
 }
 
-div.tagline {
-  padding-left: 10%;
-  padding-right: 10%;
-  font-size:1.2em;  
-}
-
 div.signup {
   margin: 9px;
   text-align:center;
   font-size: 140%;
   font-weight: bold;
 }
-/* poster */
-#poster {
-  border: solid 1px #abc;
-  margin-bottom: 20px;
-  @include peter-shadow;
-  .edit_button {
-    float: right;
-  }
-  .event_time {
-    padding: 10px;
-    margin-bottom: -5px;
-    font-weight: bold;
-    font-size: 90%;
-    color: darken($peter-gray, 40%);
-  }
-}
-#poster_title {
-  font-size:120%;
-  font-weight:bold;	
-  padding-left: 10px;
-  margin-bottom: 10px;
-}
-
 #past_meetups {
   border: solid 0.5px darken($peter-gray, 10%);
   margin-bottom: 20px;
@@ -125,7 +96,7 @@ div.event_name {
 div.event_time {
 
 }
-div.event_location {
+div.event_time_location {
   padding: 10px;
   background-color: $peter-gray;
 }

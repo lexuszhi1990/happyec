@@ -15,34 +15,9 @@
 <div id="next_meetup_notice">
   Our Next Meetup:
 </div>
-<% @events.reverse.each do |event| %>
-  <% if Time.now.utc < event.time %> 
-    <div id="poster">
-      <div class="event_time">
-		<%= event.time.to_formatted_s(:time) %>
-		<%= event.time.to_formatted_s(:weekday) %>
-        (<%= event.time.to_formatted_s(:day_month_year) %>)
-      </div>
-      <div id="poster_title">
-        <%= event.name %>
-      </div>
-      <div class="event_location">
-        Where:
-        <%= link_to event.location, "/location.html" %>
-        <% if current_user %>  <%# only myself can edit%>
-          <% @user= User.find(current_user.id) %>
-          <% if @user.name == "happypeter"%>
-            <div class="edit_button">
-              <%= link_to 'Edit', edit_event_path(event) %> 
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="event_content">
-        <%= raw event.content %>
-      </div>
-    </div>
-  <% end %>
+<% @event=Event.last %>
+<% if Time.now.utc < @event.time %> 
+  <%= render @event %>
 <% end %> 
 
 <div class="row-fluid">
