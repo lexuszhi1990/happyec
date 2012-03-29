@@ -5,8 +5,8 @@
     <div class="screenographic">
       <%= image_tag("meetup_head.jpg") %>
       <div class="bigcount">
-          <p class="count">This Sunday Afternoon</p>
-          <p class="subtext">(click to see details)</p>
+          <p class="count">Next Meetup is This Sunday Afternoon</p>
+          <p class="subtext"><%= link_to "(click to see details)", Event.last%></p>
       </div>
     </div>
     <div id="below_hero">

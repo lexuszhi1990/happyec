@@ -68,7 +68,6 @@ div.signup {
 #poster {
   border: solid 1px #abc;
   margin-bottom: 20px;
-  margin-top: -20px;
   @include peter-shadow;
   .edit_button {
     float: right;
@@ -260,10 +259,17 @@ div.nice_comment {
   font-size: 160%;
   @include github-hero;
 }
+#next_meetup_notice { 
+  text-align: center;
+  color: white;
+  padding: 10px;
+  font-size: 160%;
+  @include github-hero;
+}
 #below_hero {
   padding: 20px;
   color: darken($github-blue, 20%);
-  background-color: lighten($github-blue, 30%)
+  background-color: lighten($github-blue, 30%);
 }
 
 #login_form {
@@ -324,13 +330,6 @@ input:focus {
   position: relative;
 }
 
-.screenographic .bigcount p.subtext {
-  margin:0;
-  font-weight:bold;
-  text-align:center;
-  color:#ccc;
-  color:rgba(255,255,255,0.7);
-}
 
 .screenographic .bigcount{
   position:absolute;
@@ -345,4 +344,15 @@ input:focus {
   background:#1a2933;
   background:rgba(35,45,52,0.8);
   border-radius:5px;
+  p.subtext {
+    margin:0;
+    font-weight:bold;
+    text-align:center;
+    color:#ccc;
+    color:rgba(255,255,255,0.7);
+    a {
+      color:#ccc;
+      color:rgba(255,255,255,0.7);
+    }
+  }
 }
