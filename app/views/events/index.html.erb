@@ -1,7 +1,7 @@
 <% if not current_user %>  
   <%= render :partial => "stranger_teaser" %>
 <%else%>
-  <div id="next_meetup_notice">
+  <div class="meetup_notice">
     Our Next Meetup:
   </div>
   <% @event=Event.last %>
