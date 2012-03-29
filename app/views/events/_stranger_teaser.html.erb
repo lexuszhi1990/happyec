@@ -6,7 +6,7 @@
       <%= image_tag("meetup_head.jpg") %>
       <div class="bigcount">
           <p class="count">Next Meetup is This Sunday Afternoon</p>
-          <p class="subtext"><%= link_to "(click to see details)", Event.last%></p>
+          <p class="subtext"><%= link_to "(click to see details)", Event.last%></p><%#FIXME: Event.last can also be past %>
       </div>
     </div>
     <div id="below_hero">
