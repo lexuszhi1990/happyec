@@ -365,7 +365,7 @@ input:focus {
 /*************************/
 .screenographic .bigcount p.count {
   margin:-6px 0 0 0;
-  font-size:50px;
+  font-size:40px;
   line-height:50px;
   text-shadow:0 0 10px rgba(0,0,0,0.8);
 }
@@ -382,19 +382,17 @@ input:focus {
   color:rgba(255,255,255,0.7);
 }
 
-.screenographic {
-  text-align:center;
-}
-
 .screenographic .bigcount{
-  margin-top: -40px;
+  position: relative;
+  top: -100px;
+  left: 100px;
   color:#fff;
+  width: 540px;
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
   white-space:nowrap;
   background:#1a2933;
   background:rgba(35,45,52,0.8);
   border-radius:5px;
 }
-
-
-
