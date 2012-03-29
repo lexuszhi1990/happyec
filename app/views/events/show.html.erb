@@ -1,23 +1,4 @@
-<div class="event">
-  <div class="event_title"> 
-    <%= @event.name %>
-  </div>
-  <div class="event_location">
-    <%= @event.location %>
-    <div class="edit_button">
-      <% if current_user %>  <%# only myself can edit%>
-        <% @user= User.find(current_user.id) %>
-        <% if @user.name == "happypeter"%>
-          <%= link_to 'Edit', edit_event_path(@event) %> 
-        <%end%>
-      <%end%>
-    </div>
-  </div>
-  <div class="event_content">
-    <%= raw @event.content %>
-  </div>
-</div>
-
+<%= render @event %>
 <div class="row-fluid">
   <div class="span2">
    placeholder
