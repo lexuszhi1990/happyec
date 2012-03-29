@@ -61,15 +61,10 @@
     </div>
   </div>
   <div class="span6">
-    <div id="update_index">
-      <div class="tab_title"> 
-        Recent Updates
-      </div>
-        <div class="comments">
-          <% @comments= Comment.find(:all, :order => "id desc", :limit => 5) %>
-          <%=render @comments, :page_on => "event#index" %> <%# :page_on is defined by myself to decide which page is showing %>
-        </div><%# .comments %>
-      </div>
+      <div class="comments">
+        <% @comments= Comment.find(:all, :order => "id desc", :limit => 5) %>
+        <%=render @comments, :page_on => "event#index" %> <%# :page_on is defined by myself to decide which page is showing %>
+      </div><%# .comments %>
     </div>
   </div>
 </div>

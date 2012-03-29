@@ -1,31 +1,23 @@
 <div class="comment">
     <div class="comment_head">
       <i class="icon-comment"></i> 
-      <span class="comment_guy">
-          <a href="/users/<%= User.find(comment.user_id).id %>">    
-              <%= User.find(comment.user_id).name %>
-          </a>
-      </span>
+      <%= link_to comment.user.name, comment.user%>
       <% if page_on == "event#index" %>
         <span class="comment_parent">
-            <% @parent=Event.find(comment.event_id) %>
-            on:
-            <a href="/events/<%= @parent.id %>">
-                <%= @parent.name %>
-            </a>
+          on:
+          <% @parent=Event.find(comment.event_id) %>
+          <%= link_to @parent.name, @parent %>
         </span>
       <% elsif page_on == "event#show" %>
         commented
       <%end%>
-        
-
-        <span class="comment_time">
-            <%= time_ago_in_words comment.created_at  %> ago
-        </span>
+      <span class="comment_time">
+          <%= time_ago_in_words comment.created_at  %> ago
+      </span>
     </div> <%# class="comment_head" %>
     <div class="comment_body">
-        <%# need the "h" to escape <> %>
-        <%= markdown( h comment.content) %>
+      <%# need the "h" to escape <> %>
+      <%= markdown( h comment.content) %>
     </div>
 </div><%# .comment%>
 

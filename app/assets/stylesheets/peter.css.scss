@@ -115,16 +115,6 @@ div.event {
   }
 }
 
-div.tab_title {
-  font-size:120%;
-  font-weight:normal;	
-  padding: 5px;
-  background: $peter-gray;
-  text-align:center;
-  border: solid 0.5px darken($peter-gray, 10%);
-  @include peter-shadow;
-}
-
 div.event_title {
   font-size: 120%;
   font-weight: bold;
@@ -171,7 +161,8 @@ div.comment {
     }
   }
   .comment_body {
-    padding:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-left: 14px;
     margin-top: -5px;
     margin-bottom: -5px;
