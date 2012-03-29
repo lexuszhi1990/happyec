@@ -25,7 +25,6 @@ body { padding-top: 60px; }
   color: black;
   font-weight: bold;
   font-size: 130%;
-  margin-left: 120px;
 }
 .navbar .brand:hover {
   color: @blue;
@@ -38,13 +37,14 @@ body { padding-top: 60px; }
 // Links
 .navbar .nav > li > a {
   float: none;
-  padding: 10px 10px 11px;
   line-height: 19px;
   color: @navbarLinkColor;
   margin-top: 3px;
   text-decoration: none;
   text-shadow: none;
   font-weight: bold;
+  margin-right: 0px;
+  padding-right: 0px;
 }
 // Hover
 .navbar .nav > li > a:hover {
@@ -55,6 +55,11 @@ body { padding-top: 60px; }
 // Secondary (floated right) nav in topbar
 .navbar .nav.pull-right {
   margin-left: 0px;
-  margin-right: 180px;
+}
+
+.navbar-inner {    
+  .container {
+    width: 740px;
+  }
 }
 
