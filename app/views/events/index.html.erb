@@ -29,7 +29,7 @@
       <div id="past_meetups_body">
         <% @events.reverse.each do |event| %>
           <% if Time.now.utc > event.time %> <%# only show the events past %>
-            <%= render :partial => "event_as_past", :object => event%>
+            <%= render :partial => "meetup_namecard", :object => event%>
           <% end %> 
         <% end %>
       </div>

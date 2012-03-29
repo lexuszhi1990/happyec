@@ -75,6 +75,31 @@ div.big_signup_button {
   padding: 10px;
 }
 
+.meetup_namecard {
+  @include peter-shadow;
+  border: solid 1px darken($peter-gray, 20%);
+  margin-bottom: 50px;
+
+  .meetup_namecard_head {
+    background-color: $peter-gray;
+    padding: 10px;
+  }
+  .meetup_namecard_body {
+    padding: 10px;
+    background-color: white;
+    .meetup_namecard_body_right {
+      float:right;
+      border: solid 2px red;
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+
+
 /* event */
 div.event {
   border: solid 1px #abc;
