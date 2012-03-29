@@ -18,24 +18,10 @@
   </div>
 </div>
 
-<% @event.comments.each do |comment| %>
-    <div class="comment">
-        <div class="comment_head">
-          <i class="icon-comment"></i> 
-            <a href="/users/<%= User.find(comment.user_id).id %>">    
-                <%= User.find(comment.user_id).name %>
-            </a>
-            commented
-            <div class="comment_time">
-                <%= time_ago_in_words comment.created_at  %> ago
-            </div>
-        </div> <%# class="comment_head" %>
-        <div class="comment_body">
-            <%# need the "h" to escape <> %>
-            <%= markdown( h comment.content) %>
-        </div>
-    </div><%# .comment%>
-<% end %>
+<%# @event.comments.each do |comment| %>
+<% @comments = @event.comments %>
+<%= render @comments,  :page_on => "event#show" %>
+<%# end %>
 
 
 <% if current_user %>

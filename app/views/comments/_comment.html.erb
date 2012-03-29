@@ -1,11 +1,12 @@
 <div class="comment">
     <div class="comment_head">
       <i class="icon-comment"></i> 
-        <span class="comment_guy">
-            <a href="/users/<%= User.find(comment.user_id).id %>">    
-                <%= User.find(comment.user_id).name %>
-            </a>
-        </span>
+      <span class="comment_guy">
+          <a href="/users/<%= User.find(comment.user_id).id %>">    
+              <%= User.find(comment.user_id).name %>
+          </a>
+      </span>
+      <% if page_on == "event#index" %>
         <span class="comment_parent">
             <% @parent=Event.find(comment.event_id) %>
             on:
@@ -13,6 +14,11 @@
                 <%= @parent.name %>
             </a>
         </span>
+      <% elsif page_on == "event#show" %>
+        commented
+      <%end%>
+        
+
         <span class="comment_time">
             <%= time_ago_in_words comment.created_at  %> ago
         </span>
