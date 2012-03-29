@@ -1,5 +1,13 @@
 <% if not current_user %>  
   <%= render :partial => "stranger_teaser" %>
+<%else%>
+  <div id="next_meetup_notice">
+    Our Next Meetup:
+  </div>
+  <% @event=Event.last %>
+  <% if Time.now.utc < @event.time %> 
+    <%= render @event %>
+  <% end %> 
 <%end%>
 
 <% if current_user %>  
@@ -11,14 +19,6 @@
 	<%end%>
 <%end%>
 
-
-<div id="next_meetup_notice">
-  Our Next Meetup:
-</div>
-<% @event=Event.last %>
-<% if Time.now.utc < @event.time %> 
-  <%= render @event %>
-<% end %> 
 
 <div class="row-fluid">
   <div class="span6">
