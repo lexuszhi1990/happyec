@@ -1,6 +1,6 @@
  <div class="event_name">
-    <a href="/events/<%= @event.id %>">
-       <span class="event_time"><%= @event.time.to_formatted_s(:day_month_year) %> >></span> <%= @event.name %>
+    <a href="/events/<%= event_as_past.id %>">
+       <span class="event_time"><%= event_as_past.time.to_formatted_s(:day_month_year) %> >></span> <%= event_as_past.name %>
     </a>
 </div>
 
