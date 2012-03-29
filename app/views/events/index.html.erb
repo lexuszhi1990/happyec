@@ -45,10 +45,6 @@
   <% end %>
 <% end %> 
 
-
-
-
-
 <div class="row-fluid">
   <div class="span6">
       <div id="past_meetups">
@@ -58,11 +54,8 @@
         <div id="past_meetups_body">
           <% @events.reverse.each do |event| %>
             <% if Time.now.utc > event.time %> <%# only show the events past %>
-              <div class="event_name">
-                 <a href="/events/<%= event.id %>">
-                    <span class="event_time"><%= event.time.to_formatted_s(:day_month_year) %> >></span> <%= event.name %>
-                 </a>
-             </div>
+              <% @event=event %> 
+              <%= render :partial => "event_as_past"%>
             <% end %> 
           <% end %>
         </div>
