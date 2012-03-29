@@ -1,0 +1,18 @@
+<div class="meetup_namecard">
+  <div class="meetup_namecard_head">
+   #<%= meetup_namecard.id %>
+   <%= meetup_namecard.name %>
+
+  </div>
+  <div class="meetup_namecard_body">
+    <div class="meetup_namecard_body_right">
+      <img src="http://farm8.staticflickr.com/7272/6867730318_cd0c240750.jpg" />
+    </div>
+<%= truncate(sanitize(meetup_namecard.content), :length => 150) %>
+
+<%= link_to "read more", meetup_namecard %>
+
+  
+  </div>
+</div>
+
