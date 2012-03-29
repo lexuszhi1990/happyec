@@ -6,7 +6,8 @@
   </div>
   <div class="meetup_namecard_body">
     <div class="meetup_namecard_body_right">
-      <img src="http://farm8.staticflickr.com/7272/6867730318_cd0c240750.jpg" />
+      <img src="http://me" />
+      <%= image_tag "http://media.happyec.org/events/#{meetup_namecard.id}.jpg" %>
     </div>
 <%= truncate(sanitize(meetup_namecard.content), :length => 150) %>
 
