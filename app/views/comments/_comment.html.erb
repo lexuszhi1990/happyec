@@ -1,23 +1,25 @@
 <div class="comment">
-	<div class="comment_head">
-		<span class="comment_guy">
-            <i class="icon-comment"></i> 
-			<a href="/users/<%= User.find(comment.user_id).id %>">    
-				<%= User.find(comment.user_id).name %>
-			</a>
-		</span>
-		<span class="comment_time">
-		    <%= time_ago_in_words comment.created_at %> ago
-		</span>
-		<% if current_user && current_user.id == comment.user_id %>
-  		| <%= link_to 'edit', edit_event_comment_path(comment.event, comment) %>
-		<% end %>
-	</div>
-	<div class="comment_body">
-        <%# the "h" here helps, when user type "my book is named <hello>" RC#207 %> 
-		<%=  markdown (h comment.content) %>
-	</div>
-<% if current_user %>
-<span class="reply"> <%= link_to "Reply", new_comment_path(:event_id => comment.event.id, :parent_id => comment.id) %> </span>
-<% end %>
-</div>
+    <div class="comment_head">
+      <i class="icon-comment"></i> 
+        <span class="comment_guy">
+            <a href="/users/<%= User.find(comment.user_id).id %>">    
+                <%= User.find(comment.user_id).name %>
+            </a>
+        </span>
+        <span class="comment_parent">
+            <% @parent=Event.find(comment.event_id) %>
+            on:
+            <a href="/events/<%= @parent.id %>">
+                <%= @parent.name %>
+            </a>
+        </span>
+        <span class="comment_time">
+            <%= time_ago_in_words comment.created_at  %> ago
+        </span>
+    </div> <%# class="comment_head" %>
+    <div class="comment_body">
+        <%# need the "h" to escape <> %>
+        <%= markdown( h comment.content) %>
+    </div>
+</div><%# .comment%>
+
