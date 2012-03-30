@@ -12,6 +12,7 @@ gem 'redcarpet', '1.17.1'
 gem 'ancestry'
 gem 'faraday'
 gem 'pry', :group => :development
+gem 'truncate_html'
 
 # Gems used only for assets and not required
 # in production environments by default.

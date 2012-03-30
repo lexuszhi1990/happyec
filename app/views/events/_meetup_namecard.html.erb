@@ -9,7 +9,7 @@
       <img src="http://me" />
       <%= image_tag "http://media.happyec.org/events/#{meetup_namecard.id}.jpg" %>
     </div>
-<%= truncate(sanitize(meetup_namecard.content), :length => 150) %>
+<%= truncate_html(meetup_namecard.content) %>
 
 <%= link_to "read more", meetup_namecard %>
 
