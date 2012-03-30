@@ -78,7 +78,7 @@ div.big_signup_button {
 .meetup_namecard {
   @include peter-shadow;
   border: solid 1px darken($peter-gray, 20%);
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   height: 160px;
 
   .meetup_namecard_head {
