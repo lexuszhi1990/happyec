@@ -1,12 +1,16 @@
 <% if not current_user %>  
   <%= render :partial => "stranger_teaser" %>
 <%else%>
-  <div class="meetup_notice">
-    Our Next Meetup:
-  </div>
   <% @event=Event.last %>
-  <% if Time.now.utc < @event.time %> 
+  <% if Time.now < @event.time + 60*60*2 %> 
+    <div class="meetup_notice">
+      Our Next Meetup:
+    </div>
     <%= render @event %>
+  <% else %>
+    <div class="meetup_notice">
+      new meetup planing, plz wait
+    </div>
   <% end %> 
 <%end%>
 
@@ -28,7 +32,7 @@
       </div>
       <div id="past_meetups_body">
         <% @events.reverse.each do |event| %>
-          <% if Time.now.utc > event.time %> <%# only show the events past %>
+          <% if Time.now > event.time + 60*60*24 %> <%# only show the events 24 hours later %>
             <%= render :partial => "meetup_namecard", :object => event%>
           <% end %> 
         <% end %>
