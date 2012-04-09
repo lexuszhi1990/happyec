@@ -32,7 +32,7 @@
       </div>
       <div id="past_meetups_body">
         <% @events.reverse.each do |event| %>
-          <% if Time.now > event.time + 60*60*24 %> <%# only show the events 24 hours later %>
+          <% if Time.now > event.time + 60*60*12 %> <%# only show the events 24 hours later %>
             <%= render :partial => "meetup_namecard", :object => event%>
           <% end %> 
         <% end %>
