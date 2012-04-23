@@ -1,27 +1,4 @@
 
-# BUG #2: case insensitive
-if "HH" is already registered, you can login with "hH" or "hh" or "Hh"
-but people can still register with "hH""hh""Hh"
-so now the issue is:
-if I register as Name:"abc", Password"111"
-I can log in with Name:"aBc", password"111"
-this is actually nice.
-But problem is, when I rigister another acount: Name"aBc", password"111"
-then try to login, and I'll end up login as "abc", so this is a BUG.
-FIX: it should be allowed to register as "aBc", when "abc" or "Abc", and things like that already register
-that is make 
-
-  validates_uniqueness_of :name, :email  
-
-case insensitive
-
-http://stackoverflow.com/questions/690664/rails-validates-uniqueness-of-case-sensitivity
-
-# BUG #1: trailing space when user register their name
-when user rigister as "abc", he can still rigister as " abc" or "abc ", so this is a bug
-but when trying to login as " abc" or "abc "(passwd supposed to be the same for all), they end up logining in as "abc"
-this is actully acceptable or nice.
-
 # photo display
 http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 # greate intro on html positoning
