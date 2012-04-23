@@ -31,7 +31,8 @@
         Past Meetups
       </div>
       <div id="past_meetups_body">
-        <% @events.reverse.each do |event| %>
+        <% @recent_events= Event.find(:all, :order => "id desc", :limit => 4) %>
+        <% @recent_events.each do |event| %>
           <% if Time.now > event.time + 60*60*12 %> <%# only show the events 24 hours later %>
             <%= render :partial => "meetup_namecard", :object => event%>
           <% end %> 
@@ -41,7 +42,7 @@
   </div>
   <div class="span6">
       <div class="comments">
-        <% @comments= Comment.find(:all, :order => "id desc", :limit => 5) %>
+        <% @comments= Comment.find(:all, :order => "id desc", :limit => 7) %>
         <%=render @comments, :page_on => "event#index" %> <%# :page_on is defined by myself to decide which page is showing %>
       </div><%# .comments %>
     </div>
