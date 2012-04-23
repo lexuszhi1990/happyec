@@ -1,3 +1,7 @@
+# BUG: trailing space when user register their name
+if "HH" is already registered, you can login with "hH" or "hh" or "Hh"
+but people can still register with "hH""hh""Hh", or even worse "HH<space>"
+FIXME.
 # photo display
 http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 # greate intro on html positoning
