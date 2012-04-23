@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   attr_accessor :password  
   before_save :encrypt_password  
   before_create { generate_token(:token) }
+  before_validation :strip_blanks
+
 
   validates_confirmation_of :password  
 
@@ -40,5 +42,12 @@ class User < ActiveRecord::Base
     begin
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
+  end
+
+  protected
+
+  def strip_blanks
+    self.name = self.name.strip
+    self.email = self.email.strip
   end
 end
