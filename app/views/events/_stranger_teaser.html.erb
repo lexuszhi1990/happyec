@@ -5,8 +5,12 @@
     <div class="screenographic">
       <%= image_tag("meetup_head.jpg") %>
       <div class="bigcount">
+        <% if Time.now < Event.last.time %> 
           <p class="count">Next Meetup is This Sunday Afternoon</p>
           <p class="subtext"><%= link_to "(click to see details)", Event.last%></p><%#FIXME: Event.last can also be past %>
+        <% else %>
+          <p class="count">New Meetup planning, plz wait</p>
+        <% end %> 
       </div>
     </div>
     <div id="below_hero">
