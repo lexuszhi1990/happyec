@@ -5,6 +5,11 @@
   </div>
 
   <div id="login_form_body">
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= form_tag "/local_user_login" do %>  
       <div class="input-prepend">
         <div class="username">Username</div> 
