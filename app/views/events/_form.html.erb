@@ -1,9 +1,8 @@
 <%= simple_form_for @event do |f| %>  
-    <%= f.input :name %>
-    <%= f.input :location %>
-    <%= f.input :content %>
-    <%= f.input :time %>
-    <%= f.input :endtime %>
-    <%= f.button :submit %>
+    <%= f.input :name, :required => false %>
+    <%= f.input :location, :required => false  %>
+    <%= f.input :content, :required => false  %>
+    <%= f.input :time, :required => false  %>
+    <%= f.button :submit, :class => "btn-success" %>
 <% end %>  
 
