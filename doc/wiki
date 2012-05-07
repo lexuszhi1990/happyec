@@ -93,6 +93,7 @@ https://graph.qq.com/user/get_user_info?access_token=186D73F9A3F462D22FEC6028C63
 then I get everything
 { "ret":0, "msg":"", "nickname":"王广忠", "figureurl":"http://qzapp.qlogo.cn/qzapp/100240376/B8B8CF6AB35A92FBF796615A74063BD6/30", "figureurl_1":"http://qzapp.qlogo.cn/qzapp/100240376/B8B8CF6AB35A92FBF796615A74063BD6/50", "figureurl_2":"http://qzapp.qlogo.cn/qzapp/100240376/B8B8CF6AB35A92FBF796615A74063BD6/100", "gender":"男", "vip":"0", "level":"0" 
 
+NOTE: the figureurl can be changed at qzone.qq.com
 
 ## the oauth way
 http://www.oschina.net/question/54100_27146
