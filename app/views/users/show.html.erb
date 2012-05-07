@@ -19,7 +19,7 @@
 
 <h2 class="comments">Comments:</h2>
 
-<% @user.comments.each do |comment| %>
+<% @user.comments.reverse.each do |comment| %>
 		<div class="comment">
 			<div class="comment_head">
 				<span class="comment_time">
