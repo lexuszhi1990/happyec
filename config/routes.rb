@@ -4,6 +4,7 @@ Ec::Application.routes.draw do
   resources :events
 
   match "/auth/qq" => "users#login_from_qq"
+  match "/all_events" => "events#all_events"
   match "/auth/qq/callback" => "users#login_with_qq"
   get "log_in" => "users#login_form", :as => "log_in"  
   match "/local_user_login" =>"users#login" # when user try to login with their local account

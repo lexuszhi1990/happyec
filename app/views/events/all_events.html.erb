@@ -1,0 +1,6 @@
+<h1> All Our Meetups since Day 1:</h1>
+<hr>
+  <% @all_events= Event.find(:all, :order => "id desc") %>
+  <% @all_events.each do |event| %>
+      <%= render :partial => "meetup_namecard", :object => event%>
+  <% end %>

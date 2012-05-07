@@ -8,6 +8,9 @@ class EventsController < ApplicationController
       format.xml  { render :xml => @events }
     end
   end
+  def all_events
+    @events = Event.all
+  end
 
   def show
     @event = Event.find(params[:id])
