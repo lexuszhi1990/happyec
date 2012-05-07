@@ -1,7 +1,7 @@
 <h2 class="profile">Profile:</h2>
 
 <%= image_tag avatar_url(@user) %>
-<% link_to "Change your avatar at Gravatar.com.", "http://gravatar.com" %>  We are using <%= @user.email %>
+<%= link_to "Change your avatar at Gravatar.com.", "http://gravatar.com" %>  We are using <%= @user.email %>
 
 <div class="profile">
   Name: <%= @user.name %>
