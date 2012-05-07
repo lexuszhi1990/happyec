@@ -1,0 +1,7 @@
+<h1> All Updates on This Site: </h1>
+<hr>
+  <div class="comments">
+    <% @all_comments= Comment.find(:all, :order => "id desc") %>
+    <%=render @all_comments, :page_on => "event#index" %> <%# :page_on is defined by myself to decide which page is showing %>
+  </div>
+<%# in the future, there will probably be more than comments on this page %>
