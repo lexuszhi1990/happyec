@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120507021530) do
+ActiveRecord::Schema.define(:version => 20120507024039) do
 
   create_table "comments", :force => true do |t|
     t.integer  "event_id"
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20120507021530) do
     t.string   "password_salt"
     t.string   "qqopenid"
     t.string   "token"
-    t.string   "image_url"
   end
 
 end
