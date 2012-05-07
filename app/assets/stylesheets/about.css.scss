@@ -1,0 +1,41 @@
+/* about */
+.spacefield{
+  position:absolute;
+  left:0;
+  top:40px; /* for the bootstrap nav_bar */
+  width:100%;
+  height:170px;
+  overflow:hidden;
+  background-color:#000!important;
+}
+
+#about_header{
+  width:100%;
+  height:170px;
+  position:relative;
+  overflow:hidden;
+  margin-top:-30px;
+  margin-bottom:25px;
+}
+#about_header .intro{
+  position: absolute;
+  margin-top: 40px;
+  font-weight:bold;
+  color:#fff;
+  line-height:1.2;
+  font-size:36px;
+  width:580px;
+  text-shadow:0 0 20px #549ef9;
+} 
+
+
+#parallax_octocat{
+  position: absolute;
+  left:700px;
+  z-index: 1000;
+} 
+#parallax_earth{
+  position: relative;
+  top:-10px;
+  left:600px;
+}
