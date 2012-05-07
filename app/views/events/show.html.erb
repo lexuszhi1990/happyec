@@ -2,11 +2,7 @@
   Meetup # <%= @event.id %>
 </div>
 <%= render @event %>
-<div class="row-fluid">
-  <div class="span2">
-   placeholder
-  </div>
-  <div class="span8">
+
     <%# @event.comments.each do |comment| %>
     <% @comments = @event.comments %>
     <%= render @comments,  :page_on => "event#show" %>
@@ -29,7 +25,3 @@
         <br \>
     <% end %>
   </div>
-  <div class="span2">
-   placeholder
-  </div>
-</div>
