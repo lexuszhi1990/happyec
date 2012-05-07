@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
     User.new.tap do |user|
       user.qqopenid = openid
       user.name = qqhash["nickname"]
+      user.image_url = qqhash["figureurl_1"]
       user.email = "not given"
       user.save!
     end
