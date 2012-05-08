@@ -1,14 +1,10 @@
-<%= form_for @event do |f| %>  
-   
-  <%= f.label "Name" %>
-  <%= f.text_field :name %>
-  <%= f.label "Location" %>
-  <%= f.text_field :location %>
-  <%= f.label "Content" %>
-  <%= f.text_area :content %>    
-  <%= f.label "Time" %>
-  <%= f.datetime_select :time, :default => Event.last.time + 7.days %>
-  <br >
-  <%= f.submit "Create Event" %>
+<%= simple_form_for @event do |f| %>  
+  <%= f.input :name, :required => false %>
+  <%= f.input :location, :required => false  %>
+  <%= f.input :content, :required => false  %>
+  <%= f.input :time, :required => false, :default => Event.last.time + 7.days %>
+  <div id="create_event_btn">
+    <%= f.button :submit, :class => "btn btn-large btn-success" %>
+  </div>
 <% end %>  
 
