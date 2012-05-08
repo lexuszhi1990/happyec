@@ -151,23 +151,29 @@ div.event_content {   /*event_body is a better name FIXME */
   padding:10px;
   border: solid 2px #fff; 
 }
-input#event_name {
-  @include github-issue-input
-}
-input#event_location {
-  @include github-issue-input
-}
 
-/*** events#new  ***/
-textarea#event_content
-{ 
-  width: $main_width; 
-  height: 200px;
-  @include textarea-style;
-}
+#new_event {
+  padding-bottom: 20px;
+  input#event_name {
+    @include github-issue-input
+  }
+  input#event_location {
+    @include github-issue-input
+  }
+  textarea#event_content
+  { 
+    width: $main_width; 
+    height: 200px;
+    @include textarea-style;
+  }
 
-label.control-label {
-  font-weight:bold;
+  label.control-label {
+    font-weight:bold;
+  }
+
+  #create_event_btn {
+    float: right;
+  }
 }
 
 /* comment */
