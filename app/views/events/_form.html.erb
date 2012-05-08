@@ -8,7 +8,11 @@
   %>
 
   <%= f.input :content, :required => false  %>
-  <%= f.input :time, :required => false, :default => Event.last.time + 7.days %>
+  <%= f.input :time, 
+      :required => false, 
+      :default => Event.last.time + 7.days,
+      :discard_minute => true
+  %>
   <div id="create_event_btn">
     <%= f.button :submit, :class => "btn btn-large btn-success" %>
   </div>
