@@ -1,6 +1,12 @@
 <%= simple_form_for @event do |f| %>  
   <%= f.input :name, :required => false %>
-  <%= f.input :location, :required => false  %>
+  <%= f.input :location, 
+      :required => false, 
+      :hint => "* Default is Bookbar", 
+      :placeholder => "Bookbar",  
+      :input_html => {:value => 'Bookbar'}
+  %>
+
   <%= f.input :content, :required => false  %>
   <%= f.input :time, :required => false, :default => Event.last.time + 7.days %>
   <div id="create_event_btn">
