@@ -1,28 +1,24 @@
 <div id="user_show">
-  <h2 class="profile">Profile:</h2>
-  <%= image_tag avatar_url(@user), :size => "48x48" %>
-  <%= link_to "Change your avatar at Gravatar.com.", "http://gravatar.com" %>  We are using <%= @user.email %>
+  <a href="http://gravatar.com">
+    <%= image_tag avatar_url(@user), :size => "48x48" %>
+  </a>
 
+  <%= link_to "Edit Your Profile", "/account" %>
   <div class="profile">
     Name: <%= @user.name %>
     <br \>
     Email: <%= @user.email %>
     <br \>
-    <% if @user != nil && current_user != nil %>
-      <% if @user.id == current_user.id %>
-          <%= link_to "edit", edit_user_path(@user)%>
-      <% end %>
+    <% if @user.url.present? %>
+    URL: <a href="<%= @user.url %>"> <%= @user.url %></a> 
     <% end %>
   </div>
 
-  <% if current_user %>  
+  <% if current_user.name == "happypeter" && @user.name == "happypeter" %>  
     <div id="admin_zone">
-      <% @user= User.find(current_user.id) %>
-      <% if @user.name == "happypeter"%>
-          <%= link_to 'Post a New Event', new_event_path %>
-          |
-          <%= link_to 'Mail to All Members', "/new_mail" %>
-      <%end%>
+      <%= link_to 'Post a New Event', new_event_path %>
+      |
+      <%= link_to 'Mail to All Members', "/new_mail" %>
     </div>
   <%end%>
 

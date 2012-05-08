@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of :password  
 
-  validates_presence_of :name, :email, :password
+  validates_presence_of :name, :email 
+  validates_presence_of :password, :on => :create
   validates_uniqueness_of :name, :email, :case_sensitive => false
   def self.create_from_hash(qqhash, openid)
     User.new.tap do |user|

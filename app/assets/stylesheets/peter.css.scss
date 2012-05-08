@@ -257,6 +257,24 @@ span.event_time {
     margin: 20px;
   }
 }
+#user_edit {
+  padding-bottom: 20px;
+  input.string {
+    width: 400px;
+    @include github-issue-input
+  }
+  textarea
+  { 
+    width: $main_width; 
+    height: 200px;
+    @include textarea-style;
+  }
+
+  label{
+    font-weight:bold;
+  }
+}
+
 
 /* footer */
 div.footer {

@@ -3,6 +3,8 @@ Ec::Application.routes.draw do
 
   resources :events
 
+  match "/account" => "users#account"
+  match "/settings/profile" =>"users#edit"
   match "/auth/qq" => "users#login_from_qq"
   match "/all_events" => "events#all_events"
   match "/all_updates" => "comments#all_updates"

@@ -1,16 +1,11 @@
-<%# title "Edit Profile" %>
-
-<div class="content">
-<%= form_for @user do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </p>
-  <p><%= f.submit "Update Profile" %></p>
-<% end %>
+<div id="user_edit">
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :name, :required => false %>
+    <%= f.input :email, :required => false %>
+    <%= f.input :url, :required => false %>
+    <%= f.button :submit, :value => "Save Change", :class => "btn btn-large btn-success" %>
+  <% end %>
+  <%= image_tag avatar_url(@user), :size => "48x48" %>
+  <%= link_to "Change your avatar at Gravatar.com.", "http://gravatar.com" %>  
+  We are using <%= @user.email %>
 </div>

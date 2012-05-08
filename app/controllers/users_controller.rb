@@ -8,7 +8,10 @@ class UsersController < ApplicationController
     @user = User.new  
   end
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
+  end
+  def account 
+    redirect_to "/settings/profile"
   end
 
   def update
