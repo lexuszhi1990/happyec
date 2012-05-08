@@ -39,6 +39,7 @@ $github-blue:#839ba9;
 
 @mixin textarea-style {
   display: inline-block;
+  padding: 5px;
   border: 1px solid darken($peter-gray, 10%);
   font-size: 120%;
   @include rounded-corners(3px);
@@ -299,7 +300,6 @@ div.nice_comment {
   {
     width: 930px; 
     height: 88px;
-    padding: 4px;
     margin-bottom: 9px;
     margin-left:10px;
     margin-right:10px;
@@ -425,3 +425,21 @@ input:focus {
   }
 }
 
+/* mail */
+#new_mail {
+  padding-bottom: 20px;
+  textarea
+  { 
+    width: $main_width; 
+    height: 200px;
+    @include textarea-style;
+  }
+
+  label{
+    font-weight:bold;
+  }
+
+  #send_mail_btn {
+    float: right;
+  }
+}
