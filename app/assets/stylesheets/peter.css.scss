@@ -248,7 +248,14 @@ span.event_time {
   font-size: 80%;
 }
 
-
+#user_show {
+  #admin_zone {
+    border: solid 2px $peter-gray;
+    font-size: 160%;
+    padding: 20px;
+    margin: 20px;
+  }
+}
 
 /* footer */
 div.footer {

@@ -14,15 +14,6 @@
   <% end %> 
 <%end%>
 
-<% if current_user %>  
-	<% @user= User.find(current_user.id) %>
-	<% if @user.name == "happypeter"%>
-		<%= link_to 'Post a New Event', new_event_path %>
-        <br \>
-		<%= link_to 'Mail to All Members', "/new_mail" %>
-	<%end%>
-<%end%>
-
 
 <div class="row-fluid">
   <div class="span6">
