@@ -76,7 +76,7 @@ div.big_signup_button {
   font-weight: bold;
 }
 
-input.btn { 
+.btn { 
   /* all botton's default font-weight */
   font-weight: bold;
 }
@@ -229,20 +229,6 @@ span.username {
 span.password {
   font-size: 70%;
 }
-h2.profile {
-  font-size: 120%;
-}
-h2.comments {
-  font-size: 120%;
-}
-div.profile {
-  border: solid 1px #307D7E;
-  padding:10px;
-}
-div.profile a {
-  text-decoration:underline;
-  font-size: 70%;
-}
 span.event_time {
   color: #aaa;
   font-family: Monaco, "Courier New", monospace;
@@ -250,12 +236,32 @@ span.event_time {
 }
 
 #user_show {
+  .profile {
+    .edit_profile_btn {
+      text-align: right;
+    }
+  }
   #admin_zone {
     border: solid 2px $peter-gray;
     font-size: 160%;
     padding: 20px;
     margin: 20px;
   }
+  #user_name {
+    font-size: 250%;
+    font-weight: bold;
+    margin-bottom: 12px ;
+  }
+  #user_email {
+    font-size:140%;
+    color: darken($peter-gray, 50%);
+    margin-bottom: 5px;
+  }
+  #user_bio {
+    color: darken($peter-gray, 50%);
+    font-style: italic;
+  }
+  
 }
 #user_edit {
   padding-bottom: 20px;

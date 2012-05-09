@@ -2,7 +2,7 @@
   <%= render :partial => "stranger_teaser" %>
 <%else%>
   <% @event=Event.last %>
-  <% if Time.now < @event.time + 60*60*2 %> 
+  <% if !@event.nil? && Time.now < @event.time + 60*60*2 %> 
     <div class="meetup_notice">
       Our Next Meetup:
     </div>

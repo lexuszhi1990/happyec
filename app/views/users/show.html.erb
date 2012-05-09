@@ -1,18 +1,36 @@
 <div id="user_show">
-  <a href="http://gravatar.com">
-    <%= image_tag avatar_url(@user), :size => "48x48" %>
-  </a>
 
-  <%= link_to "Edit Your Profile", "/account" %>
-  <div class="profile">
-    Name: <%= @user.name %>
-    <br \>
-    Email: <%= @user.email %>
-    <br \>
+<div class="row-fluid profile">
+  <div class="span2">
+    <a href="http://gravatar.com">
+      <%= image_tag avatar_url(@user), :size => "120x120" %>
+    </a>
+  </div>
+
+  <div class="span7">
+    <div id="user_name">
+      <%= @user.name %>
+    </div>
+    <div id="user_email">
+      <%= @user.email %>
+   </div>
+    <% if @user.bio.present? %>
+      <div id="user_bio">
+        <%= @user.bio %> 
+      </div>
+    <% end %>
     <% if @user.url.present? %>
-    URL: <a href="<%= @user.url %>"> <%= @user.url %></a> 
+      <a href="<%= @user.url %>"> <%= @user.url %></a> 
     <% end %>
   </div>
+
+  <div class="span3 edit_profile_btn">
+    <% if current_user && current_user.name == @user.name %>  
+      <a class="btn" href="/account">Edit Your Profile</a>
+    <% end %>
+  </div>
+</div>
+
 
   <% if current_user && current_user.name == "happypeter" && @user.name == "happypeter" %>  
     <div id="admin_zone">
