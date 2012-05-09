@@ -2,7 +2,7 @@
 <div class="row-fluid profile">
   <div class="span2">
     <a href="http://gravatar.com">
-      <%= image_tag avatar_url(@user), :size => "120x120"%>
+      <%= image_tag avatar_url(@user),:alt => "Your Image", :size => "120x120"%>
     </a>
   </div>
 
@@ -27,17 +27,16 @@
     <% if current_user && current_user.name == @user.name %>  
       <a class="btn" href="/account">Edit Your Profile</a>
     <% end %>
+  <% if current_user && current_user.name == "happypeter" && @user.name == "happypeter" %>  
+    <div id="admin_zone">
+      <%= link_to 'Post a New Event', new_event_path, :class => "btn btn-danger"%>
+      <%= link_to 'Mail to All Members', "/new_mail", :class => "btn btn-success" %>
+    </div>
+  <%end%>
   </div>
 </div>
 
 
-  <% if current_user && current_user.name == "happypeter" && @user.name == "happypeter" %>  
-    <div id="admin_zone">
-      <%= link_to 'Post a New Event', new_event_path %>
-      |
-      <%= link_to 'Mail to All Members', "/new_mail" %>
-    </div>
-  <%end%>
 
   <h2 class="comments">Comments:</h2>
 

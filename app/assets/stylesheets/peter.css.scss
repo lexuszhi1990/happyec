@@ -246,10 +246,13 @@ span.event_time {
     }
   }
   #admin_zone {
-    border: solid 2px $peter-gray;
     font-size: 160%;
-    padding: 20px;
-    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px ;
+    float: right;
+    .btn {
+      margin-bottom: 10px ;
+    }
   }
   #user_name {
     font-size: 250%;
