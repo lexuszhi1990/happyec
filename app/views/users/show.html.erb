@@ -1,13 +1,12 @@
 <div id="user_show">
-
 <div class="row-fluid profile">
   <div class="span2">
     <a href="http://gravatar.com">
-      <%= image_tag avatar_url(@user), :size => "120x120" %>
+      <%= image_tag avatar_url(@user), :size => "120x120"%>
     </a>
   </div>
 
-  <div class="span7">
+  <div class="span7 main_info">
     <div id="user_name">
       <%= @user.name %>
     </div>
@@ -63,3 +62,8 @@
           </div>
   <%end%>
 </div><!-- user_show -->
+
+
+<script type="text/javascript" charset="utf-8">
+  $('img').tooltip({placement: 'bottom', title: "Change your avatar at gravatar.com"})
+</script>
