@@ -12,14 +12,14 @@
 
 <div class="row-fluid">
   <div class="span3">
-<ul class="about_nav">
-  <li><%= link_to_unless_current "About", "/about" %></li>
-  <li><%= link_to_unless_current "Location", "/about/location" %></li>
-  <li><%= link_to_unless_current "People", "/about/people" %></li>
-</ul>
-  <h3>Contact</h3>
-  We'd be glad to hear from you, if you have anything to say, you can email the site admin <%= link_to "happypeter", User.find(1) %>, 
-
-  happypeter1983@gmail.com
+    <ul class="nav nav-list">
+      <li class="<%= request.path == "/about"? "active about":"about" %>"><a href="/about"><i class="icon-github-sign"></i>About</a></li>
+      <li class="<%= request.path == "/about/people"? "active people":"people" %>"><a href="/about/people"><i class="icon-user"></i>People</a></li>
+      <li class="<%= request.path == "/about/location"? "active location":"location" %>"><a href="/about/location"><i class="icon-map-marker"></i>Location</a></li>
+    </ul>
+    <h3>Contact</h3>
+    We'd be glad to hear from you, if you have anything to say, you can email the site admin <%= link_to "happypeter", User.find(1) %>, 
+    happypeter1983@gmail.com
   </div>
+
   <div class="span9">
