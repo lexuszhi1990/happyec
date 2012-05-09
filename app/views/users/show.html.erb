@@ -14,7 +14,7 @@
     <% end %>
   </div>
 
-  <% if current_user.name == "happypeter" && @user.name == "happypeter" %>  
+  <% if current_user && current_user.name == "happypeter" && @user.name == "happypeter" %>  
     <div id="admin_zone">
       <%= link_to 'Post a New Event', new_event_path %>
       |
