@@ -19,6 +19,7 @@ Ec::Application.routes.draw do
   match "/send_mail" =>"users#sendmail" 
   get "logout" => "users#logout", :as => "logout"  
   get "sign_up" => "users#new", :as => "sign_up"  
+  match "/forget_password" =>"password_resets#new", :as => "forget_password"
 
   root :to => "events#index"  
   resources :users
