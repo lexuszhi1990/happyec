@@ -9,4 +9,6 @@ class InfoController < ApplicationController
     @title = "We give people chance to do show off their talent."
     @users = User.all
   end
+  def password_mail_sent_notice
+  end
 end

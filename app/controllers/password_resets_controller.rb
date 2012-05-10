@@ -2,11 +2,14 @@ class PasswordResetsController < ApplicationController
   def create
     user = User.find_by_email(params[:email])
     user.send_password_reset if user
-    redirect_to root_url, :notice => "Email sent with password reset instructions."
+    redirect_to "/password_mail_sent"
   end
 
   def edit
-    @user = User.find_by_password_reset_token!(params[:id])
+    @user = User.find_by_password_reset_token(params[:id])
+    if @user.nil? # this happens when user click twice the sendmail button, and get more than one mail, but not use the lastest mail
+       render :new, :alert =>"Invalid login token; please enter your email again."
+    end
   end
 
   def update
