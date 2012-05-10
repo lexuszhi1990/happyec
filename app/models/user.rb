@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :comments
   attr_accessor :password  
   before_save :encrypt_password  
-  before_create { generate_token(:token) }
+  before_create { generate_token(:auth_token) }
   before_validation :strip_blanks
 
 
@@ -12,14 +12,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :email 
   validates_presence_of :password, :on => :create
   validates_uniqueness_of :name, :email, :case_sensitive => false
-  def self.create_from_hash(qqhash, openid)
-    User.new.tap do |user|
-      user.qqopenid = openid
-      user.name = qqhash["nickname"]
-      user.email = "not given"
-      user.save!
-    end
-  end
+
   def self.authenticate(name, password)  
     user = find_by_name(name)  
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)  
