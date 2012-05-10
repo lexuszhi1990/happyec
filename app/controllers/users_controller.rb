@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
   end
   def account 
-    redirect_to "/settings/profile"
+    redirect_to set_profile_path
   end
 
   def update

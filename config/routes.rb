@@ -7,7 +7,7 @@ Ec::Application.routes.draw do
 
   match "/account" => "users#account"
   match "/password_mail_sent" =>"info#password_mail_sent_notice"
-  match "/settings/profile" =>"users#edit"
+  match "/settings/profile" =>"users#edit", :as => "set_profile"
   match "/all_events" => "events#all_events"
   match "/all_updates" => "comments#all_updates"
   match "/about" => "info#about"

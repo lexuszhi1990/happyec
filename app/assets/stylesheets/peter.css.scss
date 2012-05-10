@@ -474,3 +474,13 @@ input:focus {
     float: right;
   }
 }
+
+#password_sent_confirmation{
+  background:url("https://a248.e.akamai.net/assets.github.com/images/modules/account/password-sent-success.png") white no-repeat center left;
+  margin:90px 0 100px 120px;
+  padding:15px 0 10px 70px;
+}
+#password_sent_confirmation p {
+  width:600px;
+  font-size:18px;
+}

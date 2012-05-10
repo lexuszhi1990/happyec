@@ -1,3 +1,9 @@
+<% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+    <%= msg %>
+  </div>
+<% end %>
+<hr>
 <div id="user_edit">
   <%= simple_form_for @user do |f| %>
     <%= f.input :name, :required => false %>
