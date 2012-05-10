@@ -2,6 +2,7 @@
 <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
   <%= msg %>
 </div>
+<% end %>
 <%= form_tag password_resets_path, :method => :post do %>
   <div class="field">
     <%= label_tag :email %>
