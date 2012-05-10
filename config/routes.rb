@@ -6,19 +6,18 @@ Ec::Application.routes.draw do
   resources :events
 
   match "/account" => "users#account"
+  match "/password_mail_sent" =>"info#password_mail_sent_notice"
   match "/settings/profile" =>"users#edit"
-  match "/auth/qq" => "users#login_from_qq"
   match "/all_events" => "events#all_events"
   match "/all_updates" => "comments#all_updates"
   match "/about" => "info#about"
   match "/about/location" => "info#location"
   match "/about/people" => "info#people" # this used to be "users#index"
-  match "/auth/qq/callback" => "users#login_with_qq"
-  get "log_in" => "users#login_form", :as => "log_in"  
-  match "/local_user_login" =>"users#login" # when user try to login with their local account
+  match "/login" =>"users#login", :as => "login"
+  match "/user_auth" =>"users#auth"
   match "/new_mail" =>"users#newmail" 
   match "/send_mail" =>"users#sendmail" 
-  get "log_out" => "users#logout", :as => "log_out"  
+  get "logout" => "users#logout", :as => "logout"  
   get "sign_up" => "users#new", :as => "sign_up"  
 
   root :to => "events#index"  

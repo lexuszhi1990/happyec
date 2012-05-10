@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   def new  
     @user = User.new  
   end
-  def login_form
-  end
   def newmail  
     @user = User.new  
   end
@@ -26,16 +24,22 @@ class UsersController < ApplicationController
       end
     end
   end  
-    
 
-  def login  #login with a local account
+  def login
+  end
+
+  def auth
     user = User.authenticate(params[:name], params[:password])  
     if user
+      if !user.auth_token.present?
+        # for my old db record where no such colum
+        User.add_auth_token(user)
+      end
       cookies.permanent[:auth_token] = user.auth_token
       redirect_to root_url, :notice => "Logged in!"
     else
       flash.alert = "Incorrect name or password"
-      redirect_to :action => "login_form"
+      redirect_to :action => "login"
     end
   end
 

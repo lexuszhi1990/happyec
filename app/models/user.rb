@@ -26,6 +26,11 @@ class User < ActiveRecord::Base
       nil  
     end  
   end  
+  def self.add_auth_token(user)
+    @no_token_user = user
+    @no_token_user.generate_token(:auth_token)
+    @no_token_user.save!
+  end
   def encrypt_password  
     if password.present?  
       self.password_salt = BCrypt::Engine.generate_salt  
@@ -39,7 +44,7 @@ class User < ActiveRecord::Base
     save!
     PeterMailer.password_reset(self).deliver
   end
-
+  
   def generate_token(column)
     begin
       self[column] = SecureRandom.urlsafe_base64

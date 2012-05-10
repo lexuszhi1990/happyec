@@ -10,7 +10,7 @@
         <%= msg %>
       </div>
     <% end %>
-    <%= form_tag "/local_user_login" do %>  
+    <%= form_tag "/user_auth" do %>  
       <div class="input-prepend">
         <div class="username">Username</div> 
         <%= text_field_tag :name, params[:name] %>  
