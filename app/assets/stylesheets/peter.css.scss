@@ -28,8 +28,9 @@ $github-blue:#839ba9;
   border-top: 2px solid darken($peter-gray, 10%) ;
   border-left: 2px solid darken($peter-gray, 10%) ;
   font-size: 120%;
-  &:focus
-  { /* do not chage border size, just change its color, otherwise, the text below the input will move */
+  &:focus {
+    //do not chage border size, just change its color, otherwise, other
+    //elements will be moved
     border: 1px solid darken($peter-gray, 30%) ;
     border-top: 2px solid darken($peter-gray, 30%) ;
     border-left: 2px solid darken($peter-gray, 30%) ;

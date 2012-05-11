@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   # GET /events.xml
   def index
     @events = Event.all
+    session[:return_to] = request.url
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }
@@ -14,6 +15,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    session[:return_to] = request.url
 
     respond_to do |format|
       format.html # show.html.erb

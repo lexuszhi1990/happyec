@@ -26,6 +26,8 @@ class UsersController < ApplicationController
   end  
 
   def login
+    session[:return_to] = nil
+    session[:return_to] = params[:return_to] if params[:return_to]
   end
 
   def auth
@@ -36,7 +38,8 @@ class UsersController < ApplicationController
         User.add_auth_token(user)
       end
       cookies.permanent[:auth_token] = user.auth_token
-      redirect_to root_url, :notice => "Logged in!"
+      redirect_to_target_or_default root_url, :notice => "Logged in!"
+
     else
       flash.alert = "Incorrect name or password"
       redirect_to :action => "login"
