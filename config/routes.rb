@@ -11,6 +11,7 @@ Ec::Application.routes.draw do
   match "/all_events" => "events#all_events"
   match "/all_updates" => "comments#all_updates"
   match "/about" => "info#about"
+  match "/plans" => "info#plans", :as => "plans"
   match "/about/location" => "info#location"
   match "/about/people" => "info#people" # this used to be "users#index"
   match "/login" =>"users#login", :as => "login"
