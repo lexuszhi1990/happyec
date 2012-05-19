@@ -71,6 +71,7 @@ class UsersController < ApplicationController
 
 
   def show
+    session[:return_to] = request.url
     if params[:name]
       @user = User.where(:name => params[:name]).first
     else
