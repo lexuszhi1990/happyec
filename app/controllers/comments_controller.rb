@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @comments }
+      format.js 
     end
   end
 
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @comment }
+      format.js
     end
   end
 
@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @comment }
+      format.js
     end
   end
 
@@ -46,10 +46,10 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to_target_or_default(root_url, :notice => 'Comment was successfully created.') }
-        format.xml  { render :xml => @comment, :status => :created, :location => @comment }
+        format.js
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -62,10 +62,10 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
         format.html { redirect_to_target_or_default(root_url) }
-        format.xml  { head :ok }
+        format.js
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -78,7 +78,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to_target_or_default(root_url) }
-      format.xml  { head :ok }
+      format.js
     end
   end
 end

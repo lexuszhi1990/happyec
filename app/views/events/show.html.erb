@@ -3,24 +3,20 @@
 </div>
 <%= render @event %>
 
-    <%# @event.comments.each do |comment| %>
-    <% @comments = @event.comments %>
-    <%= render @comments,  :page_on => "event#show" %>
-    <%# end %>
+<%= render :partial => "comments/editable_comment", :collection => @event.comments %>
 
-
-    <% if current_user %>
-      <div class="nice_comment">
-      <%= simple_form_for(Comment.new(:event_id => @event.id, :user_id => current_user.id)) do |f| %>
-        <%= f.hidden_field :event_id %>
-        <%= f.hidden_field :user_id  %>
-        <%= f.input :content, :required => false, :label => "Comment on this meetup", :col => 70 %>
-        <div id="comment_btn">
-          <%= f.button :submit, "Comment on this meetup", :class => "btn btn-success"  %>
-        </div>
-      <% end %>
+<% if current_user %>
+  <div class="nice_comment">
+    <%= simple_form_for(Comment.new(:event_id => @event.id, :user_id => current_user.id)) do |f| %>
+      <%= f.hidden_field :event_id %>
+      <%= f.hidden_field :user_id  %>
+      <%= f.input :content, :required => false, :label => "Comment on this meetup", :col => 70 %>
+      <div id="comment_btn">
+        <%= f.button :submit, "Comment on this meetup", :class => "btn btn-success"  %>
       </div>
-    <% else %>
-        <%= link_to "Log in", login_path(:return_to => request.url) %> to Comment.
-        <br \>
     <% end %>
+  </div>
+<% else %>
+  <%= link_to "Log in", login_path(:return_to => request.url) %> to Comment.
+  <br \>
+<% end %>

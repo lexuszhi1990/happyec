@@ -45,7 +45,7 @@
   <div class="span6">
       <div class="comments">
         <% @comments= Comment.find(:all, :order => "id desc", :limit => 7) %>
-        <%=render @comments, :page_on => "event#index" %> <%# :page_on is defined by myself to decide which page is showing %>
+        <%=render @comments %> 
       </div><%# .comments %>
       <%= link_to "Click to See All Updates", "/all_updates/" %>
     </div>

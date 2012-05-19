@@ -17,10 +17,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to(@user, :notice => 'Profile was successfully updated.') }
-        format.xml  { head :ok }
+        format.js
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end  

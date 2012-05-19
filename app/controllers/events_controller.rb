@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     session[:return_to] = request.url
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @events }
+      format.js
     end
   end
   def all_events
@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @event }
+      format.js
     end
   end
 
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
     @event = Event.new
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @event }
+      format.js
     end
   end
 
@@ -43,10 +43,10 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         format.html { redirect_to(@event, :notice => 'Event was successfully created.') }
-        format.xml  { render :xml => @event, :status => :created, :location => @event }
+        format.js
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,10 +58,10 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.update_attributes(params[:event])
         format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
-        format.xml  { head :ok }
+        format.js
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -74,7 +74,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(events_url) }
-      format.xml  { head :ok }
+      format.js
     end
   end
 end

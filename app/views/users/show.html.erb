@@ -36,36 +36,8 @@
   </div>
 </div>
 
-
-
   <h2 class="comments">Comments:</h2>
-
-  <% @user.comments.reverse.each do |comment| %>
-          <div class="comment">
-              <div class="comment_head">
-                  <span class="comment_time">
-                      <%zone = ActiveSupport::TimeZone.new("Beijing")%>
-                      <%= comment.created_at.in_time_zone(zone).to_formatted_s(:long_ordinal)  %>
-                  </span>
-                  <span class="comment_parent">
-                      <% @parent=Event.find(comment.event_id) %>
-                      on:
-                      <a href="/events/<%= @parent.id %>">
-                          <%= @parent.name %>
-                      </a>
-                  </span>
-              </div>
-              <div class="comment_body">
-                <% if current_user && current_user.id == comment.user.id %>
-                  <ul class="actions">
-                    <li><%= link_to "Edit", edit_comment_path(comment), :class => "btn btn-small" %></li>
-                    <li><%= link_to "Delete", comment, :confirm => "Are you sure you want to delete this comment?", :method => :delete, :class => "btn btn-small" %></li>
-                  </ul>
-                <% end %>
-                <%= markdown(h comment.content) %>
-              </div>
-          </div>
-  <%end%>
+  <%= render @user.comments.reverse %>
 </div><!-- user_show -->
 
 

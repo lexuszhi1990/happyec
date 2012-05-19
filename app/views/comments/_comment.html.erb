@@ -1,29 +1,19 @@
-<div class="comment">
+<%= div_for comment do %>
     <div class="comment_head">
       <i class="icon-comment"></i> 
       <%= link_to comment.user.name, comment.user%>
-      <% if page_on == "event#index" %>
         <span class="comment_parent">
-          on:
+          commented on:
           <% @parent=Event.find(comment.event_id) %>
           <%= link_to @parent.name, @parent %>
         </span>
-      <% elsif page_on == "event#show" %>
-        commented
-      <%end%>
       <span class="comment_time">
           <%= time_ago_in_words comment.created_at  %> ago
       </span>
     </div> <%# class="comment_head" %>
     <div class="comment_body">
-      <% if current_user && current_user.id == comment.user.id %>
-        <ul class="actions">
-          <li><%= link_to "Edit", edit_comment_path(comment), :class => "btn btn-small" %></li>
-          <li><%= link_to "Delete", comment, :confirm => "Are you sure you want to delete this comment?", :method => :delete, :class => "btn btn-small" %></li>
-        </ul>
-      <% end %>
       <%# need the "h" to escape <> %>
       <%= markdown( h comment.content) %>
     </div>
-</div><%# .comment%>
+<% end %><%# .comment%>
 

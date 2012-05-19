@@ -8,9 +8,9 @@ $github-blue:#839ba9;
   -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#839ba9',endColorstr='#405a6a')";
 }
 @mixin peter-shadow {
-  -webkit-box-shadow: 0 0 6px $peter-gray;
-  -moz-box-shadow: 0 0 6px $peter-gray;
-  box-shadow: 0 0 6px $peter-gray;
+  -webkit-box-shadow: 0 0 6px darken($peter-gray, 10%);
+  -moz-box-shadow: 0 0 6px darken($peter-gray, 10%);
+  box-shadow: 0 0 6px darken($peter-gray, 10%);
 }
 @mixin no-shadow {
   -webkit-box-shadow: none;
@@ -29,7 +29,7 @@ $github-blue:#839ba9;
   border-left: 2px solid darken($peter-gray, 10%) ;
   font-size: 120%;
   &:focus {
-    //do not chage border size, just change its color, otherwise, other
+    //do not change border size, just change its color, otherwise, other
     //elements will be moved
     border: 1px solid darken($peter-gray, 30%) ;
     border-top: 2px solid darken($peter-gray, 30%) ;
@@ -41,13 +41,13 @@ $github-blue:#839ba9;
 @mixin textarea-style {
   display: inline-block;
   padding: 5px;
-  border: 1px solid darken($peter-gray, 10%);
+  border: 1px solid darken($peter-gray, 20%);
   font-size: 120%;
   @include rounded-corners(3px);
   @include no-shadow;
   &:focus
   {
-    border: 1px solid darken($peter-gray, 30%) ;
+    border: 1px solid darken($peter-gray, 50%) ;
     @include peter-shadow;
   }
 }
@@ -191,7 +191,10 @@ i.icon-comment {
 div.comment {
   @include peter-shadow;
   margin-bottom: 15px;
-  border: solid 0.5px darken($peter-gray, 10%);
+  border: solid 1px darken($peter-gray, 20%);
+  &:hover {
+    border: solid 1px darken($peter-gray, 40%);
+  }
   a {
     text-decoration:none;
     &:hover {
@@ -226,13 +229,45 @@ div.comment {
         display:inline-block; 
         vertical-align:top; 
       } 
-}
-    
+    }
   }
 }
 
-span.comment_parent {
+.edit_comment_form {
+  position:relative;
+  height: 180px;
+  #error {
+    color: red;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  .comment_head {
+    padding: 5px;
+    font-weight: bold;
+    background-color:  $peter-gray;
+    font-size: 80%;
+    margin-bottom: 5px;
+    .comment_time {
+      float: right;
+      margin-right: 10px;
+    }
+  }
+    
+  textarea
+  {
+    width: 930px; 
+    height: 88px;
+    margin-left:10px;
+    margin-right:10px;
+    @include textarea-style;
+  }
+  #comment_btn {
+    position: absolute;
+    top: 140px;
+    right: 10px;
+  } 
 }
+
 span.comment_parent a {
   text-decoration:none;
   &:hover {
