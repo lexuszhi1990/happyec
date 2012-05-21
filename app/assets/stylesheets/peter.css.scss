@@ -134,6 +134,12 @@ div.event {
   }
 }
 
+#index_comment_btn {
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
 .event_title {
   font-size: 120%;
   padding: 10px;
@@ -380,6 +386,13 @@ div.footer {
 
 
 div.nice_comment {
+  .error {
+    padding-left: 10px;
+    color: #800000;
+    font-weight: bold;
+    padding-bottom: 5px;
+    display: none;
+  }
   textarea
   {
     width: 930px; 
@@ -389,12 +402,13 @@ div.nice_comment {
     margin-right:10px;
     @include textarea-style;
   }
-  .control-group {
+  form {
     background-color: $peter-gray;
     margin-bottom: 9px;
   }
-  .control-label {
-    padding: 10px;
+  label {
+    padding-left: 10px;
+    padding-top: 10px;
     padding-bottom: 5px;
     font-weight: bold;
   }

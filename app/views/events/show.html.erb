@@ -7,16 +7,29 @@
 
 <% if current_user %>
   <div class="nice_comment">
-    <%= simple_form_for(Comment.new(:event_id => @event.id, :user_id => current_user.id)) do |f| %>
+    <%= form_for(Comment.new(:event_id => @event.id, :user_id => current_user.id)) do |f| %>
       <%= f.hidden_field :event_id %>
       <%= f.hidden_field :user_id  %>
-      <%= f.input :content, :required => false, :label => "Comment on this meetup", :col => 70 %>
-      <div id="comment_btn">
-        <%= f.button :submit, "Comment on this meetup", :class => "btn btn-success"  %>
+      <%= f.label "Comment on this meetup" %>
+      <div class="error">
+        You must write something to leave a comment
       </div>
+      <%= f.text_area :content %>
+      <%= f.submit "Comment", :class=>"btn btn-success", :id => "comment_btn" %>
     <% end %>
   </div>
 <% else %>
   <%= link_to "Log in", login_path(:return_to => request.url) %> to Comment.
   <br \>
 <% end %>
+
+
+<script>
+  $("#comment_btn").click(function() {
+    if ($.trim($('#new_comment textarea').val()) == "") 
+    {
+        $('#new_comment .error').show();
+        return false
+    }
+  });
+</script>
