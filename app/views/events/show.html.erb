@@ -11,6 +11,7 @@
       <%= f.hidden_field :event_id %>
       <%= f.hidden_field :user_id  %>
       <%= f.label "Comment on this meetup" %>
+      <a  class="formatting_tips" data-toggle="modal" href="#markdown_cheatsheet" >Formatting Tips</a>
       <div class="error">
         You must write something to leave a comment
       </div>
@@ -24,6 +25,8 @@
 <% end %>
 
 
+
+<%= render "comments/markdown_cheatsheet" %>
 <script>
   $("#comment_btn").click(function() {
     if ($.trim($('#new_comment textarea').val()) == "") 
@@ -32,4 +35,10 @@
         return false
     }
   });
+
+$('#markdown_cheatsheet').hide()
+$('#markdown_cheatsheet').modal({
+  show: false
+})
+
 </script>

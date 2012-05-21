@@ -386,6 +386,7 @@ div.footer {
 
 
 div.nice_comment {
+  position: relative;
   .error {
     padding-left: 10px;
     color: #800000;
@@ -410,6 +411,12 @@ div.nice_comment {
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 5px;
+    font-weight: bold;
+  }
+  a.formatting_tips {
+    position: absolute;
+    right: 10px;
+    top: 10px;
     font-weight: bold;
   }
   #comment_btn {
@@ -552,4 +559,16 @@ input:focus {
   font-size:18px;
 }
 
-
+table {
+  margin-left:20px;
+  tr {
+      border-bottom: 1px solid darken($peter-gray, 10%);
+    td {
+      padding-top: 10px;
+      padding-left: 20px;
+    }
+    th {
+      padding-left: 20px;
+    }
+  }
+}
