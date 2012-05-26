@@ -1,0 +1,35 @@
+.edit_comment_form {
+  position:relative;
+  height: 180px;
+  #error {
+    color: red;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  .comment_head {
+    padding: 5px;
+    font-weight: bold;
+    background-color:  $peter-gray;
+    font-size: 80%;
+    margin-bottom: 5px;
+    .comment_time {
+      float: right;
+      margin-right: 10px;
+    }
+  }
+    
+  textarea
+  {
+    width: 930px; 
+    height: 88px;
+    margin-left:10px;
+    margin-right:10px;
+    @include textarea-style;
+  }
+  #comment_btn {
+    position: absolute;
+    top: 140px;
+    right: 10px;
+  } 
+}
+

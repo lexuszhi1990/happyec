@@ -2,11 +2,9 @@
     <div class="comment_head">
       <i class="icon-comment"></i> 
       <%= link_to comment.user.name, comment.user%>
-        <span class="comment_parent">
-          commented on:
-          <% @parent=Event.find(comment.event_id) %>
-          <%= link_to @parent.name, @parent %>
-        </span>
+      commented on:
+      <% @parent=Event.find(comment.event_id) %>
+      <%= link_to @parent.name, @parent %>
       <span class="comment_time">
           <%= time_ago_in_words comment.created_at  %> ago
       </span>

@@ -1,0 +1,109 @@
+$main_width: 960px;
+$peter-gray: #ececec;
+$github-blue:#839ba9;
+@mixin github-hero {
+  background:#839ba9;
+  background:-moz-linear-gradient(#839ba9,#405a6a);
+  background:-webkit-linear-gradient(#839ba9,#405a6a);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#839ba9',endColorstr='#405a6a')";
+}
+@mixin peter-shadow {
+  -webkit-box-shadow: 0 0 6px darken($peter-gray, 10%);
+  -moz-box-shadow: 0 0 6px darken($peter-gray, 10%);
+  box-shadow: 0 0 6px darken($peter-gray, 10%);
+}
+@mixin no-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+@mixin rounded-corners($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin github-issue-input {
+  border: 1px solid darken($peter-gray, 10%);
+  border-top: 2px solid darken($peter-gray, 10%) ;
+  border-left: 2px solid darken($peter-gray, 10%) ;
+  font-size: 120%;
+  &:focus {
+    //do not change border size, just change its color, otherwise, other
+    //elements will be moved
+    border: 1px solid darken($peter-gray, 30%) ;
+    border-top: 2px solid darken($peter-gray, 30%) ;
+    border-left: 2px solid darken($peter-gray, 30%) ;
+    @include peter-shadow;
+  }
+}
+
+@mixin textarea-style {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid darken($peter-gray, 20%);
+  font-size: 120%;
+  @include rounded-corners(3px);
+  @include no-shadow;
+  &:focus
+  {
+    border: 1px solid darken($peter-gray, 50%) ;
+    @include peter-shadow;
+  }
+}
+
+$main_width: 960px;
+$peter-gray: #ececec;
+$github-blue:#839ba9;
+@mixin github-hero {
+  background:#839ba9;
+  background:-moz-linear-gradient(#839ba9,#405a6a);
+  background:-webkit-linear-gradient(#839ba9,#405a6a);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#839ba9',endColorstr='#405a6a')";
+}
+@mixin peter-shadow {
+  -webkit-box-shadow: 0 0 6px darken($peter-gray, 10%);
+  -moz-box-shadow: 0 0 6px darken($peter-gray, 10%);
+  box-shadow: 0 0 6px darken($peter-gray, 10%);
+}
+@mixin no-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+@mixin rounded-corners($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin github-issue-input {
+  border: 1px solid darken($peter-gray, 10%);
+  border-top: 2px solid darken($peter-gray, 10%) ;
+  border-left: 2px solid darken($peter-gray, 10%) ;
+  font-size: 120%;
+  &:focus {
+    //do not change border size, just change its color, otherwise, other
+    //elements will be moved
+    border: 1px solid darken($peter-gray, 30%) ;
+    border-top: 2px solid darken($peter-gray, 30%) ;
+    border-left: 2px solid darken($peter-gray, 30%) ;
+    @include peter-shadow;
+  }
+}
+
+@mixin textarea-style {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid darken($peter-gray, 20%);
+  font-size: 120%;
+  @include rounded-corners(3px);
+  @include no-shadow;
+  &:focus
+  {
+    border: 1px solid darken($peter-gray, 50%) ;
+    @include peter-shadow;
+  }
+}
+
+

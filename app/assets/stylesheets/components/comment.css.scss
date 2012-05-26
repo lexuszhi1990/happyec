@@ -1,0 +1,49 @@
+/* comment */
+i.icon-comment {
+  color: darken($peter-gray, 30%);
+}
+div.comment {
+  @include peter-shadow;
+  margin-bottom: 15px;
+  border: solid 1px darken($peter-gray, 20%);
+  &:hover {
+    border: solid 1px darken($peter-gray, 40%);
+  }
+  a {
+    text-decoration:none;
+    &:hover {
+      text-decoration: underline; 
+    }
+  }
+  .comment_head {
+    padding: 5px;
+    font-weight: bold;
+    background-color:  $peter-gray;
+    font-size: 80%;
+    margin-bottom: 5px;
+    .comment_time {
+      float: right;
+      margin-right: 10px;
+    }
+  }
+  .comment_body {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 14px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    color: #555;
+    ul.actions {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      list-style: none;
+      li {
+        display:inline-block; 
+        vertical-align:top; 
+      } 
+    }
+  }
+}
+

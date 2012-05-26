@@ -6,7 +6,7 @@ class InfoController < ApplicationController
     @title = "Find us, and join us!"
   end
   def people
-    @title = "We give people chance to do show off their talent."
+    @title = "A place to show off your talents."
     @users = User.all
   end
   def password_mail_sent_notice
