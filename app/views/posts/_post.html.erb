@@ -1,0 +1,14 @@
+<%= div_for post do %>
+    <div class="post_head">
+      <i class="icon-post"></i> 
+      <%= link_to post.user.name, post.user%>
+      <span class="post_time">
+          <%= time_ago_in_words post.created_at  %> ago
+      </span>
+    </div> <%# class="comment_head" %>
+    <div class="post_body">
+      <%= markdown( post.content) %>
+    </div>
+<% end %><%# .comment%>
+
+

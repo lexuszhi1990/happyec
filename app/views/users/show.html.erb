@@ -26,6 +26,7 @@
   <div class="span3 edit_profile_btn">
     <% if current_user && current_user.name == @user.name %>  
       <a class="btn" href="/account">Edit Your Profile</a>
+       <%= link_to "Post a Blog", new_post_path(:user_id => current_user.id), :class=> "btn" %>
     <% end %>
   <% if current_user && current_user.name == "happypeter" && @user.name == "happypeter" %>  
     <div id="admin_zone">
@@ -35,9 +36,18 @@
   <%end%>
   </div>
 </div>
-
-  <h2 class="comments">Comments:</h2>
-  <%= render @user.comments.reverse %>
+<div class="row-fluid">
+  <div class="span6">
+    <h2 class="comments">Comments:</h2>
+    <%= render @user.comments.reverse %>
+  </div>
+  <div class="span6 posts">
+    <h2 class="posts">Posts:</h2>
+    <% @user.posts.reverse.each do |post| %>
+      <%= link_to post.title, post_path(post), :class => "title" %>
+      <div class="who_when"><%= post.user.name %> on <%= post.created_at.to_date %></div>
+    <% end %>
+  </div>
 </div><!-- user_show -->
 
 

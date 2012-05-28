@@ -1,0 +1,25 @@
+.post {
+  .meta {
+    margin-bottom: 10px;
+    .author {
+      font-weight: bold;
+    }
+    .published {
+      color: darken($peter-gray, 30%);
+    }
+   }
+  .entry-content {
+    position: relative;
+    ul.actions {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      list-style: none;
+      li {
+        display:inline-block; 
+        vertical-align:top; 
+      } 
+    }
+  }
+}
+

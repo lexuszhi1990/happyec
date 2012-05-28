@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_many :comments
+  has_many :comments 
+  has_many :posts
   attr_accessor :password  
   before_save :encrypt_password  
   before_create { generate_token(:auth_token) }

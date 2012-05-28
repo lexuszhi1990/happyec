@@ -1,5 +1,7 @@
 Ec::Application.routes.draw do
 
+  resources :posts
+
   resources :password_resets
   resources :comments
 
