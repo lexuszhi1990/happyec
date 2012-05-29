@@ -1,8 +1,21 @@
-<%= form_for(@post) do |f| %>
-  <%= f.hidden_field :user_id  %>
-  <%= f.label "Title" %>
-  <%= f.text_field :title %>
-  <%= f.label "Content" %>
-  <%= f.text_area :content %>
-  <%= f.submit "Comment", :class=>"btn btn-success", :id => "comment_btn" %>
-<% end %>
+<div class="post_form">
+  <%= form_for(@post) do |f| %>
+    <%= f.hidden_field :user_id  %>
+    <%= f.label "Title" %>
+    <%= f.text_field :title %>
+    <div id="control_area">
+      <a  class="formatting_tips" data-toggle="modal" href="#markdown_cheatsheet" >Formatting Tips</a>
+    </div>
+    <%= f.text_area :content %>
+    <%= f.submit "Post", :class=>"btn btn-success", :id => "post_btn" %>
+  <% end %>
+</div>
+
+<%= render "comments/markdown_cheatsheet" %>
+
+<script>
+  $('#markdown_cheatsheet').hide()
+  $('#markdown_cheatsheet').modal({
+    show: false
+  })
+</script>

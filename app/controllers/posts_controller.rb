@@ -28,7 +28,6 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @post }
     end
   end
 
@@ -76,8 +75,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
-      format.json { head :ok }
+      format.html { redirect_to @post.user }
     end
   end
 end

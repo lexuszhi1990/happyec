@@ -1,5 +1,4 @@
 <div class="post">
-  <p id="notice"><%= notice %></p>
   <h2>
     <%= link_to  @post.title, post_path(@post), :class => "title" %>
     <small></small>
@@ -13,7 +12,7 @@
   <div class="entry-content"> 
       <%= markdown @post.content %>
       <ul class="actions">
-        <li><%= link_to "Edit", edit_post_path(@post), :class => "btn" %></li>
+        <li><%= link_to "Edit", edit_post_path(@post), :remote => true, :class => "btn" %></li>
         <li><%= link_to "Delete", @post, :confirm => "Are you sure you want to delete this comment?", :method => :delete, :class => "btn" %></li>
       </ul>
   <div>
