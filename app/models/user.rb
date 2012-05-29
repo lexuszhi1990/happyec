@@ -13,6 +13,16 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :email 
   validates_presence_of :password, :on => :create
   validates_uniqueness_of :name, :email, :case_sensitive => false
+  after_create { update_stream }
+ 
+  def update_stream
+     @stream_event = StreamEvent.new
+     @stream_event.itemId = self.id
+     @stream_event.userId = self.id
+     @stream_event.item_type = "USER"
+     @stream_event.time = self.created_at
+     @stream_event.save
+  end
 
   def self.authenticate(name, password)  
     user = find_by_name(name)  

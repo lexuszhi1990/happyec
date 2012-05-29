@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  userId: 1
+  itemId: 
+  time: 
+  type: 
+
+two:
+  userId: 1
+  itemId: 
+  time: 
+  type: 

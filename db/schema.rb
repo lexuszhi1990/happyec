@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528072407) do
+ActiveRecord::Schema.define(:version => 20120530011702) do
 
   create_table "comments", :force => true do |t|
     t.integer  "event_id"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20120528072407) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "stream_events", :force => true do |t|
+    t.integer  "userId"
+    t.integer  "itemId"
+    t.datetime "time"
+    t.string   "item_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

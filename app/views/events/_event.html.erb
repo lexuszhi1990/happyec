@@ -15,7 +15,7 @@
     (<%= event.time.to_formatted_s(:day_month_year) %>)
     <br /> 
     Where:
-    <%= link_to @event.location, "/about/location" %>
+    <%= link_to event.location, "/about/location" %>
     <% if current_user %>  <%# only myself can edit%>
       <% @user= User.find(current_user.id) %>
       <% if @user.name == "happypeter"%>
