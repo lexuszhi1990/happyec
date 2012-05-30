@@ -1,0 +1,18 @@
+<%= div_for @postcomment, :class => "edit_comment_form" do %>
+  <div class="comment_head">
+    <i class="icon-comment"></i> 
+    <%= link_to @postcomment.user.name, @postcomment.user%>
+      commented
+    <span class="comment_time">
+        <%= time_ago_in_words @postcomment.created_at  %> ago
+    </span>
+  </div> 
+
+ <%= form_for @postcomment, :remote => true do |f| %>
+  <%= f.error_messages %>
+  <%= f.text_area :content %>
+  <%= f.submit "Update Comment", :class=>"btn", :id => "comment_btn" %>
+ <% end %>
+<% end %>
+
+

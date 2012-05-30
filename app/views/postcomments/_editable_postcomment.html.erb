@@ -1,0 +1,21 @@
+<%= div_for editable_postcomment do %>
+    <div class="comment_head">
+      <i class="icon-comment"></i> 
+      <%= link_to editable_postcomment.user.name, editable_postcomment.user%>
+          commented
+      <span class="comment_time">
+          <%= time_ago_in_words editable_postcomment.created_at  %> ago
+      </span>
+    </div> <%# class="comment_head" %>
+    <div class="comment_body">
+      <% if current_user && current_user.id == editable_postcomment.user.id %>
+        <ul class="actions">
+          <li><%= link_to "Edit", edit_postcomment_path(editable_postcomment), :remote => true, :class => "btn btn-small" %></li>
+          <li><%= link_to "Delete", editable_postcomment, :confirm => "Are you sure you want to delete this comment?", :method => :delete, :class => "btn btn-small" %></li>
+        </ul>
+      <% end %>
+      <%= markdown( h editable_postcomment.content) %>
+    </div>
+<% end %>
+
+

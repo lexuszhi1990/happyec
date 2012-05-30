@@ -4,6 +4,7 @@ Ec::Application.routes.draw do
 
   resources :password_resets
   resources :comments
+  resources :postcomments
 
   resources :events
 

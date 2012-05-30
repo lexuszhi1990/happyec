@@ -1,0 +1,5 @@
+<% if @postcomment.errors.present? %>
+  $("#<%= dom_id(@postcomment) %>").find("form").prepend("<div id=\"error\">Error!</div>");
+<% else %>
+  $("#<%= dom_id(@postcomment) %>").replaceWith("<%= escape_javascript render :partial => "comments/editable_comment", :object => @postcomment %> ");
+<% end %> 

@@ -13,16 +13,58 @@
       <%= markdown @post.content %>
       <ul class="actions">
         <li><%= link_to "Edit", edit_post_path(@post), :remote => true, :class => "btn" %></li>
-        <li><%= link_to "Delete", @post, :confirm => "Are you sure you want to delete this comment?", :method => :delete, :class => "btn" %></li>
+        <li><%= link_to "Delete", @post, :confirm => "Are you sure you want to delete this post?", :method => :delete, :class => "btn" %></li>
       </ul>
-  <div>
+  </div>
 </div>
 
+<%= render :partial => "postcomments/editable_postcomment", :collection => @post.postcomments %>
+
+<% if current_user %>
+  <div class="nice_comment">
+    <%= form_for(Postcomment.new(:post_id => @post.id, :user_id => current_user.id)) do |f| %>
+      <%= f.hidden_field :post_id %>
+      <%= f.hidden_field :user_id  %>
+      <%= f.label "Comment on this meetup" %>
+      <a  class="formatting_tips" data-toggle="modal" href="#markdown_cheatsheet" >Formatting Tips</a>
+      <div class="error">
+        You must write something to leave a comment
+      </div>
+      <%= f.text_area :content %>
+      <%= f.submit "Comment", :class=>"btn btn-success", :id => "comment_btn" %>
+    <% end %>
+  </div>
+<% else %>
+  <%= link_to "Log in", login_path(:return_to => request.url) %> to Comment.
+  <br \>
+<% end %>
+
+
+
+<%= render "comments/markdown_cheatsheet" %>
 <script>
-$(".actions").hide()
-$(".entry-content").mouseover(function() {
-   $(this).find("ul.actions").show();
- }).mouseout(function() {
-   $("ul.actions").hide();
-   });
+  $("#comment_btn").click(function() {
+    if ($.trim($('textarea#postcomment_content').val()) == "") 
+    {
+        $('.error').show();
+        return false
+    }
+  });
+
+  $('#markdown_cheatsheet').hide()
+  $('#markdown_cheatsheet').modal({
+    show: false
+  })
+
+  $(".actions").hide()
+  $(".entry-content").mouseover(function() {
+     $(this).find("ul.actions").show();
+   }).mouseout(function() {
+     $("ul.actions").hide();
+     });
+  $(".postcomment").mouseover(function() {
+     $(this).find("ul.actions").show();
+   }).mouseout(function() {
+     $("ul.actions").hide();
+     });
 </script>
