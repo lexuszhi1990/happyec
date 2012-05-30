@@ -55,3 +55,20 @@
   @include peter-shadow;  
   padding: 20px;
 }
+
+.post {
+  .title {
+    font-size: 150%;
+    font-weight: bold;
+  }
+  .who_when {
+    font-size: 120%;
+    color: darken($peter-gray, 40%);
+    margin-bottom: 20px;
+  }
+}
+
+.new_blog_btn {
+  float: right;
+}
+

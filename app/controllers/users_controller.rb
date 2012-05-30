@@ -1,4 +1,4 @@
-class UsersController < ApplicationController  
+class UsersController < ApplicationController
   def new  
     @user = User.new  
   end
@@ -77,6 +77,7 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:id])
     end
+    @streamEvents = StreamEvent.where(:userId => @user.id)
 
     if @user == nil
       redirect_to root_url, :notice => "no such user!"  

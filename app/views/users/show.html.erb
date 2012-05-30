@@ -26,7 +26,6 @@
   <div class="span3 edit_profile_btn">
     <% if current_user && current_user.name == @user.name %>  
       <a class="btn" href="/account">Edit Your Profile</a>
-       <%= link_to "Post a Blog", new_post_path(:user_id => current_user.id), :class=> "btn" %>
     <% end %>
   <% if current_user && current_user.name == "happypeter" && @user.name == "happypeter" %>  
     <div id="admin_zone">
@@ -38,8 +37,8 @@
 </div>
 <div class="row-fluid">
   <div class="span6">
-    <h2 class="comments">Comments:</h2>
-    <%= render @user.comments.reverse %>
+    <h2 class="timeline">Timeline:</h2>
+    <%= render "info/timeline" %>
   </div>
   <div class="span6 posts">
     <h2 class="posts">Posts:</h2>

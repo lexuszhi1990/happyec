@@ -1,0 +1,11 @@
+.timeline {
+  .head {
+    font-weight: bold;
+   }
+  .content {
+    padding-left:15px;
+    font-size: 90%;
+    color: darken($peter-gray, 40%);
+    width: 400px;
+   }
+}

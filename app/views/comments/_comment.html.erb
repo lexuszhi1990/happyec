@@ -2,7 +2,7 @@
     <div class="comment_head">
       <i class="icon-comment"></i> 
       <%= link_to comment.user.name, comment.user%>
-      commented on:
+      commented on MEETUP:
       <% @parent=Event.find(comment.event_id) %>
       <%= link_to @parent.name, @parent %>
       <span class="comment_time">

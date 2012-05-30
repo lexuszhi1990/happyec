@@ -9,10 +9,6 @@ class EventsController < ApplicationController
       format.js
     end
   end
-  def all_events
-    @events = Event.all
-  end
-
   def show
     @event = Event.find(params[:id])
     session[:return_to] = request.url

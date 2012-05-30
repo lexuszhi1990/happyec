@@ -1,0 +1,17 @@
+<%= div_for postcomment do %>
+    <div class="comment_head">
+      <i class="icon-comment"></i> 
+      <%= link_to postcomment.user.name, postcomment.user%>
+      commented on POST:
+      <% @parent=Post.find(postcomment.post_id) %>
+      <%= link_to @parent.title, @parent %>
+      <span class="comment_time">
+          <%= time_ago_in_words postcomment.created_at  %> ago
+      </span>
+    </div> <%# class="comment_head" %>
+    <div class="comment_body">
+      <%# need the "h" to escape <> %>
+      <%= markdown( h postcomment.content) %>
+    </div>
+<% end %><%# .postcomment%>
+

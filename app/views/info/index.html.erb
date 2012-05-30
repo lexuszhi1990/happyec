@@ -1,0 +1,21 @@
+<% if not current_user %>  
+  <%= render :partial => "stranger_teaser" %>
+<%else%>
+
+  <div class="row-fluid">
+    <div class="span6 timeline_div">
+      <h2 class="news"> News Feed</h2>
+      <%= render "timeline" %>
+    </div>
+    <div class="span6">
+       <%= link_to "Post a Blog", new_post_path(:user_id => current_user.id), :class=> "btn btn-success new_blog_btn" %>
+    <h2 class="posts">Your Posts:</h2>
+    <% User.find(current_user.id).posts.reverse.each do |post| %>
+      <div class="post">
+        <%= link_to post.title, post_path(post), :class => "title" %>
+        <div class="who_when">
+          <%= post.user.name %> on <%= post.created_at.to_date %>
+        </div>
+    <% end %>
+    </div>
+<% end %>

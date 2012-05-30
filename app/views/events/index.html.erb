@@ -1,15 +1,3 @@
-<div class="timeline">
-    <% @streamEvents = StreamEvent.all  %>
-    <% @streamEvents.reverse.each do |s| %>
-      <% if s.item_type == "COMMENT" %>
-         <%= render Comment.find(s.itemId) %>
-      <% elsif s.item_type == "USER" %>
-         <%= User.find(s.itemId).name  %> joined us 
-      <% elsif s.item_type == "EVENT" %>
-         <%= render Event.find(s.itemId) %>  
-      <% end %>
-    <% end %>
-</div>
 <% if not current_user %>  
   <%= render :partial => "stranger_teaser" %>
 <%else%>

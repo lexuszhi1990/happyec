@@ -1,0 +1,55 @@
+<div class="timeline">
+    <% @streamEvents.reverse.each do |s| %>
+      <% if s.item_type == "COMMENT" %>
+        <div class="head">
+          <% @comment = Comment.find(s.itemId) %>
+          <i class="icon-comment"></i><%= link_to @comment.user.name, user_path(@comment.user) %> Commented on meetup:
+          <%= link_to @comment.event.name, event_path(@comment.event) %>
+          <%= time_ago_in_words @comment.created_at %> ago
+        </div>
+        <div class="content">
+          <%= truncate_html(@comment.content) %>
+        </div>
+        <hr>
+      <% elsif s.item_type == "USER" %>
+        <div class="head">
+          <i class="icon-user"></i><% @user = User.find(s.itemId) %> 
+          <%= link_to @user.name, user_path(@user) %> joined us, as our user NO.<%= @user.id %> 
+        </div>
+        <div class="content">
+        </div>
+         <hr>
+      <% elsif s.item_type == "EVENT" %>
+        <div class="head">
+          <% @event = Event.find(s.itemId) %>  
+          <i class="icon-glass"></i><%= link_to @event.name, event_path(@event) %>, this will be meetup #<%= @event.id %>, welcome 
+        </div>
+        <div class="content">
+          <%= truncate_html(@event.content) %>
+        </div>
+          <hr>
+      <% elsif s.item_type == "POST" %>
+        <div class="head">
+          <% @post = Post.find(s.itemId) %> 
+          <i class="icon-book"></i><%= link_to @post.user.name, user_path(@post.user) %>  on posted a blog:
+          <%= link_to @post.title, post_path(@post) %>
+          <%= time_ago_in_words @post.created_at %> ago
+        </div>
+        <div class="content">
+          <%= truncate_html(@post.content) %>
+        </div>
+         <hr>
+      <% elsif s.item_type == "POSTCOMMENT" %>
+        <div class="head">
+          <% @postcomment = Postcomment.find(s.itemId) %> 
+          <i class="icon-comment"></i><%= link_to @postcomment.user.name, user_path(@postcomment.user) %> Commented on post
+          <%= link_to @postcomment.post.title, post_path(@postcomment.post) %>
+          <%= time_ago_in_words @postcomment.created_at %> ago
+        </div>
+        <div class="content">
+          <%= truncate_html(@postcomment.content) %>
+        </div>
+         <hr>
+      <% end %>
+    <% end %>
+</div>

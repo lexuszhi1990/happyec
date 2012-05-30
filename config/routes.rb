@@ -11,9 +11,8 @@ Ec::Application.routes.draw do
   match "/account" => "users#account"
   match "/password_mail_sent" =>"info#password_mail_sent_notice"
   match "/settings/profile" =>"users#edit", :as => "set_profile"
-  match "/all_events" => "events#all_events"
-  match "/all_updates" => "comments#all_updates"
   match "/about" => "info#about"
+  match "/timeline" => "info#timeline"
   match "/plans" => "info#plans", :as => "plans"
   match "/about/location" => "info#location"
   match "/about/people" => "info#people" # this used to be "users#index"
@@ -25,7 +24,7 @@ Ec::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"  
   match "/forget_password" =>"password_resets#new", :as => "forget_password"
 
-  root :to => "events#index"  
+  root :to => "info#index"  
   resources :users
   resources :sessions
   resources :events do

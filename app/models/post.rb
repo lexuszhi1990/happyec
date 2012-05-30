@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
      @stream_event = StreamEvent.new
      @stream_event.itemId = self.id
      @stream_event.userId = self.user.id
-     @stream_event.type = "POST"
+     @stream_event.item_type = "POST"
      @stream_event.time = self.created_at
      @stream_event.save
   end

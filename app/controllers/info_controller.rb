@@ -1,4 +1,10 @@
 class InfoController < ApplicationController
+  def timeline
+  end
+  def index
+    @streamEvents = StreamEvent.all  
+  end
+
   def about
     @title = "Happyec helps people make friends learning English"
   end
